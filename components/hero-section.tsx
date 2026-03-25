@@ -310,9 +310,8 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           {carImages.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentImageIndex ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                }`}
             >
               <img src={image} alt={`Car ${index + 1}`} className="w-full h-full object-cover" />
             </div>
@@ -400,7 +399,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           <div className="tp-block">
             <div className="tp-logo">
               <svg className="tp-ico" viewBox="0 0 24 24">
-                <path d="M12 0L14.7 8.3H23.4L16.4 13.4L19 21.7L12 16.6L5 21.7L7.6 13.4L0.6 8.3H9.3L12 0Z"/>
+                <path d="M12 0L14.7 8.3H23.4L16.4 13.4L19 21.7L12 16.6L5 21.7L7.6 13.4L0.6 8.3H9.3L12 0Z" />
               </svg>
               <span className="tp-name">Trustpilot</span>
             </div>
