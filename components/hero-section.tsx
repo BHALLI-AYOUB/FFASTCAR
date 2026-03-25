@@ -453,8 +453,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           })}
         </div>
       </div>
-Livraison aéroport
-Casablanca & Marrakech
+
     </>
   )
 }
