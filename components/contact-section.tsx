@@ -25,7 +25,7 @@ const translations = {
     info: {
       phone: "+212 601 66 66 65",
       email: "Abfastcar@gmail.com",
-      address: "Rabat, Maroc",
+      address: "Rue Ouarzazate, Rabat, Maroc",
       instagram: "@abfastcar",
     },
   },
@@ -47,7 +47,7 @@ const translations = {
     info: {
       phone: "+212 601 66 66 65",
       email: "Abfastcar@gmail.com",
-      address: "Rabat, Morocco",
+      address: "Rue Ouarzazate, Rabat, Morocco",
       instagram: "@abfastcar",
     },
   },
@@ -94,7 +94,10 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
   }
 
   const handleDirections = () => {
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=Rabat,Maroc`, "_blank")
+    window.open(
+      `https://www.google.com/maps/dir/?api=1&destination=Rue+Ouarzazate,+Rabat,+Maroc`,
+      "_blank"
+    )
   }
 
   return (
@@ -274,7 +277,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent" />
             </div>
 
-            {/* Map container — the masterpiece */}
+            {/* Map container */}
             <div
               className="relative group"
               onMouseEnter={() => setMapHovered(true)}
@@ -301,7 +304,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                     </div>
                     <div>
                       <div className="text-white font-black text-lg tracking-wide">ABFastCar</div>
-                      <div className="text-yellow-400/80 text-xs font-medium tracking-widest uppercase">Rabat, Maroc</div>
+                      <div className="text-yellow-400/80 text-xs font-medium tracking-widest uppercase">Rue Ouarzazate, Rabat</div>
                     </div>
                   </div>
 
@@ -331,20 +334,20 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   </button>
                 </div>
 
-                {/* MAP IFRAME — big and gorgeous */}
+                {/* MAP IFRAME */}
                 <div className="map-iframe-wrapper relative" style={{height: '580px'}}>
                   {/* Scanline effect */}
                   <div className="scanline" />
 
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106376.83796027674!2d-6.9068908!3d33.9715904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871f50c5c1%3A0x7ac946ed7408076b!2sRabat!5e0!3m2!1sfr!2sma!4v1710000000000!5m2!1sfr!2sma"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d837.517351704087!2d-6.8289489!3d34.0189459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b93f09731c7%3A0x42fc6336299840a1!2sRue%20Ouarzazate%2C%20Rabat!5e0!3m2!1sfr!2sma!4v1711111111111!5m2!1sfr!2sma"
                     width="100%"
                     height="100%"
                     style={{ border: 0, display: 'block' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="ABFastCar Location - Rabat, Maroc"
+                    title="ABFastCar Location - Rue Ouarzazate, Rabat"
                   />
 
                   {/* Corner overlays for cinematic framing */}
@@ -366,7 +369,8 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   </div>
 
                   {/* Subtle vignette edges */}
-                  <div className="absolute inset-0 pointer-events-none z-10"
+                  <div
+                    className="absolute inset-0 pointer-events-none z-10"
                     style={{
                       background: 'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%)'
                     }}

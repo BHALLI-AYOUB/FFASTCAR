@@ -18,7 +18,7 @@ const translations = {
     trustSuffix: "agences de location certifiées",
     features: [
       { label: "Kilométrage illimité", sub: "Roulez sans limite" },
-      { label: "Livraison aéroport", sub: "Casablanca & Marrakech" },
+      { label: "Livraison aéroport", sub: "Partout au Maroc" },
       { label: "Large choix", sub: "50+ véhicules" },
       { label: "Chauffeur en option", sub: "Service personnalisé" },
       { label: "Assistance 24h/24", sub: "Toujours disponible" },
@@ -37,7 +37,7 @@ const translations = {
     trustSuffix: "certified rental agencies",
     features: [
       { label: "Unlimited mileage", sub: "Drive without limits" },
-      { label: "Airport delivery", sub: "Casablanca & Marrakech" },
+      { label: "Airport delivery", sub: "All over Morocco" },
       { label: "Wide choice", sub: "50+ vehicles" },
       { label: "Driver option", sub: "Personalized service" },
       { label: "24/7 Assistance", sub: "Always available" },
@@ -453,7 +453,8 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           })}
         </div>
       </div>
-
+Livraison aéroport
+Casablanca & Marrakech
     </>
   )
 }
