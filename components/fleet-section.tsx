@@ -16,6 +16,18 @@ const translations = {
     explore: "Explorer",
     vehicles: [
       {
+        name: "Lamborghini Urus",
+        category: "Super SUV",
+        year: "2025",
+        price: 15000,
+        images: [
+          "/urus 1_.png",
+          "/urus 2.png",
+          "/urus 3.png"
+        ],
+        features: ["Full Options", "V8 Biturbo", "640 CV"],
+      },
+      {
         name: "Mercedes G63",
         category: "Ultra Luxe SUV",
         year: "2025",
@@ -275,7 +287,18 @@ const translations = {
     book: "Book Now",
     explore: "Explore",
     vehicles: [
-      // ── 1 ──────────────────────────────────────────────────────────
+      {
+        name: "Lamborghini Urus",
+        category: "Super SUV",
+        year: "2025",
+        price: 15000,
+        images: [
+          "/urus 1_.png",
+          "/urus 2.png",
+          "/urus 3.png"
+        ],
+        features: ["Full Options", "V8 Biturbo", "640 HP"],
+      },
       {
         name: "Mercedes G63",
         category: "Ultra Luxury SUV",
@@ -288,7 +311,6 @@ const translations = {
         ],
         features: ["Full Options", "Matte Black", "V8 Biturbo"],
       },
-      // ── 2 ──────────────────────────────────────────────────────────
       {
         name: "Porsche Cayenne",
         category: "Sport SUV",
@@ -301,7 +323,6 @@ const translations = {
         ],
         features: ["Full Options", "Black", "Turbo"],
       },
-      // ── 3 ──────────────────────────────────────────────────────────
       {
         name: "Range Rover Sport Dynamic SE 2025",
         category: "Prestige SUV",
@@ -317,7 +338,6 @@ const translations = {
         ],
         features: ["Full Options", "Full Black", "4x4"],
       },
-      // ── 4 ──────────────────────────────────────────────────────────
       {
         name: "Hyundai i20 2025",
         category: "City Car",
@@ -330,7 +350,6 @@ const translations = {
         ],
         features: ["Full Options", "Full Black", "Compact"],
       },
-      // ── 5 ──────────────────────────────────────────────────────────
       {
         name: "Porsche Macan T 2025",
         category: "Sport SUV",
@@ -343,7 +362,6 @@ const translations = {
         ],
         features: ["Full Options", "Nardo Grey", "Sport"],
       },
-      // ── 6 ──────────────────────────────────────────────────────────
       {
         name: "Porsche Macan 2025",
         category: "Sport SUV",
@@ -356,7 +374,6 @@ const translations = {
         ],
         features: ["Full Options", "Black", "Performance"],
       },
-      // ── 7 ──────────────────────────────────────────────────────────
       {
         name: "Volkswagen Touareg",
         category: "Luxury SUV",
@@ -371,7 +388,6 @@ const translations = {
         ],
         features: ["Full Options", "Black", "4x4"],
       },
-      // ── 8 ──────────────────────────────────────────────────────────
       {
         name: "Range Rover Evoque Dynamic SE 2025",
         category: "Compact SUV",
@@ -385,7 +401,6 @@ const translations = {
         ],
         features: ["Full Options", "Metallic Grey", "R-Dynamic"],
       },
-      // ── 9 ── Mercedes Classe A (synced exactly from FR) ────────────
       {
         name: "Mercedes Class A Pack AMG 2025",
         category: "Sport Sedan",
@@ -399,7 +414,6 @@ const translations = {
         ],
         features: ["AMG Line Pack", "Nardo Grey", "Sport"],
       },
-      // ── 10 ── Mercedes CLA (new vehicle added from FR) ─────────────
       {
         name: "Mercedes CLA Pack AMG 2025",
         category: "Sport Sedan",
@@ -412,7 +426,6 @@ const translations = {
         ],
         features: ["AMG Line Pack", "Nardo Grey", "Sport"],
       },
-      // ── 11 ── Mercedes A200 ─────────────────────────────────────────
       {
         name: "Mercedes A200 Pack AMG 2025",
         category: "Sport Sedan",
@@ -427,7 +440,6 @@ const translations = {
         ],
         features: ["AMG Line Pack", "Nardo Grey", "Sport"],
       },
-      // ── 12 ──────────────────────────────────────────────────────────
       {
         name: "Audi A3 S-Line Sedan",
         category: "Sport Sedan",
@@ -443,7 +455,6 @@ const translations = {
         ],
         features: ["RS3 Pack", "Turbo Blue", "S-Line"],
       },
-      // ── 13 ──────────────────────────────────────────────────────────
       {
         name: "Mercedes Vito 2025",
         category: "Commercial",
@@ -456,7 +467,6 @@ const translations = {
         ],
         features: ["Automatic", "White", "Practical"],
       },
-      // ── 14 ──────────────────────────────────────────────────────────
       {
         name: "Hyundai Accent 2025",
         category: "Commercial",
@@ -472,7 +482,6 @@ const translations = {
         ],
         features: ["Automatic", "White", "Practical"],
       },
-      // ── 15 ──────────────────────────────────────────────────────────
       {
         name: "Mercedes GLA 2025",
         category: "Compact SUV",
@@ -487,7 +496,6 @@ const translations = {
         ],
         features: ["Automatic", "Black", "Economical"],
       },
-      // ── 16 ──────────────────────────────────────────────────────────
       {
         name: "Hyundai Tucson 2025",
         category: "Compact SUV",
@@ -502,7 +510,6 @@ const translations = {
         ],
         features: ["Automatic", "Black", "Economical"],
       },
-      // ── 17 ──────────────────────────────────────────────────────────
       {
         name: "Cupra Formentor",
         category: "Sport SUV",
@@ -515,7 +522,6 @@ const translations = {
         ],
         features: ["Full Options", "Grey", "Performance"],
       },
-      // ── 18 ──────────────────────────────────────────────────────────
       {
         name: "Cupra Leon 2025",
         category: "Sport Sedan",
@@ -530,7 +536,6 @@ const translations = {
         ],
         features: ["Full Options", "Grey", "Sport"],
       },
-      // ── 19 ──────────────────────────────────────────────────────────
       {
         name: "Renault Clio 5 Automatic 2025",
         category: "City Car",
@@ -740,7 +745,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                   <div className="space-y-1">
                     <div className="flex items-baseline gap-1">
                       <span className="text-5xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                        {vehicle.price}
+                        {vehicle.price.toLocaleString("fr-FR")}
                       </span>
                       <span className="text-lg text-zinc-500 font-bold">DH</span>
                     </div>
