@@ -48,36 +48,6 @@
     "titleHighlight": "PREMIUM",
     "subtitle": "Les plus grandes marques automobiles à votre service"
   },
-  "chatbot": {
-    "greeting": "Bonjour 👋 Je suis l'assistant virtuel AB FAST CAR, ici pour vous aider a trouver ce que vous cherchez. Comment puis-je vous aider?",
-    "placeholder": "Tapez votre message...",
-    "send": "Envoyer",
-    "online": "En ligne",
-    "brandName": "AB FAST CAR",
-    "today": "Aujourd'hui",
-    "suggestions": [
-      "💰 Voir les prix",
-      "🚗 Disponibilite",
-      "📝 Reserver",
-      "📍 Livraison",
-      "⏰ Horaires",
-      "🎯 Meilleure voiture"
-    ],
-    "responses": {
-      "prix": "💰 Nos prix vont de {min}/jour pour une Clio 5 à {max}/jour pour une Mercedes G63. Souhaitez-vous voir toute notre flotte ?",
-      "disponibilite": "✅ Toutes nos 14 voitures sont disponibles! Mercedes G63, Porsche Cayenne, Range Rover Sport, Porsche Macan T, VW Touareg, Range Evoque, Mercedes GLA, Cupra Formentor, Cupra Leon, Clio 5 et plus!",
-      "reservation": "📝 Reservation facile: 1️⃣ Choisissez votre voiture 2️⃣ Cliquez 'Reserver' 3️⃣ Remplissez le formulaire avec dates et infos 4️⃣ Nous vous contactons sous 2h pour confirmation!",
-      "livraison": "🚗 Livraison GRATUITE a Rabat! Service disponible dans tout le Maroc (Casablanca, Marrakech, Tanger, Fes...). Livraison a l'aeroport possible. Demandez un devis!",
-      "horaires": "⏰ Service 24/7 disponible! Reservations: 9h-20h tous les jours. Livraison flexible selon vos besoins. Assistance d'urgence disponible!",
-      "meilleure": "🎯 Pour vous recommander: Budget? Nombre de passagers? Usage (ville/voyage)? Nos tops: Mercedes G63 (ultra luxe), Porsche Cayenne (sport), Range Rover (prestige), Cupra Leon (economique sport)!",
-      "assurance": "🛡️ Assurance COMPLETE incluse! Couverture tous risques, assistance 24/7, kilometrage illimite sur certains modeles. Franchise variable selon vehicule.",
-      "carburant": "⛽ Politique carburant: Prise avec plein, retour avec plein. Option carburant prepaye disponible. Consommation moyenne fournie.",
-      "permis": "📜 Documents requis: Permis de conduire valide (+1 an min), Carte identite/Passeport, Justificatif de domicile, Caution par carte bancaire.",
-      "merci": "De rien! Je suis toujours la pour vous aider. N'hesitez pas si vous avez d'autres questions! 😊",
-      "contact": "📞 Contactez-nous: WhatsApp disponible (voir bouton vert), Email, ou reservez directement sur le site. Reponse garantie sous 2h!",
-      "default": "Je peux vous aider avec: Prix, Disponibilite, Reservation, Livraison, Horaires, Assurance, Documents requis, Recommandations. Que voulez-vous savoir? 🚗✨"
-    }
-  },
   "contact": {
     "title": "RESTONS EN",
     "titleGradient": "CONTACT",

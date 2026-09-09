@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { LocaleProvider } from "@/components/locale-provider"
-import { Chatbot } from "@/components/chatbot"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" })
@@ -64,10 +63,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://abfastcar.com" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <LocaleProvider>
-          {children}
-          <Chatbot />
-        </LocaleProvider>
+        <LocaleProvider>{children}</LocaleProvider>
         <Analytics />
       </body>
     </html>

@@ -48,36 +48,6 @@
     "titleHighlight": "PREMIUM BRANDS",
     "subtitle": "The world's leading automotive brands at your service"
   },
-  "chatbot": {
-    "greeting": "Hello 👋 I'm AB FAST CAR virtual assistant, here to help you find what you're looking for. How can I help you?",
-    "placeholder": "Type your message...",
-    "send": "Send",
-    "online": "Online",
-    "brandName": "AB FAST CAR",
-    "today": "Today",
-    "suggestions": [
-      "💰 See prices",
-      "🚗 Availability",
-      "📝 Book now",
-      "📍 Delivery",
-      "⏰ Schedule",
-      "🎯 Best car"
-    ],
-    "responses": {
-      "prix": "💰 Our prices range from {min}/day for a Clio 5 to {max}/day for a Mercedes G63. Would you like to see our entire fleet?",
-      "disponibilite": "✅ All our cars are available for booking! Which car interests you?",
-      "reservation": "📝 To book: 1️⃣ Choose your car 2️⃣ Click 'Book' 3️⃣ Fill the form 4️⃣ We contact you quickly!",
-      "livraison": "🚗 FREE delivery in Rabat! Service available throughout Morocco (Casablanca, Marrakech, Tangier, Fes...). Airport delivery possible. Ask for a quote!",
-      "horaires": "⏰ 24/7 service available! Bookings: 9am-8pm every day. Flexible delivery to suit your needs. Emergency assistance available!",
-      "meilleure": "🎯 To recommend the right car: Budget? Number of passengers? Use (city/travel)? Our top picks: Mercedes G63 (ultra luxury), Porsche Cayenne (sport), Range Rover (prestige), Cupra Leon (affordable sport)!",
-      "assurance": "🛡️ FULL insurance included! Comprehensive cover, 24/7 assistance, unlimited mileage on selected models. Excess varies by vehicle.",
-      "carburant": "⛽ Fuel policy: collect full, return full. Prepaid fuel option available. Average consumption provided.",
-      "permis": "📜 Required documents: valid driving licence (1+ year), ID card/passport, proof of address, deposit by bank card.",
-      "merci": "You're welcome! I'm always here to help. Don't hesitate if you have more questions! 😊",
-      "contact": "📞 Contact us: WhatsApp (see the green button), email, or book directly on the site. Reply guaranteed within 2h!",
-      "default": "I'm here to help! Ask me about our cars, prices or bookings. 🚗✨"
-    }
-  },
   "contact": {
     "title": "GET IN",
     "titleGradient": "TOUCH",

@@ -48,36 +48,6 @@
     "titleHighlight": "PREMIUMMERKEN",
     "subtitle": "'s Werelds toonaangevende automerken tot uw dienst"
   },
-  "chatbot": {
-    "greeting": "Hallo 👋 Ik ben de virtuele assistent van AB FAST CAR en help u graag vinden wat u zoekt. Waarmee kan ik u helpen?",
-    "placeholder": "Typ uw bericht...",
-    "send": "Verzenden",
-    "online": "Online",
-    "brandName": "AB FAST CAR",
-    "today": "Vandaag",
-    "suggestions": [
-      "💰 Prijzen bekijken",
-      "🚗 Beschikbaarheid",
-      "📝 Nu reserveren",
-      "📍 Levering",
-      "⏰ Openingstijden",
-      "🎯 Beste auto"
-    ],
-    "responses": {
-      "prix": "💰 Onze prijzen lopen van {min}/dag voor een Clio 5 tot {max}/dag voor een Mercedes G63. Wilt u ons volledige wagenpark bekijken?",
-      "disponibilite": "✅ Al onze auto's zijn beschikbaar om te reserveren! Welke auto heeft uw interesse?",
-      "reservation": "📝 Zo reserveert u: 1️⃣ Kies uw auto 2️⃣ Klik op 'Reserveren' 3️⃣ Vul het formulier in 4️⃣ Wij nemen snel contact met u op!",
-      "livraison": "🚗 GRATIS levering in Rabat! Service beschikbaar in heel Marokko (Casablanca, Marrakech, Tanger, Fez...). Levering op de luchthaven mogelijk. Vraag een offerte aan!",
-      "horaires": "⏰ 24/7 service beschikbaar! Reserveringen: 9.00-20.00 uur, elke dag. Flexibele levering volgens uw wensen. Noodhulp beschikbaar!",
-      "meilleure": "🎯 Om u goed te adviseren: Budget? Aantal passagiers? Gebruik (stad/reis)? Onze toppers: Mercedes G63 (ultraluxe), Porsche Cayenne (sportief), Range Rover (prestige), Cupra Leon (voordelig sportief)!",
-      "assurance": "🛡️ VOLLEDIGE verzekering inbegrepen! Allriskdekking, 24/7 bijstand, onbeperkt kilometers op bepaalde modellen. Eigen risico verschilt per voertuig.",
-      "carburant": "⛽ Brandstofbeleid: vol ophalen, vol terugbrengen. Optie voor vooraf betaalde brandstof beschikbaar. Gemiddeld verbruik wordt vermeld.",
-      "permis": "📜 Vereiste documenten: geldig rijbewijs (min. 1 jaar), identiteitskaart/paspoort, bewijs van woonadres, waarborg via bankkaart.",
-      "merci": "Graag gedaan! Ik sta altijd voor u klaar. Stel gerust nog meer vragen! 😊",
-      "contact": "📞 Neem contact op: WhatsApp (zie de groene knop), e-mail, of reserveer direct op de site. Antwoord gegarandeerd binnen 2 uur!",
-      "default": "Ik help u graag! Stel me een vraag over onze auto's, prijzen of reserveringen. 🚗✨"
-    }
-  },
   "contact": {
     "title": "NEEM",
     "titleGradient": "CONTACT OP",
