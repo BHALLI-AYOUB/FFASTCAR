@@ -5,41 +5,9 @@ import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Calendar, Phone, MessageCircle, X, Sparkles, Clock } from "lucide-react"
-
-const translations = {
-  fr: {
-    title: "Réservez votre",
-    vehicle: "véhicule de luxe",
-    startDate: "Date de début",
-    endDate: "Date de fin",
-    phone: "Votre numéro WhatsApp",
-    phonePlaceholder: "Numéro de téléphone",
-    numberOfDays: "Durée",
-    pricePerDay: "Prix / jour",
-    totalPrice: "Total",
-    confirmWhatsApp: "Confirmer la réservation",
-    days: "jours",
-    day: "jour",
-    pickupDate: "Date de récupération",
-    returnDate: "Date de retour",
-  },
-  en: {
-    title: "Reserve your",
-    vehicle: "luxury vehicle",
-    startDate: "Start Date",
-    endDate: "End Date",
-    phone: "Your WhatsApp Number",
-    phonePlaceholder: "Phone number",
-    numberOfDays: "Duration",
-    pricePerDay: "Price / day",
-    totalPrice: "Total",
-    confirmWhatsApp: "Confirm booking",
-    days: "days",
-    day: "day",
-    pickupDate: "Pickup Date",
-    returnDate: "Return Date",
-  },
-}
+import { useTranslations } from "next-intl"
+import { useMarket } from "@/components/locale-provider"
+import { formatPrice } from "@/lib/currency"
 
 const countryCodes = [
   { code: "+212", country: "Morocco", flag: "🇲🇦" },
@@ -67,11 +35,11 @@ interface BookingModalProps {
     name: string
     price: number
   }
-  language: "fr" | "en"
 }
 
-export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModalProps) {
-  const t = translations[language]
+export function BookingModal({ isOpen, onClose, vehicle }: BookingModalProps) {
+  const t = useTranslations("bookingmodal")
+  const { market } = useMarket()
   const [startDate, setStartDate] = useState("")
   const [endDate, setEndDate] = useState("")
   const [countryCode, setCountryCode] = useState("+212")
@@ -98,15 +66,19 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
 
   const handleWhatsAppConfirm = () => {
     if (!startDate || !endDate || !phoneNumber || numberOfDays <= 0) {
-      alert(language === "fr" ? "Veuillez remplir tous les champs" : "Please fill all fields")
+      alert(t("fillAllFields"))
       return
     }
 
     const fullPhoneNumber = `${countryCode}${phoneNumber}`
-    const message =
-      language === "fr"
-        ? `Bonjour AB FAST CAR,\n\nJe souhaite réserver:\n🚗 Véhicule: ${vehicle.name}\n📅 Du: ${startDate}\n📅 Au: ${endDate}\n⏱ Durée: ${numberOfDays} ${numberOfDays > 1 ? t.days : t.day}\n💰 Prix total: ${totalPrice} MAD\n📱 Mon numéro WhatsApp: ${fullPhoneNumber}\n\nMerci!`
-        : `Hello AB FAST CAR,\n\nI would like to book:\n🚗 Vehicle: ${vehicle.name}\n📅 From: ${startDate}\n📅 To: ${endDate}\n⏱ Duration: ${numberOfDays} ${numberOfDays > 1 ? t.days : t.day}\n💰 Total price: ${totalPrice} MAD\n📱 My WhatsApp number: ${fullPhoneNumber}\n\nThank you!`
+    const message = t("whatsappMessage", {
+      vehicle: vehicle.name,
+      start: startDate,
+      end: endDate,
+      duration: `${numberOfDays} ${numberOfDays > 1 ? t("days") : t("day")}`,
+      total: formatPrice(totalPrice, market),
+      phone: fullPhoneNumber,
+    })
 
     const whatsappUrl = `https://wa.me/212601666665?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
@@ -133,9 +105,9 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 mb-3">
                 <Sparkles className="w-6 h-6 text-yellow-400" />
-                <h2 className="text-3xl font-black text-white">{t.title}</h2>
+                <h2 className="text-3xl font-black text-white">{t("title")}</h2>
               </div>
-              <p className="text-yellow-400 text-xl font-light mb-2">{t.vehicle}</p>
+              <p className="text-yellow-400 text-xl font-light mb-2">{t("vehicle")}</p>
               <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 px-6 py-2 rounded-full">
                 <p className="text-black font-black text-2xl">{vehicle.name}</p>
               </div>
@@ -147,7 +119,7 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold">
                   <Calendar className="w-4 h-4 text-yellow-400" />
-                  {t.pickupDate}
+                  {t("pickupDate")}
                 </label>
                 <div className="relative">
                   <Input
@@ -164,7 +136,7 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold">
                   <Calendar className="w-4 h-4 text-yellow-400" />
-                  {t.returnDate}
+                  {t("returnDate")}
                 </label>
                 <Input
                   type="date"
@@ -180,7 +152,7 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
             <div className="space-y-2 mb-6">
               <label className="flex items-center gap-2 text-gray-300 text-sm font-semibold">
                 <Phone className="w-4 h-4 text-yellow-400" />
-                {t.phone}
+                {t("phone")}
               </label>
               <div className="flex gap-3">
                 <select
@@ -198,7 +170,7 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
                   type="tel"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value.replace(/[^0-9]/g, ""))}
-                  placeholder={t.phonePlaceholder}
+                  placeholder={t("phonePlaceholder")}
                   className="bg-white/5 border-white/10 text-white h-12 rounded-xl flex-1 hover:bg-white/10 focus:bg-white/10 transition-all"
                 />
               </div>
@@ -214,24 +186,23 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-300">{t.numberOfDays}</span>
+                    <span className="text-gray-300">{t("numberOfDays")}</span>
                     <span className="text-white font-bold text-lg">
-                      {numberOfDays} {numberOfDays > 1 ? t.days : t.day}
+                      {numberOfDays} {numberOfDays > 1 ? t("days") : t("day")}
                     </span>
                   </div>
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-300">{t.pricePerDay}</span>
-                    <span className="text-white font-bold">{vehicle.price} MAD</span>
+                    <span className="text-gray-300">{t("pricePerDay")}</span>
+                    <span className="text-white font-bold">{formatPrice(vehicle.price, market)}</span>
                   </div>
                   
                   <div className="h-px bg-yellow-400/20 my-3" />
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-yellow-400 font-bold text-xl">{t.totalPrice}</span>
+                    <span className="text-yellow-400 font-bold text-xl">{t("totalPrice")}</span>
                     <div className="text-right">
-                      <span className="text-yellow-400 font-black text-3xl">{totalPrice}</span>
-                      <span className="text-yellow-400/80 text-lg ml-2">MAD</span>
+                      <span className="text-yellow-400 font-black text-3xl">{formatPrice(totalPrice, market)}</span>
                     </div>
                   </div>
                 </div>
@@ -245,7 +216,7 @@ export function BookingModal({ isOpen, onClose, vehicle, language }: BookingModa
               className="w-full h-14 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-black text-lg rounded-xl shadow-lg shadow-yellow-400/50 hover:shadow-yellow-500/70 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
-              {t.confirmWhatsApp}
+              {t("confirmWhatsApp")}
             </Button>
           </div>
         </div>

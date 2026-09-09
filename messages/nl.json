@@ -1,0 +1,263 @@
+{
+  "about": {
+    "subtitle": "OVER ONS",
+    "title": "AB FAST CAR",
+    "tagline": "Uw betrouwbare partner voor luxe autoverhuur",
+    "description": "Sinds onze oprichting heeft AB FAST CAR zich gevestigd als een referentie in de autoverhuur in Marokko. Wij bieden een betrouwbare en premium ervaring met een gevarieerd wagenpark: stadsauto's, sedans, SUV's, gezinsauto's en luxemodellen. Wij hechten veel waarde aan persoonlijke klantenservice, 24/7 beschikbaarheid en een professionele begeleiding. Ons doel is om veel meer te bieden dan alleen een huurauto: een aangename, veilige rijervaring die is afgestemd op elke behoefte.",
+    "mission": "Onze missie",
+    "missionText": "Onze klanten een vlotte en kwalitatieve ervaring bieden, met voertuigen die passen bij elk budget en elke gelegenheid. Dankzij een onberispelijke service, grote flexibiliteit en een team dat op elk detail let, begeleiden wij onze klanten bij al hun verplaatsingen, of die nu privé, zakelijk of toeristisch zijn.",
+    "values": [
+      {
+        "title": "Vertrouwen",
+        "description": "Zorgvuldig onderhouden voertuigen en volledige transparantie."
+      },
+      {
+        "title": "Uitmuntendheid",
+        "description": "Een ruime keuze aan auto's voor elke gelegenheid."
+      },
+      {
+        "title": "Beschikbaarheid",
+        "description": "24/7 service en levering in heel Marokko."
+      },
+      {
+        "title": "Innovatie",
+        "description": "De nieuwste automodellen en technologieën."
+      }
+    ]
+  },
+  "bookingmodal": {
+    "title": "Reserveer uw",
+    "vehicle": "luxevoertuig",
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "phone": "Uw WhatsApp-nummer",
+    "phonePlaceholder": "Telefoonnummer",
+    "numberOfDays": "Duur",
+    "pricePerDay": "Prijs / dag",
+    "totalPrice": "Totaal",
+    "confirmWhatsApp": "Reservering bevestigen",
+    "days": "dagen",
+    "day": "dag",
+    "pickupDate": "Ophaaldatum",
+    "returnDate": "Retourdatum",
+    "fillAllFields": "Vul alle velden in",
+    "whatsappMessage": "Hallo AB FAST CAR,\n\nIk wil graag reserveren:\n🚗 Voertuig: {vehicle}\n📅 Van: {start}\n📅 Tot: {end}\n⏱ Duur: {duration}\n💰 Totaalprijs: {total}\n📱 Mijn WhatsApp-nummer: {phone}\n\nBedankt!"
+  },
+  "brands": {
+    "title": "ONZE",
+    "titleHighlight": "PREMIUMMERKEN",
+    "subtitle": "'s Werelds toonaangevende automerken tot uw dienst"
+  },
+  "contact": {
+    "title": "NEEM",
+    "titleGradient": "CONTACT OP",
+    "subtitle": "Ons team staat 24/7 voor u klaar om aan al uw wensen te voldoen",
+    "name": "Volledige naam",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "address": "Adres",
+    "message": "Bericht",
+    "whatsapp": "Reserveren via WhatsApp",
+    "instagram": "Volg ons",
+    "findUs": "Vind ons",
+    "findUsSubtitle": "Kom langs bij ons in Rabat",
+    "openNow": "24/7 geopend",
+    "getDirections": "Route bekijken",
+    "rating": "4,9/5 op Google",
+    "info": {
+      "phone": "+212 601 66 66 65",
+      "email": "Abfastcar@gmail.com",
+      "address": "Rue Ouarzazate, Rabat, Marokko",
+      "instagram": "@abfastcar"
+    }
+  },
+  "features": {
+    "title": "Onze voordelen",
+    "titleGradient": "Waarom voor ons kiezen?",
+    "subtitle": "Een premium en persoonlijke ervaring",
+    "features": [
+      {
+        "title": "VIP-chauffeursservice",
+        "description": "Professionele en discrete chauffeurs voor uw zakenreizen of privé-evenementen."
+      },
+      {
+        "title": "Levering aan huis",
+        "description": "Wij leveren uw voertuig rechtstreeks op het adres van uw keuze, overal in Marokko."
+      },
+      {
+        "title": "Recente en luxe auto's",
+        "description": "Een wagenpark dat uitsluitend bestaat uit recente voertuigen, met de grootste zorg onderhouden."
+      },
+      {
+        "title": "24/7 bijstand",
+        "description": "Ons team is dag en nacht bereikbaar om u te helpen en u met een gerust hart op weg te laten gaan."
+      }
+    ]
+  },
+  "fleet": {
+    "badge": "Premium collectie",
+    "title": "Ons",
+    "titleGradient": "uitzonderlijke wagenpark",
+    "subtitle": "Ontdek onze selectie luxevoertuigen",
+    "perDay": "/dag",
+    "book": "Reserveren",
+    "close": "Sluiten"
+  },
+  "footer": {
+    "company": "AB FAST CAR",
+    "tagline": "Luxe autoverhuur in Marokko",
+    "description": "Uw betrouwbare partner voor een uitzonderlijke rijervaring",
+    "rights": "Alle rechten voorbehouden.",
+    "terms": "Voorwaarden",
+    "privacy": "Privacy",
+    "phone": "+212 601 66 66 65",
+    "email": "Abfastcar@gmail.com",
+    "address": "Rabat, Marokko",
+    "hours": "24/7 beschikbaar",
+    "quality": "Premium service gegarandeerd"
+  },
+  "gallery": {
+    "title": "Exclusieve",
+    "titleGradient": "galerij",
+    "subtitle": "Ontdek onze voertuigen en tarieven",
+    "enlarge": "Klik om te vergroten"
+  },
+  "hero": {
+    "title1": "Autoverhuur",
+    "title2": "in Marokko",
+    "slogan": "Select & Drive",
+    "subtitle": "24/7 premium service – Ruim wagenpark: stadsauto's, sedans, SUV's, gezinsauto's en luxemodellen",
+    "cta": "Nu reserveren",
+    "secondary": "Ontdek het wagenpark",
+    "recommended": "AANBEVOLEN DOOR",
+    "trustText": "Partner van",
+    "trustBold": "500+",
+    "trustSuffix": "gecertificeerde verhuurbedrijven",
+    "features": [
+      {
+        "label": "Onbeperkt kilometers",
+        "sub": "Rijd zonder grenzen"
+      },
+      {
+        "label": "Levering op de luchthaven",
+        "sub": "Overal in Marokko"
+      },
+      {
+        "label": "Ruime keuze",
+        "sub": "50+ voertuigen"
+      },
+      {
+        "label": "Chauffeur optioneel",
+        "sub": "Persoonlijke service"
+      },
+      {
+        "label": "24/7 bijstand",
+        "sub": "Altijd bereikbaar"
+      }
+    ]
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "Over ons",
+    "fleet": "Wagenpark",
+    "services": "Diensten",
+    "testimonials": "Reviews",
+    "contact": "Contact"
+  },
+  "process": {
+    "title": "Hoe het",
+    "titleGradient": "werkt",
+    "subtitle": "Een eenvoudig proces in 4 stappen",
+    "steps": [
+      {
+        "title": "Kiezen",
+        "description": "Bekijk ons wagenpark en kies het voertuig dat het beste bij u past."
+      },
+      {
+        "title": "Reserveren",
+        "description": "Kies uw data en bevestig uw reservering in een paar klikken."
+      },
+      {
+        "title": "Ophalen",
+        "description": "Wij leveren uw voertuig op het adres van uw keuze in Marokko."
+      },
+      {
+        "title": "Genieten",
+        "description": "Beleef een uitzonderlijke rit dankzij onze premium service."
+      }
+    ]
+  },
+  "stats": {
+    "stats": [
+      {
+        "value": "24/7",
+        "label": "Beschikbare service",
+        "type": "text"
+      },
+      {
+        "value": "100%",
+        "label": "Premium voertuigen",
+        "type": "text"
+      },
+      {
+        "value": null,
+        "label": "Levering in heel Marokko",
+        "type": "flag"
+      },
+      {
+        "value": "500+",
+        "label": "Tevreden klanten",
+        "type": "text"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Wat onze",
+    "titleGradient": "klanten zeggen",
+    "subtitle": "Honderden tevreden klanten vertrouwen op ons",
+    "testimonials": [
+      {
+        "name": "Mohammed Alami",
+        "role": "Ondernemer",
+        "image": "https://i.pravatar.cc/150?img=12",
+        "rating": 5,
+        "text": "Uitzonderlijke service! De Mercedes S-Klasse was onberispelijk en werd op tijd geleverd. Ik raad AB FAST CAR van harte aan voor elke luxeverhuur."
+      },
+      {
+        "name": "Sarah Bennani",
+        "role": "Architect",
+        "image": "https://i.pravatar.cc/150?img=45",
+        "rating": 5,
+        "text": "Ik huurde een BMW voor een belangrijk evenement. De service was professioneel en het voertuig perfect. Van begin tot eind een 5-sterrenervaring."
+      },
+      {
+        "name": "Karim Idrissi",
+        "role": "Marketingdirecteur",
+        "image": "https://i.pravatar.cc/150?img=33",
+        "rating": 5,
+        "text": "Uitstekende prijs-kwaliteitverhouding. Het team reageert heel snel en de auto's zijn prachtig. Het is mijn eerste keuze geworden voor prestigeverhuur."
+      },
+      {
+        "name": "Fatima Zahrae",
+        "role": "Consultant",
+        "image": "https://i.pravatar.cc/150?img=47",
+        "rating": 5,
+        "text": "Onberispelijke service en luxueuze voertuigen. Gratis levering overal in Marokko is een enorm pluspunt. Ik ben al 2 jaar een trouwe klant."
+      },
+      {
+        "name": "Youssef El Amrani",
+        "role": "Investeerder",
+        "image": "https://i.pravatar.cc/150?img=15",
+        "rating": 5,
+        "text": "Het beste verhuurbedrijf van Rabat. Ik heb er meerdere voertuigen gehuurd en elke keer was het perfect. Professioneel team en onberispelijke auto's."
+      },
+      {
+        "name": "Amina Tazi",
+        "role": "Advocaat",
+        "image": "https://i.pravatar.cc/150?img=26",
+        "rating": 5,
+        "text": "Een uitzonderlijke ervaring! De Range Rover verkeerde in perfecte staat en de klantenservice was top. Ik raad het 100% aan."
+      }
+    ]
+  }
+}

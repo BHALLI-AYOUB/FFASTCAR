@@ -1,18 +1,23 @@
 "use client"
 import { useState } from "react"
+import { useLocale } from "next-intl"
+import type { Locale } from "@/i18n/config"
+import { useMarket } from "@/components/locale-provider"
+import { formatPrice, priceParts } from "@/lib/currency"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { BookingModal } from "@/components/booking-modal"
 import { Sparkles, Zap, Shield, X } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 type Vehicle = {
   name: string
   image: string
   year: string
   price: number
-  category: { fr: string; en: string }
-  features: { fr: string[]; en: string[] }
+  category: Record<Locale, string>
+  features: Record<Locale, string[]>
 }
 
 const VEHICLES: Vehicle[] = [
@@ -21,10 +26,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/lamborghini-urus.jpg",
     year: "2025",
     price: 15000,
-    category: { fr: "Super SUV", en: "Super SUV" },
+    category: { fr: "Super SUV", en: "Super SUV", nl: "Super SUV" },
     features: {
       fr: ["Full Options", "Noir Mat", "640 CV"],
       en: ["Full Options", "Matte Black", "640 HP"],
+      nl: ["Full options", "Mat zwart", "640 pk"],
     },
   },
   {
@@ -32,10 +38,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-g63.jpg",
     year: "2025",
     price: 8000,
-    category: { fr: "Ultra Luxe SUV", en: "Ultra Luxury SUV" },
+    category: { fr: "Ultra Luxe SUV", en: "Ultra Luxury SUV", nl: "Ultraluxe SUV" },
     features: {
       fr: ["Full Options", "Noir Mat", "V8 Biturbo"],
       en: ["Full Options", "Matte Black", "V8 Biturbo"],
+      nl: ["Full options", "Mat zwart", "V8 Biturbo"],
     },
   },
   {
@@ -43,10 +50,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/range-rover-sport.jpg",
     year: "2025",
     price: 2999,
-    category: { fr: "SUV Prestige", en: "Prestige SUV" },
+    category: { fr: "SUV Prestige", en: "Prestige SUV", nl: "Prestige SUV" },
     features: {
       fr: ["Full Options", "Full Black", "4x4"],
       en: ["Full Options", "Full Black", "4x4"],
+      nl: ["Full options", "Volledig zwart", "4x4"],
     },
   },
   {
@@ -54,10 +62,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-e-class-w214.jpg",
     year: "2025",
     price: 2500,
-    category: { fr: "Berline Luxe", en: "Luxury Sedan" },
+    category: { fr: "Berline Luxe", en: "Luxury Sedan", nl: "Luxesedan" },
     features: {
       fr: ["Full Options", "Noire", "Berline Luxe"],
       en: ["Full Options", "Black", "Luxury Sedan"],
+      nl: ["Full options", "Zwart", "Luxesedan"],
     },
   },
   {
@@ -65,10 +74,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/porsche-cayenne.jpg",
     year: "2025",
     price: 3500,
-    category: { fr: "Sport SUV", en: "Sport SUV" },
+    category: { fr: "Sport SUV", en: "Sport SUV", nl: "Sport-SUV" },
     features: {
       fr: ["Full Options", "Noir", "Turbo"],
       en: ["Full Options", "Black", "Turbo"],
+      nl: ["Full options", "Zwart", "Turbo"],
     },
   },
   {
@@ -76,10 +86,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/porsche-macan.jpg",
     year: "2025",
     price: 2300,
-    category: { fr: "Sport SUV", en: "Sport SUV" },
+    category: { fr: "Sport SUV", en: "Sport SUV", nl: "Sport-SUV" },
     features: {
       fr: ["Full Options", "Noir", "Performance"],
       en: ["Full Options", "Black", "Performance"],
+      nl: ["Full options", "Zwart", "Performance"],
     },
   },
   {
@@ -87,10 +98,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/porsche-macan-t.jpg",
     year: "2025",
     price: 1999,
-    category: { fr: "Sport SUV", en: "Sport SUV" },
+    category: { fr: "Sport SUV", en: "Sport SUV", nl: "Sport-SUV" },
     features: {
       fr: ["Full Options", "Gris Nardo", "Sport"],
       en: ["Full Options", "Nardo Grey", "Sport"],
+      nl: ["Full options", "Nardo-grijs", "Sport"],
     },
   },
   {
@@ -98,10 +110,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-vito.jpg",
     year: "2025",
     price: 1499,
-    category: { fr: "Utilitaire", en: "Van" },
+    category: { fr: "Utilitaire", en: "Van", nl: "Bestelwagen" },
     features: {
       fr: ["Automatique", "Noire", "8 Places"],
       en: ["Automatic", "Black", "8 Seats"],
+      nl: ["Automaat", "Zwart", "8 zitplaatsen"],
     },
   },
   {
@@ -109,10 +122,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/volkswagen-touareg.jpg",
     year: "2025",
     price: 1399,
-    category: { fr: "SUV Luxe", en: "Luxury SUV" },
+    category: { fr: "SUV Luxe", en: "Luxury SUV", nl: "Luxe SUV" },
     features: {
       fr: ["Full Options", "Noir", "4x4"],
       en: ["Full Options", "Black", "4x4"],
+      nl: ["Full options", "Zwart", "4x4"],
     },
   },
   {
@@ -120,10 +134,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-amg-cla-45-s.jpg",
     year: "2025",
     price: 1300,
-    category: { fr: "Berline Sport", en: "Sport Sedan" },
+    category: { fr: "Berline Sport", en: "Sport Sedan", nl: "Sportsedan" },
     features: {
       fr: ["Pack AMG", "Gris Nardo", "4MATIC+"],
       en: ["AMG Pack", "Nardo Grey", "4MATIC+"],
+      nl: ["AMG-pakket", "Nardo-grijs", "4MATIC+"],
     },
   },
   {
@@ -131,10 +146,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/range-rover-evoque.jpg",
     year: "2025",
     price: 1299,
-    category: { fr: "SUV Compact", en: "Compact SUV" },
+    category: { fr: "SUV Compact", en: "Compact SUV", nl: "Compacte SUV" },
     features: {
       fr: ["Full Options", "Gris Métallisé", "R-Dynamic"],
       en: ["Full Options", "Metallic Grey", "R-Dynamic"],
+      nl: ["Full options", "Metallic grijs", "R-Dynamic"],
     },
   },
   {
@@ -142,10 +158,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/audi-a3-s-line.jpg",
     year: "2024",
     price: 1200,
-    category: { fr: "Berline Sport", en: "Sport Sedan" },
+    category: { fr: "Berline Sport", en: "Sport Sedan", nl: "Sportsedan" },
     features: {
       fr: ["Pack S-Line", "Bleu Turbo", "Berline"],
       en: ["S-Line Pack", "Turbo Blue", "Sedan"],
+      nl: ["S-Line-pakket", "Turboblauw", "Sedan"],
     },
   },
   {
@@ -153,10 +170,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/hyundai-sonata.jpg",
     year: "2025",
     price: 1200,
-    category: { fr: "Berline", en: "Sedan" },
+    category: { fr: "Berline", en: "Sedan", nl: "Sedan" },
     features: {
       fr: ["Automatique", "Noire", "Confort"],
       en: ["Automatic", "Black", "Comfort"],
+      nl: ["Automaat", "Zwart", "Comfort"],
     },
   },
   {
@@ -164,10 +182,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/hyundai-tucson.jpg",
     year: "2025",
     price: 1100,
-    category: { fr: "SUV Compact", en: "Compact SUV" },
+    category: { fr: "SUV Compact", en: "Compact SUV", nl: "Compacte SUV" },
     features: {
       fr: ["Automatique", "Noire", "SUV"],
       en: ["Automatic", "Black", "SUV"],
+      nl: ["Automaat", "Zwart", "SUV"],
     },
   },
   {
@@ -175,10 +194,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-cla-pack-amg.jpg",
     year: "2025",
     price: 1000,
-    category: { fr: "Berline Sport", en: "Sport Sedan" },
+    category: { fr: "Berline Sport", en: "Sport Sedan", nl: "Sportsedan" },
     features: {
       fr: ["Pack AMG Line", "Noire", "Sport"],
       en: ["AMG Line Pack", "Black", "Sport"],
+      nl: ["AMG Line-pakket", "Zwart", "Sport"],
     },
   },
   {
@@ -186,10 +206,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/mercedes-classe-a-pack-amg.jpg",
     year: "2025",
     price: 999,
-    category: { fr: "Berline Sport", en: "Sport Sedan" },
+    category: { fr: "Berline Sport", en: "Sport Sedan", nl: "Sportsedan" },
     features: {
       fr: ["Pack AMG Line", "Blanche", "Sport"],
       en: ["AMG Line Pack", "White", "Sport"],
+      nl: ["AMG Line-pakket", "Wit", "Sport"],
     },
   },
   {
@@ -197,10 +218,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/cupra-formentor.jpg",
     year: "2025",
     price: 899,
-    category: { fr: "SUV Sport", en: "Sport SUV" },
+    category: { fr: "SUV Sport", en: "Sport SUV", nl: "Sport-SUV" },
     features: {
       fr: ["Full Options", "Gris", "Performance"],
       en: ["Full Options", "Grey", "Performance"],
+      nl: ["Full options", "Grijs", "Performance"],
     },
   },
   {
@@ -208,10 +230,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/cupra-leon.jpg",
     year: "2025",
     price: 699,
-    category: { fr: "Berline Sport", en: "Sport Sedan" },
+    category: { fr: "Berline Sport", en: "Sport Sedan", nl: "Sportsedan" },
     features: {
       fr: ["Full Options", "Gris", "Sport"],
       en: ["Full Options", "Grey", "Sport"],
+      nl: ["Full options", "Grijs", "Sport"],
     },
   },
   {
@@ -219,10 +242,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/peugeot-208.jpg",
     year: "2025",
     price: 399,
-    category: { fr: "Citadine", en: "City Car" },
+    category: { fr: "Citadine", en: "City Car", nl: "Stadsauto" },
     features: {
       fr: ["Automatique", "Noire", "Économique"],
       en: ["Automatic", "Black", "Economical"],
+      nl: ["Automaat", "Zwart", "Zuinig"],
     },
   },
   {
@@ -230,10 +254,11 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/hyundai-i20.jpg",
     year: "2025",
     price: 349,
-    category: { fr: "Citadine", en: "City Car" },
+    category: { fr: "Citadine", en: "City Car", nl: "Stadsauto" },
     features: {
       fr: ["Automatique", "Rouge", "Économique"],
       en: ["Automatic", "Red", "Economical"],
+      nl: ["Automaat", "Rood", "Zuinig"],
     },
   },
   {
@@ -241,37 +266,19 @@ const VEHICLES: Vehicle[] = [
     image: "/abfastcar/clio-5-automatique.jpg",
     year: "2025",
     price: 349,
-    category: { fr: "Citadine", en: "City Car" },
+    category: { fr: "Citadine", en: "City Car", nl: "Stadsauto" },
     features: {
       fr: ["Automatique", "Bleue", "Économique"],
       en: ["Automatic", "Blue", "Economical"],
+      nl: ["Automaat", "Blauw", "Zuinig"],
     },
   },
 ]
 
-const translations = {
-  fr: {
-    badge: "Collection Premium",
-    title: "Notre Flotte",
-    titleGradient: "Exceptionnelle",
-    subtitle: "Découvrez notre sélection de véhicules de luxe",
-    perDay: "/jour",
-    book: "Réserver",
-    close: "Fermer",
-  },
-  en: {
-    badge: "Premium Collection",
-    title: "Our",
-    titleGradient: "Exceptional Fleet",
-    subtitle: "Discover our selection of luxury vehicles",
-    perDay: "/day",
-    book: "Book Now",
-    close: "Close",
-  },
-}
-
-export function FleetSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function FleetSection() {
+  const locale = useLocale() as Locale
+  const { market } = useMarket()
+  const t = useTranslations("fleet")
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
   const [zoomedVehicle, setZoomedVehicle] = useState<Vehicle | null>(null)
@@ -282,7 +289,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
   }
 
   return (
-    <section id="fleet" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+    <section id="fleet" className="py-16 sm:py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
       {/* Ambient glow */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse" />
@@ -294,26 +301,26 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
         <div className="text-center mb-16 md:mb-24">
           <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 rounded-full bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/20 backdrop-blur-sm">
             <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-            <span className="text-yellow-400 font-bold text-sm tracking-wider uppercase">{t.badge}</span>
+            <span className="text-yellow-400 font-bold text-sm tracking-wider uppercase">{t("badge")}</span>
             <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
-            <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">{t.title}</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
+            <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">{t("title")}</span>
             <br />
             <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent animate-gradient">
-              {t.titleGradient}
+              {t("titleGradient")}
             </span>
           </h2>
-          <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl mx-auto font-light">{t.subtitle}</p>
+          <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl mx-auto font-light">{t("subtitle")}</p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {VEHICLES.map((vehicle) => (
             <Card
               key={vehicle.name}
               onClick={() => setZoomedVehicle(vehicle)}
-              className="group relative flex flex-col overflow-hidden bg-gradient-to-br from-zinc-900/60 to-black border border-zinc-800/60 hover:border-yellow-500/60 rounded-3xl backdrop-blur-sm cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20"
+              className="group relative flex flex-col overflow-hidden bg-gradient-to-br from-zinc-900/60 to-black border border-zinc-800/60 hover:border-yellow-500/60 rounded-2xl sm:rounded-3xl backdrop-blur-sm cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20"
             >
               {/* Photo */}
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -328,44 +335,53 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
                 {/* Year */}
-                <Badge className="absolute top-5 left-5 bg-black/80 backdrop-blur-md text-white border border-yellow-500/40 font-bold px-4 py-2 text-xs shadow-lg z-10">
-                  <Zap className="w-3.5 h-3.5 mr-1.5 inline text-yellow-400" />
+                <Badge className="absolute top-2.5 left-2.5 sm:top-5 sm:left-5 bg-black/80 backdrop-blur-md text-white border border-yellow-500/40 font-bold px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-xs shadow-lg z-10">
+                  <Zap className="w-3 h-3 mr-1 sm:mr-1.5 inline text-yellow-400" />
                   {vehicle.year}
                 </Badge>
 
                 {/* Category */}
-                <Badge className="absolute top-5 right-5 bg-gradient-to-r from-yellow-400 to-amber-500 text-black border-0 font-black px-4 py-2 text-[10px] rounded-full shadow-lg tracking-widest uppercase z-10">
-                  {vehicle.category[language]}
+                <Badge className="absolute top-2.5 right-2.5 sm:top-5 sm:right-5 bg-gradient-to-r from-yellow-400 to-amber-500 text-black border-0 font-black px-2 py-1 sm:px-4 sm:py-2 text-[8px] sm:text-[10px] rounded-full shadow-lg tracking-wider sm:tracking-widest uppercase z-10">
+                  {vehicle.category[locale]}
                 </Badge>
 
                 {/* Name over the photo */}
-                <h3 className="absolute bottom-5 left-5 right-5 text-xl md:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-lg group-hover:text-yellow-400 transition-colors duration-300 z-10">
+                <h3 className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 text-xs sm:text-xl md:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-lg group-hover:text-yellow-400 transition-colors duration-300 z-10">
                   {vehicle.name}
                 </h3>
               </div>
 
               {/* Details */}
-              <div className="flex flex-col flex-1 p-6">
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {vehicle.features[language].map((feature) => (
+              <div className="flex flex-col flex-1 p-3 sm:p-6">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-6">
+                  {vehicle.features[locale].map((feature) => (
                     <Badge
                       key={feature}
-                      className="bg-zinc-900/80 text-zinc-300 border border-zinc-700/60 text-[11px] px-3 py-1.5 rounded-lg font-medium group-hover:border-yellow-500/40 group-hover:text-yellow-400/90 transition-colors duration-300"
+                      className="bg-zinc-900/80 text-zinc-300 border border-zinc-700/60 text-[9px] sm:text-[11px] px-1.5 py-1 sm:px-3 sm:py-1.5 rounded-md sm:rounded-lg font-medium group-hover:border-yellow-500/40 group-hover:text-yellow-400/90 transition-colors duration-300"
                     >
                       {feature}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex items-end justify-between gap-3 mt-auto pt-5 border-t border-zinc-800/60">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-2 sm:gap-3 mt-auto pt-3 sm:pt-5 border-t border-zinc-800/60">
                   <div>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                        {vehicle.price.toLocaleString("fr-FR")}
+                      {priceParts(vehicle.price, market).symbolFirst && (
+                        <span className="text-xs sm:text-base text-zinc-500 font-bold">
+                          {priceParts(vehicle.price, market).symbol}
+                        </span>
+                      )}
+                      <span className="text-xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                        {priceParts(vehicle.price, market).amount}
                       </span>
-                      <span className="text-base text-zinc-500 font-bold">DH</span>
+                      {!priceParts(vehicle.price, market).symbolFirst && (
+                        <span className="text-xs sm:text-base text-zinc-500 font-bold">
+                          {priceParts(vehicle.price, market).symbol}
+                        </span>
+                      )}
                     </div>
-                    <div className="text-xs text-zinc-500 font-medium">{t.perDay}</div>
+                    <div className="text-xs text-zinc-500 font-medium">{t("perDay")}</div>
                   </div>
 
                   <Button
@@ -373,11 +389,11 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                       e.stopPropagation()
                       handleBooking(vehicle)
                     }}
-                    className="relative bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-5 py-5 rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group/btn overflow-hidden"
+                    className="relative w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-3 sm:px-5 py-3 sm:py-5 rounded-lg sm:rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group/btn overflow-hidden"
                   >
-                    <span className="relative z-10 flex items-center gap-2 text-sm">
-                      {t.book}
-                      <Shield className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
+                    <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+                      {t("book")}
+                      <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
                   </Button>
@@ -396,7 +412,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
         >
           <button
             onClick={() => setZoomedVehicle(null)}
-            aria-label={t.close}
+            aria-label={t("close")}
             className="absolute top-6 right-6 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-300 z-50 group"
           >
             <X className="w-7 h-7 text-white group-hover:rotate-90 transition-transform duration-300" />
@@ -411,7 +427,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
             <div className="text-center">
               <h3 className="text-2xl md:text-4xl font-black text-white mb-3">{zoomedVehicle.name}</h3>
               <div className="flex flex-wrap gap-2 justify-center mb-5">
-                {zoomedVehicle.features[language].map((feature) => (
+                {zoomedVehicle.features[locale].map((feature) => (
                   <Badge key={feature} className="bg-zinc-900/80 text-zinc-300 border border-zinc-700/60 text-xs px-3 py-1.5 rounded-lg">
                     {feature}
                   </Badge>
@@ -424,7 +440,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                 }}
                 className="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-8 py-6 rounded-xl shadow-lg shadow-yellow-500/30"
               >
-                {t.book} — {zoomedVehicle.price.toLocaleString("fr-FR")} DH{t.perDay}
+                {t("book")} — {formatPrice(zoomedVehicle.price, market)}{t("perDay")}
               </Button>
             </div>
           </div>
@@ -436,7 +452,6 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           vehicle={selectedVehicle}
-          language={language}
         />
       )}
 

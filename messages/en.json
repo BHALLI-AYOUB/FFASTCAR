@@ -1,0 +1,263 @@
+{
+  "about": {
+    "subtitle": "ABOUT US",
+    "title": "AB FAST CAR",
+    "tagline": "Your Trusted Partner for Luxury Car Rental",
+    "description": "Since our inception, AB FAST CAR has established itself as the leader in luxury vehicle rental in Morocco. We offer an exceptional experience with an exclusive fleet of high-end cars, personalized customer service, and 24/7 availability. Our commitment is to provide you with more than just a rental: an unforgettable driving experience.",
+    "mission": "Our Mission",
+    "missionText": "To offer our clients a premium experience with exceptional vehicles, impeccable service, and total flexibility to meet all your mobility needs.",
+    "values": [
+      {
+        "title": "Trust",
+        "description": "Well-maintained vehicles and complete transparency."
+      },
+      {
+        "title": "Excellence",
+        "description": "A premium fleet and superior quality service."
+      },
+      {
+        "title": "Availability",
+        "description": "24/7 service and delivery throughout Morocco."
+      },
+      {
+        "title": "Innovation",
+        "description": "The latest automotive models and technologies."
+      }
+    ]
+  },
+  "bookingmodal": {
+    "title": "Reserve your",
+    "vehicle": "luxury vehicle",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "phone": "Your WhatsApp Number",
+    "phonePlaceholder": "Phone number",
+    "numberOfDays": "Duration",
+    "pricePerDay": "Price / day",
+    "totalPrice": "Total",
+    "confirmWhatsApp": "Confirm booking",
+    "days": "days",
+    "day": "day",
+    "pickupDate": "Pickup Date",
+    "returnDate": "Return Date",
+    "fillAllFields": "Please fill all fields",
+    "whatsappMessage": "Hello AB FAST CAR,\n\nI would like to book:\n🚗 Vehicle: {vehicle}\n📅 From: {start}\n📅 To: {end}\n⏱ Duration: {duration}\n💰 Total price: {total}\n📱 My WhatsApp number: {phone}\n\nThank you!"
+  },
+  "brands": {
+    "title": "OUR",
+    "titleHighlight": "PREMIUM BRANDS",
+    "subtitle": "The world's leading automotive brands at your service"
+  },
+  "contact": {
+    "title": "GET IN",
+    "titleGradient": "TOUCH",
+    "subtitle": "Our team is at your disposal 24/7 to meet all your needs",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "message": "Message",
+    "whatsapp": "Reserve on WhatsApp",
+    "instagram": "Follow us",
+    "findUs": "Find Us",
+    "findUsSubtitle": "Come visit us in Rabat",
+    "openNow": "Open 24/7",
+    "getDirections": "Get Directions",
+    "rating": "4.9/5 on Google",
+    "info": {
+      "phone": "+212 601 66 66 65",
+      "email": "Abfastcar@gmail.com",
+      "address": "Rue Ouarzazate, Rabat, Morocco",
+      "instagram": "@abfastcar"
+    }
+  },
+  "features": {
+    "title": "Our Advantages",
+    "titleGradient": "Why Choose Us?",
+    "subtitle": "A premium and personalized experience",
+    "features": [
+      {
+        "title": "VIP Chauffeur Service",
+        "description": "Professional and discreet drivers for your business trips or private events."
+      },
+      {
+        "title": "Home Delivery",
+        "description": "We deliver your vehicle directly to the address of your choice, anywhere in Morocco."
+      },
+      {
+        "title": "Recent & Luxury Cars",
+        "description": "A fleet exclusively composed of recent vehicles, maintained with the utmost care."
+      },
+      {
+        "title": "24/7 Assistance",
+        "description": "Our team is available day and night to meet your needs and ensure your peace of mind."
+      }
+    ]
+  },
+  "fleet": {
+    "badge": "Premium Collection",
+    "title": "Our",
+    "titleGradient": "Exceptional Fleet",
+    "subtitle": "Discover our selection of luxury vehicles",
+    "perDay": "/day",
+    "book": "Book Now",
+    "close": "Close"
+  },
+  "footer": {
+    "company": "AB FAST CAR",
+    "tagline": "Luxury car rental in Morocco",
+    "description": "Your trusted partner for an exceptional driving experience",
+    "rights": "All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "phone": "+212 601 66 66 65",
+    "email": "Abfastcar@gmail.com",
+    "address": "Rabat, Morocco",
+    "hours": "Available 24/7",
+    "quality": "Premium Service Guaranteed"
+  },
+  "gallery": {
+    "title": "Exclusive",
+    "titleGradient": "Gallery",
+    "subtitle": "Discover our vehicles and pricing",
+    "enlarge": "Click to enlarge"
+  },
+  "hero": {
+    "title1": "Car rental",
+    "title2": "in Morocco",
+    "slogan": "Select & Drive",
+    "subtitle": "Premium 24/7 service – Wide fleet of high-end vehicles",
+    "cta": "Book now",
+    "secondary": "Discover fleet",
+    "recommended": "RECOMMENDED BY",
+    "trustText": "Partners with",
+    "trustBold": "500+",
+    "trustSuffix": "certified rental agencies",
+    "features": [
+      {
+        "label": "Unlimited mileage",
+        "sub": "Drive without limits"
+      },
+      {
+        "label": "Airport delivery",
+        "sub": "All over Morocco"
+      },
+      {
+        "label": "Wide choice",
+        "sub": "50+ vehicles"
+      },
+      {
+        "label": "Driver option",
+        "sub": "Personalized service"
+      },
+      {
+        "label": "24/7 Assistance",
+        "sub": "Always available"
+      }
+    ]
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "fleet": "Fleet",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "process": {
+    "title": "How It",
+    "titleGradient": "Works",
+    "subtitle": "A simple process in 4 steps",
+    "steps": [
+      {
+        "title": "Choose",
+        "description": "Browse our fleet and select the perfect vehicle for your needs."
+      },
+      {
+        "title": "Book",
+        "description": "Choose your dates and confirm your booking in a few clicks."
+      },
+      {
+        "title": "Pick Up",
+        "description": "We deliver your vehicle to the address of your choice in Morocco."
+      },
+      {
+        "title": "Enjoy",
+        "description": "Experience exceptional driving with our premium service."
+      }
+    ]
+  },
+  "stats": {
+    "stats": [
+      {
+        "value": "24/7",
+        "label": "Available service",
+        "type": "text"
+      },
+      {
+        "value": "100%",
+        "label": "Premium vehicles",
+        "type": "text"
+      },
+      {
+        "value": null,
+        "label": "National delivery",
+        "type": "flag"
+      },
+      {
+        "value": "500+",
+        "label": "Happy clients",
+        "type": "text"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our",
+    "titleGradient": "Clients Say",
+    "subtitle": "Hundreds of satisfied customers trust us",
+    "testimonials": [
+      {
+        "name": "Mohammed Alami",
+        "role": "Business Owner",
+        "image": "https://i.pravatar.cc/150?img=12",
+        "rating": 5,
+        "text": "Exceptional service! The Mercedes S-Class was impeccable and delivered on time. I highly recommend AB FAST CAR for any luxury rental."
+      },
+      {
+        "name": "Sarah Bennani",
+        "role": "Architect",
+        "image": "https://i.pravatar.cc/150?img=45",
+        "rating": 5,
+        "text": "I rented a BMW for an important event. The service was professional, the vehicle perfect. A 5-star experience from start to finish."
+      },
+      {
+        "name": "Karim Idrissi",
+        "role": "Marketing Director",
+        "image": "https://i.pravatar.cc/150?img=33",
+        "rating": 5,
+        "text": "Excellent value for money. The team is very responsive and the cars are magnificent. It's become my first choice for prestige rentals."
+      },
+      {
+        "name": "Fatima Zahrae",
+        "role": "Consultant",
+        "image": "https://i.pravatar.cc/150?img=47",
+        "rating": 5,
+        "text": "Impeccable service and luxurious vehicles. Free delivery anywhere in Morocco is a huge plus. I've been a loyal customer for 2 years."
+      },
+      {
+        "name": "Youssef El Amrani",
+        "role": "Investor",
+        "image": "https://i.pravatar.cc/150?img=15",
+        "rating": 5,
+        "text": "The best rental agency in Rabat. I've rented several vehicles and each time it was perfect. Professional team and impeccable cars."
+      },
+      {
+        "name": "Amina Tazi",
+        "role": "Lawyer",
+        "image": "https://i.pravatar.cc/150?img=26",
+        "rating": 5,
+        "text": "An exceptional experience! The Range Rover was in perfect condition and customer service was top-notch. I recommend 100%."
+      }
+    ]
+  }
+}
