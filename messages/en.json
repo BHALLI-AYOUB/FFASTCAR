@@ -41,7 +41,7 @@
     "pickupDate": "Pickup Date",
     "returnDate": "Return Date",
     "fillAllFields": "Please fill all fields",
-    "whatsappMessage": "Hello AB FAST CAR,\n\nI would like to book:\n🚗 Vehicle: {vehicle}\n📅 From: {start}\n📅 To: {end}\n⏱ Duration: {duration}\n💰 Total price: {total} MAD\n📱 My WhatsApp number: {phone}\n\nThank you!"
+    "whatsappMessage": "Hello AB FAST CAR,\n\nI would like to book:\n🚗 Vehicle: {vehicle}\n📅 From: {start}\n📅 To: {end}\n⏱ Duration: {duration}\n💰 Total price: {total}\n📱 My WhatsApp number: {phone}\n\nThank you!"
   },
   "brands": {
     "title": "OUR",
@@ -64,7 +64,7 @@
       "🎯 Best car"
     ],
     "responses": {
-      "prix": "💰 Our prices range from 349 DH/day for a Clio 5 to 8000 DH/day for a Mercedes G63. Would you like to see our entire fleet?",
+      "prix": "💰 Our prices range from {min}/day for a Clio 5 to {max}/day for a Mercedes G63. Would you like to see our entire fleet?",
       "disponibilite": "✅ All our cars are available for booking! Which car interests you?",
       "reservation": "📝 To book: 1️⃣ Choose your car 2️⃣ Click 'Book' 3️⃣ Fill the form 4️⃣ We contact you quickly!",
       "livraison": "🚗 FREE delivery in Rabat! Service available throughout Morocco (Casablanca, Marrakech, Tangier, Fes...). Airport delivery possible. Ask for a quote!",

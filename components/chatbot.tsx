@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { X, Send, MessageCircle, ArrowLeft } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { useMarket } from "@/components/locale-provider"
+import { formatPrice } from "@/lib/currency"
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,6 +15,7 @@ export function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const t = useTranslations("chatbot")
+  const { market } = useMarket()
   const suggestions = t.raw("suggestions") as string[]
 
   const scrollToBottom = () => {
@@ -39,7 +42,10 @@ export function Chatbot() {
 
   const getBotResponse = (userInput: string) => {
     if (userInput.includes("prix") || userInput.includes("price") || userInput.includes("💰")) {
-      return t("responses.prix")
+      return t("responses.prix", {
+        min: formatPrice(349, market),
+        max: formatPrice(8000, market),
+      })
     }
     if (userInput.includes("disponib") || userInput.includes("availab") || userInput.includes("🚗")) {
       return t("responses.disponibilite")

@@ -41,7 +41,7 @@
     "pickupDate": "Ophaaldatum",
     "returnDate": "Retourdatum",
     "fillAllFields": "Vul alle velden in",
-    "whatsappMessage": "Hallo AB FAST CAR,\n\nIk wil graag reserveren:\n🚗 Voertuig: {vehicle}\n📅 Van: {start}\n📅 Tot: {end}\n⏱ Duur: {duration}\n💰 Totaalprijs: {total} MAD\n📱 Mijn WhatsApp-nummer: {phone}\n\nBedankt!"
+    "whatsappMessage": "Hallo AB FAST CAR,\n\nIk wil graag reserveren:\n🚗 Voertuig: {vehicle}\n📅 Van: {start}\n📅 Tot: {end}\n⏱ Duur: {duration}\n💰 Totaalprijs: {total}\n📱 Mijn WhatsApp-nummer: {phone}\n\nBedankt!"
   },
   "brands": {
     "title": "ONZE",
@@ -64,7 +64,7 @@
       "🎯 Beste auto"
     ],
     "responses": {
-      "prix": "💰 Onze prijzen lopen van 349 DH/dag voor een Clio 5 tot 8000 DH/dag voor een Mercedes G63. Wilt u ons volledige wagenpark bekijken?",
+      "prix": "💰 Onze prijzen lopen van {min}/dag voor een Clio 5 tot {max}/dag voor een Mercedes G63. Wilt u ons volledige wagenpark bekijken?",
       "disponibilite": "✅ Al onze auto's zijn beschikbaar om te reserveren! Welke auto heeft uw interesse?",
       "reservation": "📝 Zo reserveert u: 1️⃣ Kies uw auto 2️⃣ Klik op 'Reserveren' 3️⃣ Vul het formulier in 4️⃣ Wij nemen snel contact met u op!",
       "livraison": "🚗 GRATIS levering in Rabat! Service beschikbaar in heel Marokko (Casablanca, Marrakech, Tanger, Fez...). Levering op de luchthaven mogelijk. Vraag een offerte aan!",

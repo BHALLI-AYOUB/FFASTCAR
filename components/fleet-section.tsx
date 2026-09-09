@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { useLocale } from "next-intl"
 import type { Locale } from "@/i18n/config"
+import { useMarket } from "@/components/locale-provider"
+import { formatPrice, priceParts } from "@/lib/currency"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -275,6 +277,7 @@ const VEHICLES: Vehicle[] = [
 
 export function FleetSection() {
   const locale = useLocale() as Locale
+  const { market } = useMarket()
   const t = useTranslations("fleet")
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
@@ -364,10 +367,19 @@ export function FleetSection() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-2 sm:gap-3 mt-auto pt-3 sm:pt-5 border-t border-zinc-800/60">
                   <div>
                     <div className="flex items-baseline gap-1">
+                      {priceParts(vehicle.price, market).symbolFirst && (
+                        <span className="text-xs sm:text-base text-zinc-500 font-bold">
+                          {priceParts(vehicle.price, market).symbol}
+                        </span>
+                      )}
                       <span className="text-xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                        {vehicle.price.toLocaleString("fr-FR")}
+                        {priceParts(vehicle.price, market).amount}
                       </span>
-                      <span className="text-xs sm:text-base text-zinc-500 font-bold">DH</span>
+                      {!priceParts(vehicle.price, market).symbolFirst && (
+                        <span className="text-xs sm:text-base text-zinc-500 font-bold">
+                          {priceParts(vehicle.price, market).symbol}
+                        </span>
+                      )}
                     </div>
                     <div className="text-xs text-zinc-500 font-medium">{t("perDay")}</div>
                   </div>
@@ -428,7 +440,7 @@ export function FleetSection() {
                 }}
                 className="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-8 py-6 rounded-xl shadow-lg shadow-yellow-500/30"
               >
-                {t("book")} — {zoomedVehicle.price.toLocaleString("fr-FR")} DH{t("perDay")}
+                {t("book")} — {formatPrice(zoomedVehicle.price, market)}{t("perDay")}
               </Button>
             </div>
           </div>

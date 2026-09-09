@@ -41,7 +41,7 @@
     "pickupDate": "Date de récupération",
     "returnDate": "Date de retour",
     "fillAllFields": "Veuillez remplir tous les champs",
-    "whatsappMessage": "Bonjour AB FAST CAR,\n\nJe souhaite réserver:\n🚗 Véhicule: {vehicle}\n📅 Du: {start}\n📅 Au: {end}\n⏱ Durée: {duration}\n💰 Prix total: {total} MAD\n📱 Mon numéro WhatsApp: {phone}\n\nMerci!"
+    "whatsappMessage": "Bonjour AB FAST CAR,\n\nJe souhaite réserver:\n🚗 Véhicule: {vehicle}\n📅 Du: {start}\n📅 Au: {end}\n⏱ Durée: {duration}\n💰 Prix total: {total}\n📱 Mon numéro WhatsApp: {phone}\n\nMerci!"
   },
   "brands": {
     "title": "NOS MARQUES",
@@ -64,7 +64,7 @@
       "🎯 Meilleure voiture"
     ],
     "responses": {
-      "prix": "💰 Nos prix varient de 349 DH/jour (Clio 5) a 8000 DH/jour (Mercedes G63). Prix moyens: Citadines 350-600 DH, Berlines 700-1200 DH, SUV Luxe 1300-3000 DH, Ultra Luxe 3500-8000 DH.",
+      "prix": "💰 Nos prix vont de {min}/jour pour une Clio 5 à {max}/jour pour une Mercedes G63. Souhaitez-vous voir toute notre flotte ?",
       "disponibilite": "✅ Toutes nos 14 voitures sont disponibles! Mercedes G63, Porsche Cayenne, Range Rover Sport, Porsche Macan T, VW Touareg, Range Evoque, Mercedes GLA, Cupra Formentor, Cupra Leon, Clio 5 et plus!",
       "reservation": "📝 Reservation facile: 1️⃣ Choisissez votre voiture 2️⃣ Cliquez 'Reserver' 3️⃣ Remplissez le formulaire avec dates et infos 4️⃣ Nous vous contactons sous 2h pour confirmation!",
       "livraison": "🚗 Livraison GRATUITE a Rabat! Service disponible dans tout le Maroc (Casablanca, Marrakech, Tanger, Fes...). Livraison a l'aeroport possible. Demandez un devis!",

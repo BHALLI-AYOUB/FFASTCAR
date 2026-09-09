@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Calendar, Phone, MessageCircle, X, Sparkles, Clock } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { useMarket } from "@/components/locale-provider"
+import { formatPrice } from "@/lib/currency"
 
 const countryCodes = [
   { code: "+212", country: "Morocco", flag: "🇲🇦" },
@@ -37,6 +39,7 @@ interface BookingModalProps {
 
 export function BookingModal({ isOpen, onClose, vehicle }: BookingModalProps) {
   const t = useTranslations("bookingmodal")
+  const { market } = useMarket()
   const [startDate, setStartDate] = useState("")
   const [endDate, setEndDate] = useState("")
   const [countryCode, setCountryCode] = useState("+212")
@@ -73,7 +76,7 @@ export function BookingModal({ isOpen, onClose, vehicle }: BookingModalProps) {
       start: startDate,
       end: endDate,
       duration: `${numberOfDays} ${numberOfDays > 1 ? t("days") : t("day")}`,
-      total: totalPrice,
+      total: formatPrice(totalPrice, market),
       phone: fullPhoneNumber,
     })
 
@@ -191,7 +194,7 @@ export function BookingModal({ isOpen, onClose, vehicle }: BookingModalProps) {
                   
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300">{t("pricePerDay")}</span>
-                    <span className="text-white font-bold">{vehicle.price} MAD</span>
+                    <span className="text-white font-bold">{formatPrice(vehicle.price, market)}</span>
                   </div>
                   
                   <div className="h-px bg-yellow-400/20 my-3" />
@@ -199,8 +202,7 @@ export function BookingModal({ isOpen, onClose, vehicle }: BookingModalProps) {
                   <div className="flex justify-between items-center">
                     <span className="text-yellow-400 font-bold text-xl">{t("totalPrice")}</span>
                     <div className="text-right">
-                      <span className="text-yellow-400 font-black text-3xl">{totalPrice}</span>
-                      <span className="text-yellow-400/80 text-lg ml-2">MAD</span>
+                      <span className="text-yellow-400 font-black text-3xl">{formatPrice(totalPrice, market)}</span>
                     </div>
                   </div>
                 </div>
