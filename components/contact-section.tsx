@@ -200,7 +200,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
         }
       `}</style>
 
-      <section id="contact" className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section id="contact" className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-500/30 rounded-full blur-3xl animate-pulse" />
@@ -210,14 +210,14 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header Section */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 sm:mb-20">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <Sparkles className="h-10 w-10 text-yellow-400 animate-pulse" />
-              <h2 className="text-6xl md:text-7xl font-black tracking-tight">
+              <Sparkles className="h-5 w-5 sm:h-10 sm:w-10 shrink-0 text-yellow-400 animate-pulse" />
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
                 <span className="text-white">{t.title} </span>
                 <span className="shimmer-text">{t.titleGradient}</span>
               </h2>
-              <Sparkles className="h-10 w-10 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
+              <Sparkles className="h-5 w-5 sm:h-10 sm:w-10 shrink-0 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
@@ -242,9 +242,9 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   )}
                   <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 ${card.bgGlow} rounded-full blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-500`} />
                   <div className="relative z-10 mb-6">
-                    <div className={`icon-float inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${card.color} p-1 group-hover:scale-110 transition-transform duration-500`} style={{animationDelay: `${index * 0.2}s`}}>
+                    <div className={`icon-float inline-flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${card.color} p-1 group-hover:scale-110 transition-transform duration-500`} style={{animationDelay: `${index * 0.2}s`}}>
                       <div className="w-full h-full bg-black rounded-xl flex items-center justify-center">
-                        <card.icon className="h-10 w-10 text-white group-hover:scale-125 transition-transform duration-500" />
+                        <card.icon className="h-7 w-7 sm:h-10 sm:w-10 text-white group-hover:scale-125 transition-transform duration-500" />
                       </div>
                     </div>
                   </div>
@@ -291,19 +291,19 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
               <div className="relative rounded-[1.75rem] overflow-hidden bg-black border border-yellow-500/20">
 
                 {/* Top HUD bar */}
-                <div className="relative z-20 flex items-center justify-between px-8 py-5 bg-gradient-to-r from-black via-zinc-950 to-black border-b border-yellow-500/20">
+                <div className="relative z-20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 px-4 sm:px-8 py-4 sm:py-5 bg-gradient-to-r from-black via-zinc-950 to-black border-b border-yellow-500/20">
                   {/* Left: branding */}
-                  <div className="flex items-center gap-4">
-                    <div className="relative">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center shadow-lg shadow-yellow-500/40">
-                        <MapPin className="w-6 h-6 text-black" strokeWidth={2.5} />
+                  <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                    <div className="relative shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center shadow-lg shadow-yellow-500/40">
+                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-black" strokeWidth={2.5} />
                       </div>
                       {/* Radar rings */}
                       <div className="absolute inset-0 rounded-xl border-2 border-yellow-400/60 radar-ping" />
                       <div className="absolute inset-0 rounded-xl border-2 border-yellow-400/40 radar-ping-delay" />
                     </div>
                     <div>
-                      <div className="text-white font-black text-lg tracking-wide">ABFastCar</div>
+                      <div className="text-white font-black text-base sm:text-lg tracking-wide truncate">ABFastCar</div>
                       <div className="text-yellow-400/80 text-xs font-medium tracking-widest uppercase">Rue Ouarzazate, Rabat</div>
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   {/* Right: directions button */}
                   <button
                     onClick={handleDirections}
-                    className="group/btn flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm hover:from-yellow-500 hover:to-amber-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/30"
+                    className="group/btn flex items-center justify-center gap-2 w-full sm:w-auto shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-xs sm:text-sm hover:from-yellow-500 hover:to-amber-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/30"
                   >
                     <Navigation className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                     {t.getDirections}
@@ -335,7 +335,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                 </div>
 
                 {/* MAP IFRAME */}
-                <div className="map-iframe-wrapper relative" style={{height: '580px'}}>
+                <div className="map-iframe-wrapper relative h-[340px] sm:h-[460px] lg:h-[580px]">
                   {/* Scanline effect */}
                   <div className="scanline" />
 

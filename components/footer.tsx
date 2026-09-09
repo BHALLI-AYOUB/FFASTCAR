@@ -223,11 +223,11 @@ export function Footer({ language }: { language: "fr" | "en" }) {
 
               {/* Links */}
               <div className="flex flex-wrap gap-6 text-sm">
-                <a href="#" className="text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
+                <a href="#" className="inline-flex items-center min-h-[24px] py-1 text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
                   {t.terms}
                 </a>
                 <span className="text-zinc-700">•</span>
-                <a href="#" className="text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
+                <a href="#" className="inline-flex items-center min-h-[24px] py-1 text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
                   {t.privacy}
                 </a>
                 <span className="text-zinc-700">•</span>

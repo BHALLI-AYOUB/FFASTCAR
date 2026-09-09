@@ -52,7 +52,7 @@ export function StatsSection({ language }: { language: "fr" | "en" }) {
               {stat.type === "flag" ? (
                 <MoroccoFlag />
               ) : (
-                <div className="text-5xl font-black text-gradient-gold mb-2">{stat.value}</div>
+                <div className="text-3xl sm:text-5xl font-black text-gradient-gold mb-2">{stat.value}</div>
               )}
               <p className="text-muted-foreground font-semibold">{stat.label}</p>
             </div>

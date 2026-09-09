@@ -178,7 +178,7 @@ export function AboutSection({ language }: AboutSectionProps) {
         }
       `}</style>
 
-      <section id="about" className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section id="about" className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-96 h-96 bg-yellow-500/30 rounded-full blur-3xl animate-pulse" />
@@ -193,7 +193,7 @@ export function AboutSection({ language }: AboutSectionProps) {
 
         <div className="container mx-auto px-6 relative z-10 max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 sm:mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
               <TrendingUp className="h-8 w-8 text-yellow-400 animate-pulse" />
               <p className="text-yellow-400 font-bold text-sm tracking-widest uppercase">{t.subtitle}</p>
@@ -202,7 +202,7 @@ export function AboutSection({ language }: AboutSectionProps) {
             
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="float-icon h-10 w-10 text-yellow-400" />
-              <h2 className="text-6xl md:text-7xl font-black shimmer-text tracking-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black shimmer-text tracking-tight">
                 {t.title}
               </h2>
               <Sparkles className="float-icon h-10 w-10 text-yellow-400" style={{animationDelay: '1s'}} />
@@ -270,7 +270,7 @@ export function AboutSection({ language }: AboutSectionProps) {
                     
                     {/* Icon Container */}
                     <div className="relative z-10 mb-6">
-                      <div className={`float-icon inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${value.color} p-1 group-hover:scale-110 transition-transform duration-500`} style={{animationDelay: `${index * 0.2}s`}}>
+                      <div className={`float-icon inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${value.color} p-1 group-hover:scale-110 transition-transform duration-500`} style={{animationDelay: `${index * 0.2}s`}}>
                         <div className="w-full h-full bg-black rounded-xl flex items-center justify-center">
                           <Icon className="h-8 w-8 text-white group-hover:scale-125 transition-transform duration-500" />
                         </div>

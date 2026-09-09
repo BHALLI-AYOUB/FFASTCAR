@@ -151,7 +151,7 @@ export function FeaturesSection({ language }: { language: "fr" | "en" }) {
         }
       `}</style>
 
-      <section id="services" className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section id="services" className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse" />
@@ -161,10 +161,10 @@ export function FeaturesSection({ language }: { language: "fr" | "en" }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header Section */}
-          <div className="text-center mb-24">
+          <div className="text-center mb-12 sm:mb-24">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Star className="star-icon h-10 w-10 text-yellow-400" />
-              <h2 className="text-5xl md:text-6xl font-black text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white">
                 {t.title}
               </h2>
               <Star className="star-icon h-10 w-10 text-yellow-400" style={{animationDirection: 'reverse'}} />
@@ -198,7 +198,7 @@ export function FeaturesSection({ language }: { language: "fr" | "en" }) {
                 
                 {/* Icon Container */}
                 <div className="icon-container mb-8 relative" style={{animationDelay: `${index * 0.2}s`}}>
-                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.color} p-1 group-hover:scale-110 transition-transform duration-500`}>
+                  <div className={`inline-flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${feature.color} p-1 group-hover:scale-110 transition-transform duration-500`}>
                     <div className="w-full h-full bg-black rounded-xl flex items-center justify-center">
                       <feature.icon className="h-10 w-10 text-white group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
                     </div>

@@ -282,7 +282,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
   }
 
   return (
-    <section id="fleet" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+    <section id="fleet" className="py-16 sm:py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
       {/* Ambient glow */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse" />
@@ -297,7 +297,7 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
             <span className="text-yellow-400 font-bold text-sm tracking-wider uppercase">{t.badge}</span>
             <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
             <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">{t.title}</span>
             <br />
             <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent animate-gradient">
@@ -308,12 +308,12 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {VEHICLES.map((vehicle) => (
             <Card
               key={vehicle.name}
               onClick={() => setZoomedVehicle(vehicle)}
-              className="group relative flex flex-col overflow-hidden bg-gradient-to-br from-zinc-900/60 to-black border border-zinc-800/60 hover:border-yellow-500/60 rounded-3xl backdrop-blur-sm cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20"
+              className="group relative flex flex-col overflow-hidden bg-gradient-to-br from-zinc-900/60 to-black border border-zinc-800/60 hover:border-yellow-500/60 rounded-2xl sm:rounded-3xl backdrop-blur-sm cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20"
             >
               {/* Photo */}
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -328,42 +328,42 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                 <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
                 {/* Year */}
-                <Badge className="absolute top-5 left-5 bg-black/80 backdrop-blur-md text-white border border-yellow-500/40 font-bold px-4 py-2 text-xs shadow-lg z-10">
-                  <Zap className="w-3.5 h-3.5 mr-1.5 inline text-yellow-400" />
+                <Badge className="absolute top-2.5 left-2.5 sm:top-5 sm:left-5 bg-black/80 backdrop-blur-md text-white border border-yellow-500/40 font-bold px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-xs shadow-lg z-10">
+                  <Zap className="w-3 h-3 mr-1 sm:mr-1.5 inline text-yellow-400" />
                   {vehicle.year}
                 </Badge>
 
                 {/* Category */}
-                <Badge className="absolute top-5 right-5 bg-gradient-to-r from-yellow-400 to-amber-500 text-black border-0 font-black px-4 py-2 text-[10px] rounded-full shadow-lg tracking-widest uppercase z-10">
+                <Badge className="absolute top-2.5 right-2.5 sm:top-5 sm:right-5 bg-gradient-to-r from-yellow-400 to-amber-500 text-black border-0 font-black px-2 py-1 sm:px-4 sm:py-2 text-[8px] sm:text-[10px] rounded-full shadow-lg tracking-wider sm:tracking-widest uppercase z-10">
                   {vehicle.category[language]}
                 </Badge>
 
                 {/* Name over the photo */}
-                <h3 className="absolute bottom-5 left-5 right-5 text-xl md:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-lg group-hover:text-yellow-400 transition-colors duration-300 z-10">
+                <h3 className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 text-xs sm:text-xl md:text-2xl font-black text-white leading-tight tracking-tight drop-shadow-lg group-hover:text-yellow-400 transition-colors duration-300 z-10">
                   {vehicle.name}
                 </h3>
               </div>
 
               {/* Details */}
-              <div className="flex flex-col flex-1 p-6">
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-col flex-1 p-3 sm:p-6">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-6">
                   {vehicle.features[language].map((feature) => (
                     <Badge
                       key={feature}
-                      className="bg-zinc-900/80 text-zinc-300 border border-zinc-700/60 text-[11px] px-3 py-1.5 rounded-lg font-medium group-hover:border-yellow-500/40 group-hover:text-yellow-400/90 transition-colors duration-300"
+                      className="bg-zinc-900/80 text-zinc-300 border border-zinc-700/60 text-[9px] sm:text-[11px] px-1.5 py-1 sm:px-3 sm:py-1.5 rounded-md sm:rounded-lg font-medium group-hover:border-yellow-500/40 group-hover:text-yellow-400/90 transition-colors duration-300"
                     >
                       {feature}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex items-end justify-between gap-3 mt-auto pt-5 border-t border-zinc-800/60">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-2 sm:gap-3 mt-auto pt-3 sm:pt-5 border-t border-zinc-800/60">
                   <div>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                      <span className="text-xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
                         {vehicle.price.toLocaleString("fr-FR")}
                       </span>
-                      <span className="text-base text-zinc-500 font-bold">DH</span>
+                      <span className="text-xs sm:text-base text-zinc-500 font-bold">DH</span>
                     </div>
                     <div className="text-xs text-zinc-500 font-medium">{t.perDay}</div>
                   </div>
@@ -373,11 +373,11 @@ export function FleetSection({ language }: { language: "fr" | "en" }) {
                       e.stopPropagation()
                       handleBooking(vehicle)
                     }}
-                    className="relative bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-5 py-5 rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group/btn overflow-hidden"
+                    className="relative w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-black px-3 sm:px-5 py-3 sm:py-5 rounded-lg sm:rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group/btn overflow-hidden"
                   >
-                    <span className="relative z-10 flex items-center gap-2 text-sm">
+                    <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
                       {t.book}
-                      <Shield className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
                   </Button>

@@ -151,7 +151,7 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
         }
       `}</style>
 
-      <section className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl" />
@@ -160,10 +160,10 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header Section */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 sm:mb-20">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="sparkle-icon h-8 w-8 text-yellow-400" />
-              <h2 className="text-6xl md:text-7xl font-black tracking-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
                 <span className="text-white">{t.title} </span>
                 <span className="shimmer-text">{t.titleHighlight}</span>
               </h2>
@@ -181,7 +181,7 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-20 w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-6 z-20 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
               aria-label="Previous"
             >
               <ChevronLeft className="h-8 w-8" strokeWidth={3} />
@@ -189,7 +189,7 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
 
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-20 w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-6 z-20 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
               aria-label="Next"
             >
               <ChevronRight className="h-8 w-8" strokeWidth={3} />
@@ -244,13 +244,18 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  index === currentIndex 
-                    ? "w-16 h-3 bg-gradient-to-r from-yellow-400 to-amber-500 shadow-lg shadow-yellow-400/50" 
-                    : "w-3 h-3 bg-zinc-700 hover:bg-zinc-600"
-                }`}
+                className="group/pg flex h-6 items-center px-2 -my-1.5"
                 aria-label={`Go to page ${index + 1}`}
-              />
+                aria-current={index === currentIndex}
+              >
+                <span
+                  className={`block transition-all duration-300 rounded-full ${
+                    index === currentIndex
+                      ? "w-16 h-3 bg-gradient-to-r from-yellow-400 to-amber-500 shadow-lg shadow-yellow-400/50"
+                      : "w-3 h-3 bg-zinc-700 group-hover/pg:bg-zinc-600"
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

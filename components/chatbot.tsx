@@ -137,15 +137,15 @@ export function Chatbot({ language: initialLanguage }: { language: "fr" | "en" }
             setMessages([{ text: t.greeting, isBot: true }])
           }
         }}
-        className="fixed bottom-24 right-6 z-50 h-16 w-16 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 hover:from-yellow-500 hover:to-amber-700 shadow-2xl shadow-yellow-500/50 transition-all duration-300 hover:scale-110"
+        className="fixed bottom-[4.5rem] right-4 sm:bottom-24 sm:right-6 z-50 h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 hover:from-yellow-500 hover:to-amber-700 shadow-2xl shadow-yellow-500/50 transition-all duration-300 hover:scale-110"
       >
-        <MessageCircle className="h-8 w-8 text-black" />
+        <MessageCircle className="h-5 w-5 sm:h-8 sm:w-8 text-black" />
       </Button>
     )
   }
 
   return (
-    <Card className="fixed bottom-6 right-6 z-50 w-[400px] h-[600px] bg-white flex flex-col overflow-hidden rounded-3xl shadow-2xl">
+    <Card className="fixed inset-x-3 bottom-3 sm:inset-x-auto sm:right-6 sm:bottom-6 z-50 w-auto sm:w-[400px] h-[75vh] max-h-[600px] bg-white flex flex-col overflow-hidden rounded-3xl shadow-2xl">
       {/* Header avec switch langue intégré */}
       <div className="p-4 bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-between">
         <div className="flex items-center gap-3">

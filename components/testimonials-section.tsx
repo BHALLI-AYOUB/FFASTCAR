@@ -202,7 +202,7 @@ export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
         }
       `}</style>
 
-      <section id="testimonials" className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section id="testimonials" className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-96 h-96 bg-yellow-500/30 rounded-full blur-3xl animate-pulse" />
@@ -212,10 +212,10 @@ export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center mb-24">
+          <div className="text-center mb-12 sm:mb-24">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="float-sparkle h-10 w-10 text-yellow-400" />
-              <h2 className="text-6xl md:text-7xl font-black tracking-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
                 <span className="text-white">{t.title} </span>
                 <span className="shimmer-text">{t.titleGradient}</span>
               </h2>
@@ -254,7 +254,7 @@ export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
               >
                 {/* Quote Icon */}
                 <div className="quote-icon absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Quote className="h-16 w-16 text-yellow-400" />
+                  <Quote className="h-10 w-10 sm:h-16 sm:w-16 text-yellow-400" />
                 </div>
 
                 {/* Glow Effect */}

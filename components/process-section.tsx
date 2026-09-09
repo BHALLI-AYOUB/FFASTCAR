@@ -194,7 +194,7 @@ export function ProcessSection({ language }: { language: "fr" | "en" }) {
         }
       `}</style>
 
-      <section className="py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" />
@@ -204,10 +204,10 @@ export function ProcessSection({ language }: { language: "fr" | "en" }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center mb-24">
+          <div className="text-center mb-12 sm:mb-24">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" />
-              <h2 className="text-5xl md:text-6xl font-black text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white">
                 {t.title} <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">{t.titleGradient}</span>
               </h2>
               <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
@@ -301,7 +301,7 @@ export function ProcessSection({ language }: { language: "fr" | "en" }) {
                         
                         {/* Icon Background */}
                         <div className={`relative z-10 w-36 h-36 rounded-full ${step.bgColor} backdrop-blur-sm flex items-center justify-center`}>
-                          <step.icon className={`h-16 w-16 text-white ${hoveredIndex === index ? 'scale-125 rotate-12' : ''} transition-all duration-500`} />
+                          <step.icon className={`h-10 w-10 sm:h-16 sm:w-16 text-white ${hoveredIndex === index ? 'scale-125 rotate-12' : ''} transition-all duration-500`} />
                         </div>
                       </div>
                     </div>

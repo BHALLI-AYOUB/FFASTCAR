@@ -537,18 +537,24 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
                 </div>
 
                 {/* Progress dots */}
-                <div className="flex flex-wrap gap-2 justify-center mt-6">
+                <div className="flex flex-wrap gap-y-1 justify-center mt-6">
                   {carImages.map((car, index) => (
                     <button
                       key={car.src}
                       onClick={() => setCurrentImageIndex(index)}
                       aria-label={car.name}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${
-                        index === currentImageIndex
-                          ? "w-8 bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.8)]"
-                          : "w-1.5 bg-white/25 hover:bg-white/60"
-                      }`}
-                    />
+                      aria-current={index === currentImageIndex}
+                      // Dot stays small, but the button keeps a 24px tall touch area
+                      className="group/dot flex h-8 items-center px-2.5 -my-2"
+                    >
+                      <span
+                        className={`block h-1.5 rounded-full transition-all duration-500 ${
+                          index === currentImageIndex
+                            ? "w-8 bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.8)]"
+                            : "w-1.5 bg-white/25 group-hover/dot:bg-white/60"
+                        }`}
+                      />
+                    </button>
                   ))}
                 </div>
               </div>

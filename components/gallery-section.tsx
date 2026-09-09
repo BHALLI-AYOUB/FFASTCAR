@@ -36,10 +36,10 @@ export function GallerySection({ language }: { language: "fr" | "en" }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
-    <section className="py-32 relative bg-secondary/20">
+    <section className="py-20 sm:py-32 relative bg-secondary/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4">
             {t.title} <span className="text-gradient-gold">{t.titleGradient}</span>
           </h2>
           <p className="text-xl text-muted-foreground">{t.subtitle}</p>
