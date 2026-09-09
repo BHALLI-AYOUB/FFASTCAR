@@ -21,7 +21,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-background">
       <div className="fixed inset-0 pointer-events-none z-0">
         <img
-          src="/images/whatsapp-20image-202025-12-28-20at-2014.jpeg"
+          src="/abfastcar/mercedes-g63.jpg"
           alt="Background"
           className="w-full h-full object-cover opacity-10"
         />

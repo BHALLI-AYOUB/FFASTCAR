@@ -348,6 +348,9 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="ABFastCar Location - Rue Ouarzazate, Rabat"
+                    // Privacy/adblock extensions inject a `sandbox` attribute onto third-party
+                    // iframes before React hydrates, which trips the attribute-mismatch warning.
+                    suppressHydrationWarning
                   />
 
                   {/* Corner overlays for cinematic framing */}
