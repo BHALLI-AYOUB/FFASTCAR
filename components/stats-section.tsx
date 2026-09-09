@@ -1,22 +1,5 @@
-const translations = {
-  fr: {
-    stats: [
-      { value: "24/7", label: "Service disponible", type: "text" },
-      { value: "100%", label: "Véhicules premium", type: "text" },
-      { value: null, label: "Livraison nationale", type: "flag" },
-      { value: "500+", label: "Clients satisfaits", type: "text" },
-    ],
-  },
-  en: {
-    stats: [
-      { value: "24/7", label: "Available service", type: "text" },
-      { value: "100%", label: "Premium vehicles", type: "text" },
-      { value: null, label: "National delivery", type: "flag" },
-      { value: "500+", label: "Happy clients", type: "text" },
-    ],
-  },
-}
 
+import { useTranslations } from "next-intl"
 const MoroccoFlag = () => (
   <svg
     width="80"
@@ -37,14 +20,15 @@ const MoroccoFlag = () => (
   </svg>
 )
 
-export function StatsSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function StatsSection() {
+  const t = useTranslations("stats")
+  const stats = t.raw("stats") as { value: string | null; label: string; type: string }[]
 
   return (
     <section className="py-20 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {t.stats.map((stat, index) => (
+          {stats.map((stat, index) => (
             <div
               key={index}
               className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-8 text-center hover:scale-105 hover:border-primary/50 transition-all duration-300"

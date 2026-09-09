@@ -2,21 +2,7 @@
 
 import { useState } from "react"
 import { X } from "lucide-react"
-
-const translations = {
-  fr: {
-    title: "Galerie",
-    titleGradient: "Exclusive",
-    subtitle: "Découvrez nos véhicules et tarifs",
-    enlarge: "Cliquez pour agrandir",
-  },
-  en: {
-    title: "Exclusive",
-    titleGradient: "Gallery",
-    subtitle: "Discover our vehicles and pricing",
-    enlarge: "Click to enlarge",
-  },
-}
+import { useTranslations } from "next-intl"
 
 const galleryImages = [
   { url: "/abfastcar/lamborghini-urus.jpg", alt: "Lamborghini Urus" },
@@ -31,8 +17,8 @@ const galleryImages = [
   { url: "/abfastcar/audi-a3-s-line.jpg", alt: "Audi A3 S-Line Berline" },
 ]
 
-export function GallerySection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function GallerySection() {
+  const t = useTranslations("gallery")
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
@@ -40,9 +26,9 @@ export function GallerySection({ language }: { language: "fr" | "en" }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-4">
-            {t.title} <span className="text-gradient-gold">{t.titleGradient}</span>
+            {t("title")} <span className="text-gradient-gold">{t("titleGradient")}</span>
           </h2>
-          <p className="text-xl text-muted-foreground">{t.subtitle}</p>
+          <p className="text-xl text-muted-foreground">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
@@ -62,7 +48,7 @@ export function GallerySection({ language }: { language: "fr" | "en" }) {
               <div className="absolute inset-x-0 bottom-0 p-4">
                 <p className="text-white text-xs md:text-sm font-bold leading-tight drop-shadow">{image.alt}</p>
                 <p className="text-yellow-400 text-[10px] font-semibold uppercase tracking-wider mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {t.enlarge}
+                  {t("enlarge")}
                 </p>
               </div>
             </div>

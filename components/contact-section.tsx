@@ -5,53 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Instagram, Sparkles, MessageCircle, Navigation, Clock, Star } from "lucide-react"
-
-const translations = {
-  fr: {
-    title: "RESTONS EN",
-    titleGradient: "CONTACT",
-    subtitle: "Notre équipe est à votre disposition 24/7 pour répondre à tous vos besoins",
-    name: "Nom complet",
-    email: "Email",
-    phone: "Téléphone",
-    message: "Message",
-    whatsapp: "Réserver sur WhatsApp",
-    instagram: "Suivez-nous",
-    findUs: "Nous Trouver",
-    findUsSubtitle: "Venez nous rendre visite à Rabat",
-    openNow: "Ouvert 24h/24",
-    getDirections: "Obtenir l'itinéraire",
-    rating: "4.9/5 sur Google",
-    info: {
-      phone: "+212 601 66 66 65",
-      email: "Abfastcar@gmail.com",
-      address: "Rue Ouarzazate, Rabat, Maroc",
-      instagram: "@abfastcar",
-    },
-  },
-  en: {
-    title: "GET IN",
-    titleGradient: "TOUCH",
-    subtitle: "Our team is at your disposal 24/7 to meet all your needs",
-    name: "Full name",
-    email: "Email",
-    phone: "Phone",
-    message: "Message",
-    whatsapp: "Reserve on WhatsApp",
-    instagram: "Follow us",
-    findUs: "Find Us",
-    findUsSubtitle: "Come visit us in Rabat",
-    openNow: "Open 24/7",
-    getDirections: "Get Directions",
-    rating: "4.9/5 on Google",
-    info: {
-      phone: "+212 601 66 66 65",
-      email: "Abfastcar@gmail.com",
-      address: "Rue Ouarzazate, Rabat, Morocco",
-      instagram: "@abfastcar",
-    },
-  },
-}
+import { useTranslations } from "next-intl"
 
 const contactCards = [
   {
@@ -80,8 +34,9 @@ const contactCards = [
   },
 ]
 
-export function ContactSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function ContactSection() {
+  const t = useTranslations("contact")
+  const info = t.raw("info") as Record<string, string>
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
   const [mapHovered, setMapHovered] = useState(false)
 
@@ -214,14 +169,14 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="h-5 w-5 sm:h-10 sm:w-10 shrink-0 text-yellow-400 animate-pulse" />
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
-                <span className="text-white">{t.title} </span>
-                <span className="shimmer-text">{t.titleGradient}</span>
+                <span className="text-white">{t("title")} </span>
+                <span className="shimmer-text">{t("titleGradient")}</span>
               </h2>
               <Sparkles className="h-5 w-5 sm:h-10 sm:w-10 shrink-0 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-xl text-zinc-400 font-light italic max-w-2xl">{t.subtitle}</p>
+              <p className="text-xl text-zinc-400 font-light italic max-w-2xl">{t("subtitle")}</p>
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
           </div>
@@ -250,10 +205,10 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   </div>
                   <div className="relative z-10">
                     <h3 className={`text-xl font-bold mb-3 ${hoveredCard === index ? `bg-gradient-to-r ${card.color} bg-clip-text text-transparent` : 'text-white'} transition-all duration-300`}>
-                      {t[card.key as keyof typeof t] as string}
+                      {t(card.key)}
                     </h3>
                     <p className="text-zinc-400 group-hover:text-zinc-300 transition-colors text-sm">
-                      {t.info[card.key as keyof typeof t.info]}
+                      {info[card.key]}
                     </p>
                   </div>
                   <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${card.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-3xl`} />
@@ -271,7 +226,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent" />
               <div className="flex items-center gap-3 px-8 py-3 rounded-full bg-gradient-to-r from-yellow-500/10 to-amber-500/10 border border-yellow-500/30 backdrop-blur-sm">
                 <Navigation className="w-5 h-5 text-yellow-400 animate-pulse" />
-                <span className="text-yellow-400 font-black text-sm tracking-widest uppercase">{t.findUs}</span>
+                <span className="text-yellow-400 font-black text-sm tracking-widest uppercase">{t("findUs")}</span>
                 <Navigation className="w-5 h-5 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
               </div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent" />
@@ -312,11 +267,11 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   <div className="hidden md:flex items-center gap-6">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30">
                       <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-green-400 text-xs font-bold tracking-wider">{t.openNow}</span>
+                      <span className="text-green-400 text-xs font-bold tracking-wider">{t("openNow")}</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30">
                       <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                      <span className="text-yellow-400 text-xs font-bold">{t.rating}</span>
+                      <span className="text-yellow-400 text-xs font-bold">{t("rating")}</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30">
                       <Clock className="w-3.5 h-3.5 text-blue-400" />
@@ -330,7 +285,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                     className="group/btn flex items-center justify-center gap-2 w-full sm:w-auto shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-xs sm:text-sm hover:from-yellow-500 hover:to-amber-600 hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/30"
                   >
                     <Navigation className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
-                    {t.getDirections}
+                    {t("getDirections")}
                   </button>
                 </div>
 
@@ -385,17 +340,17 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                   <div className="flex flex-wrap items-center gap-6">
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-yellow-400" />
-                      <span className="text-zinc-300 text-sm font-medium">{t.info.phone}</span>
+                      <span className="text-zinc-300 text-sm font-medium">{t("info.phone")}</span>
                     </div>
                     <div className="w-px h-4 bg-zinc-700" />
                     <div className="flex items-center gap-2">
                       <Mail className="w-4 h-4 text-yellow-400" />
-                      <span className="text-zinc-300 text-sm font-medium">{t.info.email}</span>
+                      <span className="text-zinc-300 text-sm font-medium">{t("info.email")}</span>
                     </div>
                     <div className="w-px h-4 bg-zinc-700" />
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-yellow-400" />
-                      <span className="text-zinc-300 text-sm font-medium">{t.info.address}</span>
+                      <span className="text-zinc-300 text-sm font-medium">{t("info.address")}</span>
                     </div>
                   </div>
                   {/* Live indicator */}
@@ -417,7 +372,7 @@ export function ContactSection({ language }: { language: "fr" | "en" }) {
                 className="relative bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-black font-bold text-lg px-16 py-8 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-black"
               >
                 <MessageCircle className="mr-3 h-7 w-7" />
-                {t.whatsapp}
+                {t("whatsapp")}
               </Button>
             </div>
 

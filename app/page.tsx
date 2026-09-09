@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
@@ -15,8 +14,6 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
-  const [language, setLanguage] = useState<"fr" | "en">("fr")
-
   return (
     <div className="relative min-h-screen bg-background">
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -29,18 +26,18 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        <Navigation language={language} setLanguage={setLanguage} />
-        <HeroSection language={language} />
-        <BrandsSection language={language} />
-        <AboutSection language={language} />
-        <StatsSection language={language} />
-        <FeaturesSection language={language} />
-        <FleetSection language={language} />
-        <ProcessSection language={language} />
-        <TestimonialsSection language={language} />
-        <ContactSection language={language} />
+        <Navigation />
+        <HeroSection />
+        <BrandsSection />
+        <AboutSection />
+        <StatsSection />
+        <FeaturesSection />
+        <FleetSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <ContactSection />
         
-        <Footer language={language} />
+        <Footer />
       </div>
 
       <WhatsAppButton />

@@ -1,0 +1,293 @@
+{
+  "about": {
+    "subtitle": "À PROPOS DE NOUS",
+    "title": "AB FAST CAR",
+    "tagline": "Votre Partenaire de Confiance pour la Location de Voitures de Luxe",
+    "description": "Depuis notre création, AB FAST CAR s'est imposé comme une référence dans la location de véhicules au Maroc. Nous proposons une expérience fiable et premium avec une flotte variée : citadines, berlines, SUV, voitures familiales et modèles de luxe Nous mettons un point d'honneur à offrir un service client personnalisé, une disponibilité 24h/7j et une prise en charge professionnelle. Notre objectif est de garantir bien plus qu'une simple location : une expérience de conduite agréable, sécurisée et adaptée à chaque besoin.",
+    "mission": "Notre Mission",
+    "missionText": "Offrir à nos clients une expérience fluide et de qualité, avec des véhicules adaptés à tous les budgets et à toutes les occasions. Grâce à un service irréprochable, une grande flexibilité et une équipe attentif à chaque détail, nous accompagnons nos clients dans tous leurs déplacements, qu'ils soient personnels, professionnels ou touristiques.",
+    "values": [
+      {
+        "title": "Confiance",
+        "description": "Des véhicules entretenus avec soin et une transparence totale."
+      },
+      {
+        "title": "Excellence",
+        "description": "Un large choix de voitures pour chaque occasion."
+      },
+      {
+        "title": "Disponibilité",
+        "description": "Service 24h/7j et livraison partout au Maroc."
+      },
+      {
+        "title": "Innovation",
+        "description": "Les derniers modèles et technologies automobiles."
+      }
+    ]
+  },
+  "bookingmodal": {
+    "title": "Réservez votre",
+    "vehicle": "véhicule de luxe",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
+    "phone": "Votre numéro WhatsApp",
+    "phonePlaceholder": "Numéro de téléphone",
+    "numberOfDays": "Durée",
+    "pricePerDay": "Prix / jour",
+    "totalPrice": "Total",
+    "confirmWhatsApp": "Confirmer la réservation",
+    "days": "jours",
+    "day": "jour",
+    "pickupDate": "Date de récupération",
+    "returnDate": "Date de retour",
+    "fillAllFields": "Veuillez remplir tous les champs",
+    "whatsappMessage": "Bonjour AB FAST CAR,\n\nJe souhaite réserver:\n🚗 Véhicule: {vehicle}\n📅 Du: {start}\n📅 Au: {end}\n⏱ Durée: {duration}\n💰 Prix total: {total} MAD\n📱 Mon numéro WhatsApp: {phone}\n\nMerci!"
+  },
+  "brands": {
+    "title": "NOS MARQUES",
+    "titleHighlight": "PREMIUM",
+    "subtitle": "Les plus grandes marques automobiles à votre service"
+  },
+  "chatbot": {
+    "greeting": "Bonjour 👋 Je suis l'assistant virtuel AB FAST CAR, ici pour vous aider a trouver ce que vous cherchez. Comment puis-je vous aider?",
+    "placeholder": "Tapez votre message...",
+    "send": "Envoyer",
+    "online": "En ligne",
+    "brandName": "AB FAST CAR",
+    "today": "Aujourd'hui",
+    "suggestions": [
+      "💰 Voir les prix",
+      "🚗 Disponibilite",
+      "📝 Reserver",
+      "📍 Livraison",
+      "⏰ Horaires",
+      "🎯 Meilleure voiture"
+    ],
+    "responses": {
+      "prix": "💰 Nos prix varient de 349 DH/jour (Clio 5) a 8000 DH/jour (Mercedes G63). Prix moyens: Citadines 350-600 DH, Berlines 700-1200 DH, SUV Luxe 1300-3000 DH, Ultra Luxe 3500-8000 DH.",
+      "disponibilite": "✅ Toutes nos 14 voitures sont disponibles! Mercedes G63, Porsche Cayenne, Range Rover Sport, Porsche Macan T, VW Touareg, Range Evoque, Mercedes GLA, Cupra Formentor, Cupra Leon, Clio 5 et plus!",
+      "reservation": "📝 Reservation facile: 1️⃣ Choisissez votre voiture 2️⃣ Cliquez 'Reserver' 3️⃣ Remplissez le formulaire avec dates et infos 4️⃣ Nous vous contactons sous 2h pour confirmation!",
+      "livraison": "🚗 Livraison GRATUITE a Rabat! Service disponible dans tout le Maroc (Casablanca, Marrakech, Tanger, Fes...). Livraison a l'aeroport possible. Demandez un devis!",
+      "horaires": "⏰ Service 24/7 disponible! Reservations: 9h-20h tous les jours. Livraison flexible selon vos besoins. Assistance d'urgence disponible!",
+      "meilleure": "🎯 Pour vous recommander: Budget? Nombre de passagers? Usage (ville/voyage)? Nos tops: Mercedes G63 (ultra luxe), Porsche Cayenne (sport), Range Rover (prestige), Cupra Leon (economique sport)!",
+      "assurance": "🛡️ Assurance COMPLETE incluse! Couverture tous risques, assistance 24/7, kilometrage illimite sur certains modeles. Franchise variable selon vehicule.",
+      "carburant": "⛽ Politique carburant: Prise avec plein, retour avec plein. Option carburant prepaye disponible. Consommation moyenne fournie.",
+      "permis": "📜 Documents requis: Permis de conduire valide (+1 an min), Carte identite/Passeport, Justificatif de domicile, Caution par carte bancaire.",
+      "merci": "De rien! Je suis toujours la pour vous aider. N'hesitez pas si vous avez d'autres questions! 😊",
+      "contact": "📞 Contactez-nous: WhatsApp disponible (voir bouton vert), Email, ou reservez directement sur le site. Reponse garantie sous 2h!",
+      "default": "Je peux vous aider avec: Prix, Disponibilite, Reservation, Livraison, Horaires, Assurance, Documents requis, Recommandations. Que voulez-vous savoir? 🚗✨"
+    }
+  },
+  "contact": {
+    "title": "RESTONS EN",
+    "titleGradient": "CONTACT",
+    "subtitle": "Notre équipe est à votre disposition 24/7 pour répondre à tous vos besoins",
+    "name": "Nom complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "message": "Message",
+    "whatsapp": "Réserver sur WhatsApp",
+    "instagram": "Suivez-nous",
+    "findUs": "Nous Trouver",
+    "findUsSubtitle": "Venez nous rendre visite à Rabat",
+    "openNow": "Ouvert 24h/24",
+    "getDirections": "Obtenir l'itinéraire",
+    "rating": "4.9/5 sur Google",
+    "info": {
+      "phone": "+212 601 66 66 65",
+      "email": "Abfastcar@gmail.com",
+      "address": "Rue Ouarzazate, Rabat, Maroc",
+      "instagram": "@abfastcar"
+    }
+  },
+  "features": {
+    "title": "Nos Avantages",
+    "titleGradient": "Pourquoi Nous Choisir ?",
+    "subtitle": "Une expérience premium et personnalisée",
+    "features": [
+      {
+        "title": "Service Chauffeur VIP",
+        "description": "Des chauffeurs professionnels et discrets pour vos déplacements d'affaires ou événements privés."
+      },
+      {
+        "title": "Livraison à Domicile",
+        "description": "Nous livrons votre véhicule directement à l'adresse de votre choix, partout au Maroc."
+      },
+      {
+        "title": "Voitures Récentes & Luxe",
+        "description": "Une flotte exclusivement composée de véhicules récents, entretenus avec le plus grand soin."
+      },
+      {
+        "title": "Assistance 24/7",
+        "description": "Notre équipe est disponible jour et nuit pour répondre à vos besoins et garantir votre sérénité."
+      }
+    ]
+  },
+  "fleet": {
+    "badge": "Collection Premium",
+    "title": "Notre Flotte",
+    "titleGradient": "Exceptionnelle",
+    "subtitle": "Découvrez notre sélection de véhicules de luxe",
+    "perDay": "/jour",
+    "book": "Réserver",
+    "close": "Fermer"
+  },
+  "footer": {
+    "company": "AB FAST CAR",
+    "tagline": "Location de voitures de luxe au Maroc",
+    "description": "Votre partenaire de confiance pour une expérience de conduite exceptionnelle",
+    "rights": "Tous droits réservés.",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "phone": "+212 601 66 66 65",
+    "email": "Abfastcar@gmail.com",
+    "address": "Rabat, Maroc",
+    "hours": "Disponible 24/7",
+    "quality": "Service Premium Garanti"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "titleGradient": "Exclusive",
+    "subtitle": "Découvrez nos véhicules et tarifs",
+    "enlarge": "Cliquez pour agrandir"
+  },
+  "hero": {
+    "title1": "Location de voitures",
+    "title2": "au Maroc",
+    "slogan": "Select & Drive",
+    "subtitle": "Service premium 24/7 – Large flotte : citadines, berline ,SUV, familiales et modèles de luxe",
+    "cta": "Réserver maintenant",
+    "secondary": "Découvrir la flotte",
+    "recommended": "RECOMMANDÉ PAR",
+    "trustText": "Partenaires avec",
+    "trustBold": "500+",
+    "trustSuffix": "agences de location certifiées",
+    "features": [
+      {
+        "label": "Kilométrage illimité",
+        "sub": "Roulez sans limite"
+      },
+      {
+        "label": "Livraison aéroport",
+        "sub": "Partout au Maroc"
+      },
+      {
+        "label": "Large choix",
+        "sub": "50+ véhicules"
+      },
+      {
+        "label": "Chauffeur en option",
+        "sub": "Service personnalisé"
+      },
+      {
+        "label": "Assistance 24h/24",
+        "sub": "Toujours disponible"
+      }
+    ]
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "fleet": "Flotte",
+    "services": "Services",
+    "testimonials": "Témoignages",
+    "contact": "Contact"
+  },
+  "process": {
+    "title": "Comment Ça",
+    "titleGradient": "Marche",
+    "subtitle": "Un processus simple en 4 étapes",
+    "steps": [
+      {
+        "title": "Choisissez",
+        "description": "Parcourez notre flotte et sélectionnez le véhicule parfait pour vos besoins."
+      },
+      {
+        "title": "Réservez",
+        "description": "Choisissez vos dates et confirmez votre réservation en quelques clics."
+      },
+      {
+        "title": "Récupérez",
+        "description": "Nous livrons votre véhicule à l'adresse de votre choix au Maroc."
+      },
+      {
+        "title": "Profitez",
+        "description": "Vivez une expérience de conduite exceptionnelle avec notre service premium."
+      }
+    ]
+  },
+  "stats": {
+    "stats": [
+      {
+        "value": "24/7",
+        "label": "Service disponible",
+        "type": "text"
+      },
+      {
+        "value": "100%",
+        "label": "Véhicules premium",
+        "type": "text"
+      },
+      {
+        "value": null,
+        "label": "Livraison nationale",
+        "type": "flag"
+      },
+      {
+        "value": "500+",
+        "label": "Clients satisfaits",
+        "type": "text"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Ce Que Disent",
+    "titleGradient": "Nos Clients",
+    "subtitle": "Des centaines de clients satisfaits nous font confiance",
+    "testimonials": [
+      {
+        "name": "Mohammed Alami",
+        "role": "Chef d'entreprise",
+        "image": "https://i.pravatar.cc/150?img=12",
+        "rating": 5,
+        "text": "Service exceptionnel ! La Mercedes Classe S était impeccable et la livraison à l'heure. Je recommande vivement AB FAST CAR pour toute location de luxe."
+      },
+      {
+        "name": "Sarah Bennani",
+        "role": "Architecte",
+        "image": "https://i.pravatar.cc/150?img=45",
+        "rating": 5,
+        "text": "J'ai loué une BMW pour un événement important. Le service était professionnel, le véhicule parfait. Une expérience 5 étoiles du début à la fin."
+      },
+      {
+        "name": "Karim Idrissi",
+        "role": "Directeur Marketing",
+        "image": "https://i.pravatar.cc/150?img=33",
+        "rating": 5,
+        "text": "Excellent rapport qualité-prix. L'équipe est très réactive et les voitures sont magnifiques. C'est devenu mon premier choix pour les locations de prestige."
+      },
+      {
+        "name": "Fatima Zahrae",
+        "role": "Consultante",
+        "image": "https://i.pravatar.cc/150?img=47",
+        "rating": 5,
+        "text": "Service impeccable et véhicules luxueux. La livraison gratuite partout au Maroc est un énorme plus. Je suis cliente fidèle depuis 2 ans."
+      },
+      {
+        "name": "Youssef El Amrani",
+        "role": "Investisseur",
+        "image": "https://i.pravatar.cc/150?img=15",
+        "rating": 5,
+        "text": "La meilleure agence de location à Rabat. J'ai loué plusieurs véhicules et chaque fois c'était parfait. Équipe professionnelle et voitures impeccables."
+      },
+      {
+        "name": "Amina Tazi",
+        "role": "Avocate",
+        "image": "https://i.pravatar.cc/150?img=26",
+        "rating": 5,
+        "text": "Une expérience exceptionnelle ! Le Range Rover était en parfait état et le service clientèle au top. Je recommande à 100%."
+      }
+    ]
+  }
+}

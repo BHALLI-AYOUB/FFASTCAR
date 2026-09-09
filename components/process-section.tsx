@@ -2,90 +2,19 @@
 
 import { Search, Calendar, Key, ThumbsUp, ArrowRight, Sparkles } from "lucide-react"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
-const translations = {
-  fr: {
-    title: "Comment Ça",
-    titleGradient: "Marche",
-    subtitle: "Un processus simple en 4 étapes",
-    steps: [
-      {
-        icon: Search,
-        title: "Choisissez",
-        description: "Parcourez notre flotte et sélectionnez le véhicule parfait pour vos besoins.",
-        color: "from-blue-400 to-cyan-400",
-        bgColor: "bg-blue-500/20",
-        shadowColor: "shadow-blue-500/50"
-      },
-      {
-        icon: Calendar,
-        title: "Réservez",
-        description: "Choisissez vos dates et confirmez votre réservation en quelques clics.",
-        color: "from-purple-400 to-pink-400",
-        bgColor: "bg-purple-500/20",
-        shadowColor: "shadow-purple-500/50"
-      },
-      {
-        icon: Key,
-        title: "Récupérez",
-        description: "Nous livrons votre véhicule à l'adresse de votre choix au Maroc.",
-        color: "from-yellow-400 to-orange-400",
-        bgColor: "bg-yellow-500/20",
-        shadowColor: "shadow-yellow-500/50"
-      },
-      {
-        icon: ThumbsUp,
-        title: "Profitez",
-        description: "Vivez une expérience de conduite exceptionnelle avec notre service premium.",
-        color: "from-green-400 to-emerald-400",
-        bgColor: "bg-green-500/20",
-        shadowColor: "shadow-green-500/50"
-      },
-    ],
-  },
-  en: {
-    title: "How It",
-    titleGradient: "Works",
-    subtitle: "A simple process in 4 steps",
-    steps: [
-      {
-        icon: Search,
-        title: "Choose",
-        description: "Browse our fleet and select the perfect vehicle for your needs.",
-        color: "from-blue-400 to-cyan-400",
-        bgColor: "bg-blue-500/20",
-        shadowColor: "shadow-blue-500/50"
-      },
-      {
-        icon: Calendar,
-        title: "Book",
-        description: "Choose your dates and confirm your booking in a few clicks.",
-        color: "from-purple-400 to-pink-400",
-        bgColor: "bg-purple-500/20",
-        shadowColor: "shadow-purple-500/50"
-      },
-      {
-        icon: Key,
-        title: "Pick Up",
-        description: "We deliver your vehicle to the address of your choice in Morocco.",
-        color: "from-yellow-400 to-orange-400",
-        bgColor: "bg-yellow-500/20",
-        shadowColor: "shadow-yellow-500/50"
-      },
-      {
-        icon: ThumbsUp,
-        title: "Enjoy",
-        description: "Experience exceptional driving with our premium service.",
-        color: "from-green-400 to-emerald-400",
-        bgColor: "bg-green-500/20",
-        shadowColor: "shadow-green-500/50"
-      },
-    ],
-  },
-}
+const STEP_STYLES = [
+  { icon: Search, color: "from-blue-400 to-cyan-400", bgColor: "bg-blue-500/20", shadowColor: "shadow-blue-500/50" },
+  { icon: Calendar, color: "from-purple-400 to-pink-400", bgColor: "bg-purple-500/20", shadowColor: "shadow-purple-500/50" },
+  { icon: Key, color: "from-yellow-400 to-orange-400", bgColor: "bg-yellow-500/20", shadowColor: "shadow-yellow-500/50" },
+  { icon: ThumbsUp, color: "from-green-400 to-emerald-400", bgColor: "bg-green-500/20", shadowColor: "shadow-green-500/50" },
+]
 
-export function ProcessSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function ProcessSection() {
+  const t = useTranslations("process")
+  const steps = (t.raw("steps") as { title: string; description: string }[])
+    .map((s, i) => ({ ...s, ...STEP_STYLES[i] }))
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
@@ -208,13 +137,13 @@ export function ProcessSection({ language }: { language: "fr" | "en" }) {
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" />
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white">
-                {t.title} <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">{t.titleGradient}</span>
+                {t("title")} <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">{t("titleGradient")}</span>
               </h2>
               <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-xl text-zinc-400 font-light italic">{t.subtitle}</p>
+              <p className="text-xl text-zinc-400 font-light italic">{t("subtitle")}</p>
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
           </div>
@@ -272,10 +201,10 @@ export function ProcessSection({ language }: { language: "fr" | "en" }) {
 
             {/* Steps Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative" style={{zIndex: 1}}>
-              {t.steps.map((step, index) => (
+              {steps.map((step, index) => (
                 <div key={index} className="relative">
                   {/* Arrow Between Steps (Mobile) */}
-                  {index < t.steps.length - 1 && (
+                  {index < steps.length - 1 && (
                     <div className="lg:hidden flex justify-center my-6">
                       <ArrowRight className={`h-8 w-8 text-gradient-to-r ${step.color} animate-bounce`} />
                     </div>

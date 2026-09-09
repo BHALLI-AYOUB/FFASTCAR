@@ -3,47 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Instagram, Facebook, Phone, ChevronDown, Infinity, PlaneTakeoff, LayoutGrid, UserCheck, Headphones } from "lucide-react"
-
-const translations = {
-  fr: {
-    title1: "Location de voitures",
-    title2: "au Maroc",
-    slogan: "Select & Drive",
-    subtitle: "Service premium 24/7 – Large flotte : citadines, berline ,SUV, familiales et modèles de luxe",
-    cta: "Réserver maintenant",
-    secondary: "Découvrir la flotte",
-    recommended: "RECOMMANDÉ PAR",
-    trustText: "Partenaires avec",
-    trustBold: "500+",
-    trustSuffix: "agences de location certifiées",
-    features: [
-      { label: "Kilométrage illimité", sub: "Roulez sans limite" },
-      { label: "Livraison aéroport", sub: "Partout au Maroc" },
-      { label: "Large choix", sub: "50+ véhicules" },
-      { label: "Chauffeur en option", sub: "Service personnalisé" },
-      { label: "Assistance 24h/24", sub: "Toujours disponible" },
-    ],
-  },
-  en: {
-    title1: "Car rental",
-    title2: "in Morocco",
-    slogan: "Select & Drive",
-    subtitle: "Premium 24/7 service – Wide fleet of high-end vehicles",
-    cta: "Book now",
-    secondary: "Discover fleet",
-    recommended: "RECOMMENDED BY",
-    trustText: "Partners with",
-    trustBold: "500+",
-    trustSuffix: "certified rental agencies",
-    features: [
-      { label: "Unlimited mileage", sub: "Drive without limits" },
-      { label: "Airport delivery", sub: "All over Morocco" },
-      { label: "Wide choice", sub: "50+ vehicles" },
-      { label: "Driver option", sub: "Personalized service" },
-      { label: "24/7 Assistance", sub: "Always available" },
-    ],
-  },
-}
+import { useTranslations } from "next-intl"
 
 const FEATURE_ICONS = [Infinity, PlaneTakeoff, LayoutGrid, UserCheck, Headphones]
 
@@ -62,8 +22,9 @@ const carImages = [
   { src: "/abfastcar/cupra-formentor.jpg", name: "Cupra Formentor", tag: "SUV Sport" },
 ]
 
-export function HeroSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function HeroSection() {
+  const t = useTranslations("hero")
+  const heroFeatures = t.raw("features") as { label: string; sub: string }[]
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -438,22 +399,22 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
             {/* LEFT — copy */}
             <div className="text-center lg:text-left order-2 lg:order-1">
               <div className={`hero-slogan justify-center lg:justify-start mb-7 ${isLoaded ? "rise rise-1" : "pre-rise"}`}>
-                {t.slogan}
+                {t("slogan")}
               </div>
 
               <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.95]">
                 <span className={`block bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent ${isLoaded ? "rise rise-2" : "pre-rise"}`}>
-                  {t.title1}
+                  {t("title1")}
                 </span>
                 <span className={`block text-white mt-2 ${isLoaded ? "rise rise-3" : "pre-rise"}`}>
-                  {t.title2}
+                  {t("title2")}
                 </span>
               </h1>
 
               <div className={`flex items-center justify-center lg:justify-start gap-4 pt-7 ${isLoaded ? "rise rise-4" : "pre-rise"}`}>
                 <div className="h-px w-12 shrink-0 bg-gradient-to-r from-transparent via-yellow-400 to-yellow-400 hidden lg:block" />
                 <p className="hero-subtitle text-lg md:text-xl text-gray-300 font-light max-w-xl italic">
-                  {t.subtitle}
+                  {t("subtitle")}
                 </p>
               </div>
 
@@ -465,7 +426,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
                   className="cta-pulse w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-black text-base px-10 py-7 rounded-full shadow-[0_0_35px_rgba(250,204,21,0.45)] transition-all duration-300 hover:scale-105"
                 >
                   <Phone className="mr-3 h-5 w-5" />
-                  {t.cta}
+                  {t("cta")}
                 </Button>
 
                 <Button
@@ -474,7 +435,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
                   variant="outline"
                   className="w-full sm:w-auto font-bold text-base px-10 py-7 rounded-full border-2 border-white/40 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 hover:scale-105"
                 >
-                  {t.secondary}
+                  {t("secondary")}
                 </Button>
               </div>
 
@@ -565,7 +526,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
         {/* Scroll Down */}
         <button
           onClick={scrollToFleet}
-          aria-label={t.secondary}
+          aria-label={t("secondary")}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white/50 hover:text-yellow-400 transition-all duration-300 animate-bounce"
         >
           <ChevronDown className="h-8 w-8" />
@@ -596,14 +557,14 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           <div className="trust-sep" />
 
           <p className="partner-txt">
-            {t.trustText} <strong>{t.trustBold}</strong> {t.trustSuffix}
+            {t("trustText")} <strong>{t("trustBold")}</strong> {t("trustSuffix")}
           </p>
 
           <div className="trust-sep" />
 
           {/* Platforms */}
           <div className="plat-wrap">
-            <span className="plat-eyebrow">{t.recommended}</span>
+            <span className="plat-eyebrow">{t("recommended")}</span>
             <div className="plat-row">
               <div className="plat-chip klook"><div className="plat-dot" />KLOOK</div>
               <div className="plat-chip expedia"><div className="plat-dot" />expedia</div>
@@ -619,7 +580,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
       ═══════════════════════════════════════ */}
       <div className="feat-wrap">
         <div className="feat-grid">
-          {t.features.map((f, i) => {
+          {heroFeatures.map((f, i) => {
             const Icon = FEATURE_ICONS[i]
             return (
               <div key={i} className="feat-card">

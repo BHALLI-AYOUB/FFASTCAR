@@ -2,96 +2,19 @@
 
 import { Car, Shield, Clock, Award, Sparkles, TrendingUp } from "lucide-react"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
-interface AboutSectionProps {
-  language: "fr" | "en"
-}
+const VALUE_STYLES = [
+  { icon: Shield, color: "from-blue-400 to-cyan-400", bgGlow: "bg-blue-500/20" },
+  { icon: Award, color: "from-yellow-400 to-orange-400", bgGlow: "bg-yellow-500/20" },
+  { icon: Clock, color: "from-purple-400 to-pink-400", bgGlow: "bg-purple-500/20" },
+  { icon: Car, color: "from-green-400 to-emerald-400", bgGlow: "bg-green-500/20" },
+]
 
-const translations = {
-  fr: {
-    subtitle: "À PROPOS DE NOUS",
-    title: "AB FAST CAR",
-    tagline: "Votre Partenaire de Confiance pour la Location de Voitures de Luxe",
-    description:
-      "Depuis notre création, AB FAST CAR s'est imposé comme une référence dans la location de véhicules au Maroc. Nous proposons une expérience fiable et premium avec une flotte variée : citadines, berlines, SUV, voitures familiales et modèles de luxe Nous mettons un point d'honneur à offrir un service client personnalisé, une disponibilité 24h/7j et une prise en charge professionnelle. Notre objectif est de garantir bien plus qu'une simple location : une expérience de conduite agréable, sécurisée et adaptée à chaque besoin.",
-    mission: "Notre Mission",
-    missionText:
-      "Offrir à nos clients une expérience fluide et de qualité, avec des véhicules adaptés à tous les budgets et à toutes les occasions. Grâce à un service irréprochable, une grande flexibilité et une équipe attentif à chaque détail, nous accompagnons nos clients dans tous leurs déplacements, qu'ils soient personnels, professionnels ou touristiques.",
-    values: [
-      {
-        icon: Shield,
-        title: "Confiance",
-        description: "Des véhicules entretenus avec soin et une transparence totale.",
-        color: "from-blue-400 to-cyan-400",
-        bgGlow: "bg-blue-500/20"
-      },
-      {
-        icon: Award,
-        title: "Excellence",
-        description: "Un large choix de voitures pour chaque occasion.",
-        color: "from-yellow-400 to-orange-400",
-        bgGlow: "bg-yellow-500/20"
-      },
-      {
-        icon: Clock,
-        title: "Disponibilité",
-        description: "Service 24h/7j et livraison partout au Maroc.",
-        color: "from-purple-400 to-pink-400",
-        bgGlow: "bg-purple-500/20"
-      },
-      {
-        icon: Car,
-        title: "Innovation",
-        description: "Les derniers modèles et technologies automobiles.",
-        color: "from-green-400 to-emerald-400",
-        bgGlow: "bg-green-500/20"
-      },
-    ],
-  },
-  en: {
-    subtitle: "ABOUT US",
-    title: "AB FAST CAR",
-    tagline: "Your Trusted Partner for Luxury Car Rental",
-    description:
-      "Since our inception, AB FAST CAR has established itself as the leader in luxury vehicle rental in Morocco. We offer an exceptional experience with an exclusive fleet of high-end cars, personalized customer service, and 24/7 availability. Our commitment is to provide you with more than just a rental: an unforgettable driving experience.",
-    mission: "Our Mission",
-    missionText:
-      "To offer our clients a premium experience with exceptional vehicles, impeccable service, and total flexibility to meet all your mobility needs.",
-    values: [
-      {
-        icon: Shield,
-        title: "Trust",
-        description: "Well-maintained vehicles and complete transparency.",
-        color: "from-blue-400 to-cyan-400",
-        bgGlow: "bg-blue-500/20"
-      },
-      {
-        icon: Award,
-        title: "Excellence",
-        description: "A premium fleet and superior quality service.",
-        color: "from-yellow-400 to-orange-400",
-        bgGlow: "bg-yellow-500/20"
-      },
-      {
-        icon: Clock,
-        title: "Availability",
-        description: "24/7 service and delivery throughout Morocco.",
-        color: "from-purple-400 to-pink-400",
-        bgGlow: "bg-purple-500/20"
-      },
-      {
-        icon: Car,
-        title: "Innovation",
-        description: "The latest automotive models and technologies.",
-        color: "from-green-400 to-emerald-400",
-        bgGlow: "bg-green-500/20"
-      },
-    ],
-  },
-}
-
-export function AboutSection({ language }: AboutSectionProps) {
-  const t = translations[language]
+export function AboutSection() {
+  const t = useTranslations("about")
+  const values = (t.raw("values") as { title: string; description: string }[])
+    .map((v, i) => ({ ...v, ...VALUE_STYLES[i] }))
   const [hoveredValue, setHoveredValue] = useState<number | null>(null)
 
   return (
@@ -196,21 +119,21 @@ export function AboutSection({ language }: AboutSectionProps) {
           <div className="text-center mb-12 sm:mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
               <TrendingUp className="h-8 w-8 text-yellow-400 animate-pulse" />
-              <p className="text-yellow-400 font-bold text-sm tracking-widest uppercase">{t.subtitle}</p>
+              <p className="text-yellow-400 font-bold text-sm tracking-widest uppercase">{t("subtitle")}</p>
               <TrendingUp className="h-8 w-8 text-yellow-400 animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="float-icon h-10 w-10 text-yellow-400" />
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-black shimmer-text tracking-tight">
-                {t.title}
+                {t("title")}
               </h2>
               <Sparkles className="float-icon h-10 w-10 text-yellow-400" style={{animationDelay: '1s'}} />
             </div>
             
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-xl text-zinc-400 font-light italic max-w-3xl">{t.tagline}</p>
+              <p className="text-xl text-zinc-400 font-light italic max-w-3xl">{t("tagline")}</p>
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
           </div>
@@ -224,7 +147,7 @@ export function AboutSection({ language }: AboutSectionProps) {
               <div className="relative bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border-2 border-yellow-400/30 rounded-3xl p-10 md:p-14 shadow-2xl">
                 {/* Description */}
                 <p className="text-lg text-zinc-300 leading-relaxed mb-10">
-                  {t.description}
+                  {t("description")}
                 </p>
                 
                 {/* Mission Section */}
@@ -236,12 +159,12 @@ export function AboutSection({ language }: AboutSectionProps) {
                       <Award className="h-6 w-6 text-black" />
                     </div>
                     <h3 className="text-3xl font-black bg-gradient-to-r from-yellow-300 to-amber-400 bg-clip-text text-transparent">
-                      {t.mission}
+                      {t("mission")}
                     </h3>
                   </div>
                   
                   <p className="text-zinc-300 text-lg leading-relaxed">
-                    {t.missionText}
+                    {t("missionText")}
                   </p>
                 </div>
               </div>
@@ -250,7 +173,7 @@ export function AboutSection({ language }: AboutSectionProps) {
 
           {/* Values Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.values.map((value, index) => {
+            {values.map((value, index) => {
               const Icon = value.icon
               return (
                 <div

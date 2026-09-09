@@ -2,37 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { MarketSwitcher } from "@/components/market-switcher"
 
-interface NavigationProps {
-  language: "fr" | "en"
-  setLanguage: (lang: "fr" | "en") => void
-}
-
-const translations = {
-  fr: {
-    home: "Accueil",
-    about: "À Propos",
-    fleet: "Flotte",
-    services: "Services",
-    testimonials: "Témoignages",
-    contact: "Contact",
-  },
-  en: {
-    home: "Home",
-    about: "About",
-    fleet: "Fleet",
-    services: "Services",
-    testimonials: "Testimonials",
-    contact: "Contact",
-  },
-}
-
-export function Navigation({ language, setLanguage }: NavigationProps) {
+export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const t = translations[language]
+  const t = useTranslations("navigation")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,12 +44,12 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
   }
 
   const navItems = [
-    { id: "home", label: t.home },
-    { id: "about", label: t.about },
-    { id: "fleet", label: t.fleet },
-    { id: "services", label: t.services },
-    { id: "testimonials", label: t.testimonials },
-    { id: "contact", label: t.contact },
+    { id: "home", label: t("home") },
+    { id: "about", label: t("about") },
+    { id: "fleet", label: t("fleet") },
+    { id: "services", label: t("services") },
+    { id: "testimonials", label: t("testimonials") },
+    { id: "contact", label: t("contact") },
   ]
 
   return (
@@ -192,19 +170,8 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4">
-              {/* Language Switcher */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-                  className="relative bg-gradient-to-br from-zinc-900 to-black text-yellow-400 hover:text-yellow-300 font-bold rounded-xl px-5 py-2 border-2 border-yellow-400/30 hover:border-yellow-400/60 transition-all duration-300 hover:scale-105"
-                >
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  {language === "fr" ? "FR" : "EN"}
-                </Button>
-              </div>
+              {/* Market / language switcher */}
+              <MarketSwitcher />
 
               {/* Mobile Menu Button */}
               <button

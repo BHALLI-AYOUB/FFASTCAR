@@ -1,82 +1,19 @@
 "use client"
 
 import { Car, Users, MapPin, Clock, Star } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-const translations = {
-  fr: {
-    title: "Nos Avantages",
-    titleGradient: "Pourquoi Nous Choisir ?",
-    subtitle: "Une expérience premium et personnalisée",
-    features: [
-      {
-        icon: Users,
-        title: "Service Chauffeur VIP",
-        description: "Des chauffeurs professionnels et discrets pour vos déplacements d'affaires ou événements privés.",
-        color: "from-blue-400 to-cyan-400",
-        bgGlow: "bg-blue-500/20"
-      },
-      {
-        icon: MapPin,
-        title: "Livraison à Domicile",
-        description: "Nous livrons votre véhicule directement à l'adresse de votre choix, partout au Maroc.",
-        color: "from-purple-400 to-pink-400",
-        bgGlow: "bg-purple-500/20"
-      },
-      {
-        icon: Car,
-        title: "Voitures Récentes & Luxe",
-        description: "Une flotte exclusivement composée de véhicules récents, entretenus avec le plus grand soin.",
-        color: "from-yellow-400 to-orange-400",
-        bgGlow: "bg-yellow-500/20"
-      },
-      {
-        icon: Clock,
-        title: "Assistance 24/7",
-        description: "Notre équipe est disponible jour et nuit pour répondre à vos besoins et garantir votre sérénité.",
-        color: "from-green-400 to-emerald-400",
-        bgGlow: "bg-green-500/20"
-      },
-    ],
-  },
-  en: {
-    title: "Our Advantages",
-    titleGradient: "Why Choose Us?",
-    subtitle: "A premium and personalized experience",
-    features: [
-      {
-        icon: Users,
-        title: "VIP Chauffeur Service",
-        description: "Professional and discreet drivers for your business trips or private events.",
-        color: "from-blue-400 to-cyan-400",
-        bgGlow: "bg-blue-500/20"
-      },
-      {
-        icon: MapPin,
-        title: "Home Delivery",
-        description: "We deliver your vehicle directly to the address of your choice, anywhere in Morocco.",
-        color: "from-purple-400 to-pink-400",
-        bgGlow: "bg-purple-500/20"
-      },
-      {
-        icon: Car,
-        title: "Recent & Luxury Cars",
-        description: "A fleet exclusively composed of recent vehicles, maintained with the utmost care.",
-        color: "from-yellow-400 to-orange-400",
-        bgGlow: "bg-yellow-500/20"
-      },
-      {
-        icon: Clock,
-        title: "24/7 Assistance",
-        description: "Our team is available day and night to meet your needs and ensure your peace of mind.",
-        color: "from-green-400 to-emerald-400",
-        bgGlow: "bg-green-500/20"
-      },
-    ],
-  },
-}
+const FEATURE_STYLES = [
+  { icon: Users, color: "from-blue-400 to-cyan-400", bgGlow: "bg-blue-500/20" },
+  { icon: MapPin, color: "from-purple-400 to-pink-400", bgGlow: "bg-purple-500/20" },
+  { icon: Car, color: "from-yellow-400 to-orange-400", bgGlow: "bg-yellow-500/20" },
+  { icon: Clock, color: "from-green-400 to-emerald-400", bgGlow: "bg-green-500/20" },
+]
 
-export function FeaturesSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function FeaturesSection() {
+  const t = useTranslations("features")
+  const features = (t.raw("features") as { title: string; description: string }[])
+    .map((f, i) => ({ ...f, ...FEATURE_STYLES[i] }))
 
   return (
     <>
@@ -165,25 +102,25 @@ export function FeaturesSection({ language }: { language: "fr" | "en" }) {
             <div className="flex items-center justify-center gap-4 mb-6">
               <Star className="star-icon h-10 w-10 text-yellow-400" />
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white">
-                {t.title}
+                {t("title")}
               </h2>
               <Star className="star-icon h-10 w-10 text-yellow-400" style={{animationDirection: 'reverse'}} />
             </div>
             
             <p className="text-4xl md:text-5xl font-black bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent mb-6">
-              {t.titleGradient}
+              {t("titleGradient")}
             </p>
             
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-xl text-zinc-400 font-light italic">{t.subtitle}</p>
+              <p className="text-xl text-zinc-400 font-light italic">{t("subtitle")}</p>
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
           </div>
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {t.features.map((feature, index) => (
+            {features.map((feature, index) => (
               <div
                 key={index}
                 className="feature-card group relative bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border-2 border-zinc-800 rounded-3xl p-8 hover:border-transparent transition-all duration-500 cursor-pointer"

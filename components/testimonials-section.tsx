@@ -3,110 +3,19 @@
 import { Card } from "@/components/ui/card"
 import { Star, Quote, Sparkles } from "lucide-react"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
-const translations = {
-  fr: {
-    title: "Ce Que Disent",
-    titleGradient: "Nos Clients",
-    subtitle: "Des centaines de clients satisfaits nous font confiance",
-    testimonials: [
-      {
-        name: "Mohammed Alami",
-        role: "Chef d'entreprise",
-        image: "https://i.pravatar.cc/150?img=12",
-        rating: 5,
-        text: "Service exceptionnel ! La Mercedes Classe S était impeccable et la livraison à l'heure. Je recommande vivement AB FAST CAR pour toute location de luxe.",
-      },
-      {
-        name: "Sarah Bennani",
-        role: "Architecte",
-        image: "https://i.pravatar.cc/150?img=45",
-        rating: 5,
-        text: "J'ai loué une BMW pour un événement important. Le service était professionnel, le véhicule parfait. Une expérience 5 étoiles du début à la fin.",
-      },
-      {
-        name: "Karim Idrissi",
-        role: "Directeur Marketing",
-        image: "https://i.pravatar.cc/150?img=33",
-        rating: 5,
-        text: "Excellent rapport qualité-prix. L'équipe est très réactive et les voitures sont magnifiques. C'est devenu mon premier choix pour les locations de prestige.",
-      },
-      {
-        name: "Fatima Zahrae",
-        role: "Consultante",
-        image: "https://i.pravatar.cc/150?img=47",
-        rating: 5,
-        text: "Service impeccable et véhicules luxueux. La livraison gratuite partout au Maroc est un énorme plus. Je suis cliente fidèle depuis 2 ans.",
-      },
-      {
-        name: "Youssef El Amrani",
-        role: "Investisseur",
-        image: "https://i.pravatar.cc/150?img=15",
-        rating: 5,
-        text: "La meilleure agence de location à Rabat. J'ai loué plusieurs véhicules et chaque fois c'était parfait. Équipe professionnelle et voitures impeccables.",
-      },
-      {
-        name: "Amina Tazi",
-        role: "Avocate",
-        image: "https://i.pravatar.cc/150?img=26",
-        rating: 5,
-        text: "Une expérience exceptionnelle ! Le Range Rover était en parfait état et le service clientèle au top. Je recommande à 100%.",
-      },
-    ],
-  },
-  en: {
-    title: "What Our",
-    titleGradient: "Clients Say",
-    subtitle: "Hundreds of satisfied customers trust us",
-    testimonials: [
-      {
-        name: "Mohammed Alami",
-        role: "Business Owner",
-        image: "https://i.pravatar.cc/150?img=12",
-        rating: 5,
-        text: "Exceptional service! The Mercedes S-Class was impeccable and delivered on time. I highly recommend AB FAST CAR for any luxury rental.",
-      },
-      {
-        name: "Sarah Bennani",
-        role: "Architect",
-        image: "https://i.pravatar.cc/150?img=45",
-        rating: 5,
-        text: "I rented a BMW for an important event. The service was professional, the vehicle perfect. A 5-star experience from start to finish.",
-      },
-      {
-        name: "Karim Idrissi",
-        role: "Marketing Director",
-        image: "https://i.pravatar.cc/150?img=33",
-        rating: 5,
-        text: "Excellent value for money. The team is very responsive and the cars are magnificent. It's become my first choice for prestige rentals.",
-      },
-      {
-        name: "Fatima Zahrae",
-        role: "Consultant",
-        image: "https://i.pravatar.cc/150?img=47",
-        rating: 5,
-        text: "Impeccable service and luxurious vehicles. Free delivery anywhere in Morocco is a huge plus. I've been a loyal customer for 2 years.",
-      },
-      {
-        name: "Youssef El Amrani",
-        role: "Investor",
-        image: "https://i.pravatar.cc/150?img=15",
-        rating: 5,
-        text: "The best rental agency in Rabat. I've rented several vehicles and each time it was perfect. Professional team and impeccable cars.",
-      },
-      {
-        name: "Amina Tazi",
-        role: "Lawyer",
-        image: "https://i.pravatar.cc/150?img=26",
-        rating: 5,
-        text: "An exceptional experience! The Range Rover was in perfect condition and customer service was top-notch. I recommend 100%.",
-      },
-    ],
-  },
+type Testimonial = {
+  name: string
+  role: string
+  image: string
+  rating: number
+  text: string
 }
 
-export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function TestimonialsSection() {
+  const t = useTranslations("testimonials")
+  const testimonials = t.raw("testimonials") as Testimonial[]
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
@@ -216,14 +125,14 @@ export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="float-sparkle h-10 w-10 text-yellow-400" />
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
-                <span className="text-white">{t.title} </span>
-                <span className="shimmer-text">{t.titleGradient}</span>
+                <span className="text-white">{t("title")} </span>
+                <span className="shimmer-text">{t("titleGradient")}</span>
               </h2>
               <Sparkles className="float-sparkle h-10 w-10 text-yellow-400" style={{animationDelay: '1s'}} />
             </div>
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-xl text-zinc-400 font-light italic">{t.subtitle}</p>
+              <p className="text-xl text-zinc-400 font-light italic">{t("subtitle")}</p>
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
 
@@ -245,7 +154,7 @@ export function TestimonialsSection({ language }: { language: "fr" | "en" }) {
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
                 className="testimonial-card group bg-gradient-to-br from-zinc-900/90 to-black/90 backdrop-blur-xl border-2 border-zinc-800 hover:border-yellow-400/50 rounded-3xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/20 cursor-pointer"

@@ -2,19 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
-
-const translations = {
-  fr: {
-    title: "NOS MARQUES",
-    titleHighlight: "PREMIUM",
-    subtitle: "Les plus grandes marques automobiles à votre service",
-  },
-  en: {
-    title: "OUR",
-    titleHighlight: "PREMIUM BRANDS",
-    subtitle: "The world's leading automotive brands at your service",
-  },
-}
+import { useTranslations } from "next-intl"
 
 const brands = [
   { 
@@ -55,8 +43,8 @@ const brands = [
   },
 ]
 
-export function BrandsSection({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function BrandsSection() {
+  const t = useTranslations("brands")
   const [currentIndex, setCurrentIndex] = useState(0)
   const brandsPerPage = 6
   const totalPages = Math.ceil(brands.length / brandsPerPage)
@@ -164,14 +152,14 @@ export function BrandsSection({ language }: { language: "fr" | "en" }) {
             <div className="flex items-center justify-center gap-4 mb-6">
               <Sparkles className="sparkle-icon h-8 w-8 text-yellow-400" />
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
-                <span className="text-white">{t.title} </span>
-                <span className="shimmer-text">{t.titleHighlight}</span>
+                <span className="text-white">{t("title")} </span>
+                <span className="shimmer-text">{t("titleHighlight")}</span>
               </h2>
               <Sparkles className="sparkle-icon h-8 w-8 text-yellow-400" style={{animationDelay: '1s'}} />
             </div>
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-zinc-400 text-xl font-light italic">{t.subtitle}</p>
+              <p className="text-zinc-400 text-xl font-light italic">{t("subtitle")}</p>
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
             </div>
           </div>

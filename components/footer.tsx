@@ -1,38 +1,10 @@
 "use client"
 
 import { Instagram, Facebook, Mail, Phone, MapPin, Clock, Award, Sparkles } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-const translations = {
-  fr: {
-    company: "AB FAST CAR",
-    tagline: "Location de voitures de luxe au Maroc",
-    description: "Votre partenaire de confiance pour une expérience de conduite exceptionnelle",
-    rights: "Tous droits réservés.",
-    terms: "Conditions",
-    privacy: "Confidentialité",
-    phone: "+212 601 66 66 65",
-    email: "Abfastcar@gmail.com",
-    address: "Rabat, Maroc",
-    hours: "Disponible 24/7",
-    quality: "Service Premium Garanti",
-  },
-  en: {
-    company: "AB FAST CAR",
-    tagline: "Luxury car rental in Morocco",
-    description: "Your trusted partner for an exceptional driving experience",
-    rights: "All rights reserved.",
-    terms: "Terms",
-    privacy: "Privacy",
-    phone: "+212 601 66 66 65",
-    email: "Abfastcar@gmail.com",
-    address: "Rabat, Morocco",
-    hours: "Available 24/7",
-    quality: "Premium Service Guaranteed",
-  },
-}
-
-export function Footer({ language }: { language: "fr" | "en" }) {
-  const t = translations[language]
+export function Footer() {
+  const t = useTranslations("footer")
 
   return (
     <>
@@ -102,18 +74,18 @@ export function Footer({ language }: { language: "fr" | "en" }) {
               <div className="mb-6">
                 <h3 className="text-4xl font-black mb-2">
                   <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
-                    {t.company.split(" ")[0]} {t.company.split(" ")[1]}
+                    {t("company").split(" ")[0]} {t("company").split(" ")[1]}
                   </span>{" "}
-                  <span className="text-white">{t.company.split(" ")[2]}</span>
+                  <span className="text-white">{t("company").split(" ")[2]}</span>
                 </h3>
-                <p className="text-yellow-400 text-lg font-semibold mb-3">{t.tagline}</p>
-                <p className="text-zinc-400 leading-relaxed max-w-md">{t.description}</p>
+                <p className="text-yellow-400 text-lg font-semibold mb-3">{t("tagline")}</p>
+                <p className="text-zinc-400 leading-relaxed max-w-md">{t("description")}</p>
               </div>
 
               {/* Quality Badge */}
               <div className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400/10 to-amber-500/10 border-2 border-yellow-400/30 rounded-full px-6 py-3 backdrop-blur-sm">
                 <Award className="h-6 w-6 text-yellow-400" />
-                <span className="text-white font-bold">{t.quality}</span>
+                <span className="text-white font-bold">{t("quality")}</span>
               </div>
             </div>
 
@@ -125,34 +97,34 @@ export function Footer({ language }: { language: "fr" | "en" }) {
               </h4>
               <div className="space-y-4">
                 <a
-                  href={`tel:${t.phone}`}
+                  href={`tel:${t("phone")}`}
                   className="flex items-center gap-3 text-zinc-400 hover:text-yellow-400 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400/20 transition-colors">
                     <Phone className="h-5 w-5" />
                   </div>
-                  <span className="text-sm">{t.phone}</span>
+                  <span className="text-sm">{t("phone")}</span>
                 </a>
                 <a
-                  href={`mailto:${t.email}`}
+                  href={`mailto:${t("email")}`}
                   className="flex items-center gap-3 text-zinc-400 hover:text-yellow-400 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400/20 transition-colors">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="text-sm">{t.email}</span>
+                  <span className="text-sm">{t("email")}</span>
                 </a>
                 <div className="flex items-center gap-3 text-zinc-400">
                   <div className="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="text-sm">{t.address}</span>
+                  <span className="text-sm">{t("address")}</span>
                 </div>
                 <div className="flex items-center gap-3 text-zinc-400">
                   <div className="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center">
                     <Clock className="h-5 w-5" />
                   </div>
-                  <span className="text-sm">{t.hours}</span>
+                  <span className="text-sm">{t("hours")}</span>
                 </div>
               </div>
             </div>
@@ -198,7 +170,7 @@ export function Footer({ language }: { language: "fr" | "en" }) {
                   </div>
                 </a>
                 <a
-                  href={`mailto:${t.email}`}
+                  href={`mailto:${t("email")}`}
                   className="social-icon group"
                 >
                   <div className="relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 hover:scale-110 transition-all duration-300">
@@ -217,21 +189,21 @@ export function Footer({ language }: { language: "fr" | "en" }) {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
                 <p className="text-zinc-400 text-sm">
-                  © 2025 <span className="text-yellow-400 font-semibold">{t.company}</span>. {t.rights}
+                  © 2025 <span className="text-yellow-400 font-semibold">{t("company")}</span>. {t("rights")}
                 </p>
               </div>
 
               {/* Links */}
               <div className="flex flex-wrap gap-6 text-sm">
                 <a href="#" className="inline-flex items-center min-h-[24px] py-1 text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
-                  {t.terms}
+                  {t("terms")}
                 </a>
                 <span className="text-zinc-700">•</span>
                 <a href="#" className="inline-flex items-center min-h-[24px] py-1 text-zinc-400 hover:text-yellow-400 transition-colors font-medium">
-                  {t.privacy}
+                  {t("privacy")}
                 </a>
                 <span className="text-zinc-700">•</span>
-                <span className="text-zinc-500">{t.phone}</span>
+                <span className="text-zinc-500">{t("phone")}</span>
               </div>
             </div>
 
