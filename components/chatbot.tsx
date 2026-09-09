@@ -26,6 +26,19 @@ export function Chatbot() {
     scrollToBottom()
   }, [messages])
 
+  // Switching market changes the language and the currency, so an existing
+  // transcript would be a mix of both. Start the conversation over in the
+  // newly selected language instead of leaving stale replies on screen.
+  const firstRender = useRef(true)
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    setMessages((prev) => (prev.length ? [{ text: t("greeting"), isBot: true }] : prev))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [market.code])
+
   const handleSend = () => {
     if (!input.trim()) return
 
