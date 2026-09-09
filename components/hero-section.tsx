@@ -48,18 +48,18 @@ const translations = {
 const FEATURE_ICONS = [Infinity, PlaneTakeoff, LayoutGrid, UserCheck, Headphones]
 
 const carImages = [
-  "/WHITECLAA.jpeg",
-  "/A3.jpeg",
-  "/cupraa.jpeg",
-  "/G63FULLBLACK.jpeg",
-  "/rangerover.jpeg",
-  "/porchecayyene.jpeg",
-  "/Q8.jpeg",
-  "/whiterange.jpeg",
-  "/CLAA.jpeg",
-  "/touareg.jpeg",
-  "/touareginside.jpeg",
-  "/cupra2025.jpeg",
+  { src: "/abfastcar/lamborghini-urus.jpg", name: "Lamborghini Urus", tag: "Super SUV" },
+  { src: "/abfastcar/mercedes-g63.jpg", name: "Mercedes G63", tag: "Ultra Luxe" },
+  { src: "/abfastcar/range-rover-sport.jpg", name: "Range Rover Sport", tag: "Prestige" },
+  { src: "/abfastcar/mercedes-e-class-w214.jpg", name: "Mercedes Classe E", tag: "Berline Luxe" },
+  { src: "/abfastcar/porsche-cayenne.jpg", name: "Porsche Cayenne", tag: "Sport SUV" },
+  { src: "/abfastcar/porsche-macan-t.jpg", name: "Porsche Macan T", tag: "Sport SUV" },
+  { src: "/abfastcar/volkswagen-touareg.jpg", name: "Volkswagen Touareg", tag: "SUV Luxe" },
+  { src: "/abfastcar/mercedes-amg-cla-45-s.jpg", name: "Mercedes-AMG CLA 45 S", tag: "Berline Sport" },
+  { src: "/abfastcar/range-rover-evoque.jpg", name: "Range Rover Evoque", tag: "SUV Compact" },
+  { src: "/abfastcar/audi-a3-s-line.jpg", name: "Audi A3 S-Line", tag: "Berline Sport" },
+  { src: "/abfastcar/mercedes-classe-a-pack-amg.jpg", name: "Mercedes Classe A", tag: "Berline Sport" },
+  { src: "/abfastcar/cupra-formentor.jpg", name: "Cupra Formentor", tag: "SUV Sport" },
 ]
 
 export function HeroSection({ language }: { language: "fr" | "en" }) {
@@ -68,7 +68,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    carImages.forEach((src) => {
+    carImages.forEach(({ src }) => {
       const img = new Image()
       img.src = src
     })
@@ -78,7 +78,7 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carImages.length)
-    }, 2000)
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
@@ -111,11 +111,114 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           animation-delay: 0s, 1.2s;
         }
 
-        /* ── SLOGAN ── */
-        @keyframes sloganIn {
-          from { opacity: 0; letter-spacing: 0.35em; }
-          to   { opacity: 1; letter-spacing: 0.22em; }
+        /* ── STAGGERED ENTRANCE ── */
+        .pre-rise { opacity: 0; }
+        @keyframes rise {
+          from { opacity: 0; transform: translateY(26px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
+        .rise { opacity: 0; animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .rise-1 { animation-delay: 0.05s; }
+        .rise-2 { animation-delay: 0.18s; }
+        .rise-3 { animation-delay: 0.30s; }
+        .rise-4 { animation-delay: 0.44s; }
+        .rise-5 { animation-delay: 0.58s; }
+        .rise-6 { animation-delay: 0.72s; }
+
+        /* ── SHOWCASE PANEL ── */
+        @keyframes showcaseIn {
+          from { opacity: 0; transform: translateY(40px) scale(0.94); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .showcase-in {
+          opacity: 0;
+          animation: showcaseIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+        }
+        @keyframes showcaseFloat {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-14px); }
+        }
+        .showcase-float { animation: showcaseFloat 6s ease-in-out infinite; }
+        .showcase-frame::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 28px;
+          box-shadow: inset 0 0 60px rgba(0,0,0,0.55);
+          pointer-events: none;
+        }
+
+        /* Light sweep across the frame */
+        @keyframes sheen {
+          0%   { transform: translateX(-130%) skewX(-18deg); }
+          55%  { transform: translateX(130%)  skewX(-18deg); }
+          100% { transform: translateX(130%)  skewX(-18deg); }
+        }
+        .showcase-sheen {
+          position: absolute;
+          top: 0; bottom: 0; left: 0;
+          width: 55%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+          animation: sheen 5.5s ease-in-out infinite;
+          z-index: 2;
+        }
+
+        /* Car name swap */
+        @keyframes labelIn {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .label-in { animation: labelIn 0.7s ease-out both; }
+
+        /* CTA breathing glow */
+        @keyframes ctaPulse {
+          0%, 100% { box-shadow: 0 0 30px rgba(250,204,21,0.35); }
+          50%      { box-shadow: 0 0 52px rgba(250,204,21,0.72); }
+        }
+        .cta-pulse { animation: ctaPulse 3.2s ease-in-out infinite; }
+
+        /* ── AMBIENT BACKDROP ── */
+        .hero-blob {
+          position: absolute;
+          width: 46vw; height: 46vw;
+          max-width: 620px; max-height: 620px;
+          border-radius: 9999px;
+          filter: blur(90px);
+          pointer-events: none;
+        }
+        .hero-blob-a {
+          top: -12%; left: -10%;
+          background: rgba(250,204,21,0.16);
+          animation: blobDrift 17s ease-in-out infinite;
+        }
+        .hero-blob-b {
+          bottom: -18%; right: -8%;
+          background: rgba(245,158,11,0.13);
+          animation: blobDrift 21s ease-in-out infinite reverse;
+        }
+        @keyframes blobDrift {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50%      { transform: translate(60px, -45px) scale(1.15); }
+        }
+        .hero-grid {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px);
+          background-size: 64px 64px;
+          mask-image: radial-gradient(ellipse at 50% 40%, black 10%, transparent 72%);
+          -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 10%, transparent 72%);
+        }
+
+        /* Respect reduced-motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+          .rise, .showcase-in { animation-duration: 0.01ms; animation-delay: 0s; opacity: 1; }
+          .showcase-float, .showcase-sheen, .cta-pulse, .hero-blob { animation: none; }
+        }
+
+        /* ── SLOGAN ── */
         .hero-slogan {
           font-family: 'Montserrat', sans-serif;
           font-size: 13px;
@@ -123,10 +226,8 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
           letter-spacing: 0.22em;
           text-transform: uppercase;
           color: #f5c518;
-          animation: sloganIn 1s ease-out forwards;
           display: flex;
           align-items: center;
-          justify-content: center;
           gap: 12px;
         }
         .hero-slogan::before,
@@ -304,79 +405,153 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
       {/* ═══════════════════════════════════════
           HERO
       ═══════════════════════════════════════ */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-        {/* Background Slideshow */}
-        <div className="absolute inset-0 z-0">
-          {carImages.map((image, index) => (
+      <section id="home" className="relative min-h-screen overflow-hidden pt-28 pb-20 lg:pt-32">
+        {/* ── Ambient backdrop: the current car, blurred far out of focus ── */}
+        <div className="absolute inset-0 z-0 bg-black">
+          {carImages.map((car, index) => (
             <div
-              key={image}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              key={car.src}
+              className={`absolute inset-0 transition-opacity duration-[1600ms] ease-in-out ${
                 index === currentImageIndex ? "opacity-100" : "opacity-0"
               }`}
             >
-              <img src={image} alt={`Car ${index + 1}`} className="w-full h-full object-cover" />
+              <img
+                src={car.src}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover scale-125 blur-3xl opacity-40"
+              />
             </div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black" />
+          {/* Slow-drifting colour blobs */}
+          <div className="hero-blob hero-blob-a" />
+          <div className="hero-blob hero-blob-b" />
+          {/* Fine grid texture */}
+          <div className="hero-grid" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-          <div className="space-y-12">
-            {/* Main Title */}
-            <div className="space-y-4">
-              {/* Slogan */}
-              <div className="hero-slogan mb-6">{t.slogan}</div>
+        {/* ── Content ── */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center min-h-[calc(100vh-13rem)]">
 
-              <h1 className="hero-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter">
-                <span className="block bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+            {/* LEFT — copy */}
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className={`hero-slogan justify-center lg:justify-start mb-7 ${isLoaded ? "rise rise-1" : "pre-rise"}`}>
+                {t.slogan}
+              </div>
+
+              <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.95]">
+                <span className={`block bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent ${isLoaded ? "rise rise-2" : "pre-rise"}`}>
                   {t.title1}
                 </span>
-                <span className="block text-white mt-2">{t.title2}</span>
+                <span className={`block text-white mt-2 ${isLoaded ? "rise rise-3" : "pre-rise"}`}>
+                  {t.title2}
+                </span>
               </h1>
 
-              <div className={`flex items-center justify-center gap-4 pt-4 ${isLoaded ? "subtitle-animate" : "opacity-0"}`}>
-                <div className="h-px w-16 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-                <p className="hero-subtitle text-xl md:text-2xl text-gray-300 font-light max-w-3xl italic">
+              <div className={`flex items-center justify-center lg:justify-start gap-4 pt-7 ${isLoaded ? "rise rise-4" : "pre-rise"}`}>
+                <div className="h-px w-12 shrink-0 bg-gradient-to-r from-transparent via-yellow-400 to-yellow-400 hidden lg:block" />
+                <p className="hero-subtitle text-lg md:text-xl text-gray-300 font-light max-w-xl italic">
                   {t.subtitle}
                 </p>
-                <div className="h-px w-16 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+              </div>
+
+              {/* CTAs */}
+              <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-10 ${isLoaded ? "rise rise-5" : "pre-rise"}`}>
+                <Button
+                  onClick={openWhatsApp}
+                  size="lg"
+                  className="cta-pulse w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-black text-base px-10 py-7 rounded-full shadow-[0_0_35px_rgba(250,204,21,0.45)] transition-all duration-300 hover:scale-105"
+                >
+                  <Phone className="mr-3 h-5 w-5" />
+                  {t.cta}
+                </Button>
+
+                <Button
+                  onClick={scrollToFleet}
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto font-bold text-base px-10 py-7 rounded-full border-2 border-white/40 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 hover:scale-105"
+                >
+                  {t.secondary}
+                </Button>
+              </div>
+
+              {/* Socials */}
+              <div className={`flex gap-4 justify-center lg:justify-start items-center pt-10 ${isLoaded ? "rise rise-6" : "pre-rise"}`}>
+                <a href="https://www.instagram.com/abfastcar/" target="_blank" rel="noopener noreferrer" className="group" aria-label="Instagram">
+                  <div className="w-12 h-12 rounded-full border border-white/25 flex items-center justify-center hover:border-yellow-400 hover:bg-yellow-400/10 hover:scale-110 transition-all duration-300">
+                    <Instagram className="h-5 w-5 text-white group-hover:text-yellow-400 transition-colors" />
+                  </div>
+                </a>
+                <a href="https://facebook.com/abfastcar" target="_blank" rel="noopener noreferrer" className="group" aria-label="Facebook">
+                  <div className="w-12 h-12 rounded-full border border-white/25 flex items-center justify-center hover:border-yellow-400 hover:bg-yellow-400/10 hover:scale-110 transition-all duration-300">
+                    <Facebook className="h-5 w-5 text-white group-hover:text-yellow-400 transition-colors" />
+                  </div>
+                </a>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
-              <Button
-                onClick={openWhatsApp}
-                size="lg"
-                className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-16 py-8 rounded-full shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:shadow-[0_0_50px_rgba(250,204,21,0.8)] transition-all duration-300 hover:scale-105"
-              >
-                <Phone className="mr-3 h-6 w-6" />
-                {t.cta}
-              </Button>
+            {/* RIGHT — the car, shown uncropped */}
+            <div className={`order-1 lg:order-2 ${isLoaded ? "showcase-in" : "pre-rise"}`}>
+              <div className="showcase-float relative mx-auto w-full max-w-[380px] lg:max-w-[460px]">
+                {/* Glow behind the frame */}
+                <div className="absolute -inset-6 bg-gradient-to-tr from-yellow-500/25 via-amber-400/10 to-transparent blur-3xl rounded-full pointer-events-none" />
 
-              <Button
-                onClick={scrollToFleet}
-                size="lg"
-                variant="outline"
-                className="font-semibold text-lg px-16 py-8 rounded-full border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
-              >
-                {t.secondary}
-              </Button>
-            </div>
+                <div className="showcase-frame relative aspect-[4/5] rounded-[28px] overflow-hidden border border-yellow-400/25 bg-black shadow-[0_35px_80px_-15px_rgba(0,0,0,0.9)]">
+                  {carImages.map((car, index) => (
+                    <img
+                      key={car.src}
+                      src={car.src}
+                      alt={car.name}
+                      className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[1600ms] ease-out ${
+                        index === currentImageIndex
+                          ? "opacity-100 scale-105"
+                          : "opacity-0 scale-100"
+                      }`}
+                    />
+                  ))}
 
-            {/* Social Links */}
-            <div className="flex gap-6 justify-center items-center pt-8">
-              <a href="https://www.instagram.com/abfastcar/" target="_blank" rel="noopener noreferrer" className="group">
-                <div className="w-14 h-14 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-yellow-400 hover:bg-yellow-400/10 transition-all duration-300">
-                  <Instagram className="h-6 w-6 text-white group-hover:text-yellow-400 transition-colors" />
+                  {/* Light sweep across the glass */}
+                  <div className="showcase-sheen pointer-events-none" />
+
+                  {/* Bottom label */}
+                  <div className="absolute inset-x-0 bottom-0 pointer-events-none">
+                    <div className="h-28 bg-gradient-to-t from-black via-black/75 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <div key={currentImageIndex} className="label-in">
+                        <div className="text-[10px] font-bold tracking-[0.22em] uppercase text-yellow-400 mb-1">
+                          {carImages[currentImageIndex].tag}
+                        </div>
+                        <div className="text-white text-lg md:text-xl font-black leading-tight">
+                          {carImages[currentImageIndex].name}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Corner accents */}
+                  <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-yellow-400/70 rounded-tl-lg pointer-events-none" />
+                  <div className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-yellow-400/70 rounded-tr-lg pointer-events-none" />
                 </div>
-              </a>
-              <a href="https://facebook.com/abfastcar" target="_blank" rel="noopener noreferrer" className="group">
-                <div className="w-14 h-14 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-yellow-400 hover:bg-yellow-400/10 transition-all duration-300">
-                  <Facebook className="h-6 w-6 text-white group-hover:text-yellow-400 transition-colors" />
+
+                {/* Progress dots */}
+                <div className="flex flex-wrap gap-2 justify-center mt-6">
+                  {carImages.map((car, index) => (
+                    <button
+                      key={car.src}
+                      onClick={() => setCurrentImageIndex(index)}
+                      aria-label={car.name}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        index === currentImageIndex
+                          ? "w-8 bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.8)]"
+                          : "w-1.5 bg-white/25 hover:bg-white/60"
+                      }`}
+                    />
+                  ))}
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -384,7 +559,8 @@ export function HeroSection({ language }: { language: "fr" | "en" }) {
         {/* Scroll Down */}
         <button
           onClick={scrollToFleet}
-          className="absolute bottom-8 right-8 z-20 text-white/60 hover:text-yellow-400 transition-all duration-300 animate-bounce"
+          aria-label={t.secondary}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white/50 hover:text-yellow-400 transition-all duration-300 animate-bounce"
         >
           <ChevronDown className="h-8 w-8" />
         </button>
