@@ -15,7 +15,7 @@ const carImages = [
   { src: "/abfastcar/porsche-cayenne.jpg", name: "Porsche Cayenne", tag: "Sport SUV" },
   { src: "/abfastcar/porsche-macan-t.jpg", name: "Porsche Macan T", tag: "Sport SUV" },
   { src: "/abfastcar/volkswagen-touareg.jpg", name: "Volkswagen Touareg", tag: "SUV Luxe" },
-  { src: "/abfastcar/mercedes-amg-cla-45-s.jpg", name: "Mercedes-AMG CLA 45 S", tag: "Berline Sport" },
+  { src: "/abfastcar/mercedes-amg-cla-45-s.jpg", name: "Mercedes CLA Pack AMG Line Plus", tag: "Berline Sport" },
   { src: "/abfastcar/range-rover-evoque.jpg", name: "Range Rover Evoque", tag: "SUV Compact" },
   { src: "/abfastcar/audi-a3-s-line.jpg", name: "Audi A3 S-Line", tag: "Berline Sport" },
   { src: "/abfastcar/mercedes-classe-a-pack-amg.jpg", name: "Mercedes Classe A", tag: "Berline Sport" },

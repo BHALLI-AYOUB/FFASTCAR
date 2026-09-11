@@ -11,7 +11,7 @@ const galleryImages = [
   { url: "/abfastcar/porsche-cayenne.jpg", alt: "Porsche Cayenne" },
   { url: "/abfastcar/mercedes-e-class-w214.jpg", alt: "Mercedes-Benz E-Class W214" },
   { url: "/abfastcar/porsche-macan-t.jpg", alt: "Porsche Macan T 2025" },
-  { url: "/abfastcar/mercedes-amg-cla-45-s.jpg", alt: "Mercedes-AMG CLA 45 S 4MATIC+" },
+  { url: "/abfastcar/mercedes-amg-cla-45-s.jpg", alt: "Mercedes CLA Pack AMG Line Plus" },
   { url: "/abfastcar/volkswagen-touareg.jpg", alt: "Volkswagen Touareg" },
   { url: "/abfastcar/range-rover-evoque.jpg", alt: "Range Rover Evoque Dynamic SE 2025" },
   { url: "/abfastcar/audi-a3-s-line.jpg", alt: "Audi A3 S-Line Berline" },
