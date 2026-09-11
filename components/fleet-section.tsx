@@ -130,7 +130,7 @@ const VEHICLES: Vehicle[] = [
     },
   },
   {
-    name: "Mercedes-AMG CLA 45 S 4MATIC+",
+    name: "Mercedes CLA Pack AMG Line Plus",
     image: "/abfastcar/mercedes-amg-cla-45-s.jpg",
     year: "2025",
     price: 1300,
@@ -166,7 +166,7 @@ const VEHICLES: Vehicle[] = [
     },
   },
   {
-    name: "Hyundai Sonata facelift (DN8)",
+    name: "Hyundai Accent",
     image: "/abfastcar/hyundai-sonata.jpg",
     year: "2025",
     price: 1200,

@@ -28,6 +28,7 @@ export type Market = {
 
 export const MARKETS: Market[] = [
   { code: "ma", flag: "🇲🇦", label: "Maroc", locale: "fr", intlLocale: "fr-MA", currency: "MAD", rate: 1 },
+  { code: "fr", flag: "🇫🇷", label: "France", locale: "fr", intlLocale: "fr-FR", currency: "EUR", rate: 0.092 },
   { code: "be", flag: "🇧🇪", label: "Belgique", locale: "fr", intlLocale: "fr-BE", currency: "EUR", rate: 0.092 },
   { code: "gb", flag: "🇬🇧", label: "United Kingdom", locale: "en", intlLocale: "en-GB", currency: "GBP", rate: 0.079 },
   { code: "nl", flag: "🇳🇱", label: "Nederland", locale: "nl", intlLocale: "nl-NL", currency: "EUR", rate: 0.092 },
