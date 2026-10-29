@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { createContext, useCallback, useContext, useRef, useState } from "react"
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react"
 
 /**
  * Opens the video player. The player (components/video-player-dialog.tsx) is
@@ -19,6 +19,12 @@ export type PlayableVideo = {
 }
 
 export type PlayerLabels = { close: string; loading: string; error: string; retry: string }
+
+/**
+ * Window event fired when the player with sound opens (detail: true) or
+ * closes (false), so the muted card previews pause meanwhile.
+ */
+export const PLAYER_EVENT = "abfc-player"
 
 type PlayerModule = typeof import("@/components/video-player-dialog")
 
@@ -38,6 +44,10 @@ export function VideoPlayerProvider({ labels, children }: { labels: PlayerLabels
   const [failed, setFailed] = useState<{ video: PlayableVideo; trigger: HTMLElement } | null>(null)
   const [loading, setLoading] = useState(false)
   const pending = useRef(0)
+
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent(PLAYER_EVENT, { detail: open !== null }))
+  }, [open])
 
   const play = useCallback((video: PlayableVideo, trigger: HTMLElement) => {
     const request = ++pending.current

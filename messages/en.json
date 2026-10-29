@@ -253,7 +253,9 @@
     "loading": "Loading video…",
     "error": "The video could not be played. Check your connection and try again.",
     "retry": "Try again",
-    "cta": "Choose a vehicle"
+    "cta": "Choose a vehicle",
+    "preview": "Muted preview",
+    "watchWithSound": "Watch with sound"
   },
   "conditions": {
     "contents": "Contents",

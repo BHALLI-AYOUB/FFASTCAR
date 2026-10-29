@@ -253,7 +253,9 @@
     "loading": "Video laden…",
     "error": "De video kon niet worden afgespeeld. Controleer uw verbinding en probeer het opnieuw.",
     "retry": "Opnieuw proberen",
-    "cta": "Kies een voertuig"
+    "cta": "Kies een voertuig",
+    "preview": "Voorbeeld zonder geluid",
+    "watchWithSound": "Bekijk met geluid"
   },
   "conditions": {
     "contents": "Inhoud",
