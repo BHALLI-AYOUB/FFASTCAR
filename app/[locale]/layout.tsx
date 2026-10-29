@@ -20,11 +20,11 @@ import { THEME_STORAGE_KEY } from "@/lib/theme"
 
 /**
  * Message namespaces used by client components (navigation, language and
- * currency switcher, booking dialog/form, prices, mobile bar). Server
+ * currency switcher, booking dialog/form, prices). Server
  * components read their texts on the server, so the rest of the catalogue
  * (about, FAQ, meta…) is not shipped to the browser.
  */
-const CLIENT_NAMESPACES = ["common", "navigation", "switcher", "booking", "mobileBar"] as const
+const CLIENT_NAMESPACES = ["common", "navigation", "switcher", "booking"] as const
 
 /**
  * Applies a saved light theme before the first paint (no dark flash); dark

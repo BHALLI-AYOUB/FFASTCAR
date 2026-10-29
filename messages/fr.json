@@ -253,7 +253,9 @@
     "loading": "Chargement de la vidéo…",
     "error": "La vidéo n’a pas pu être lue. Vérifiez votre connexion, puis réessayez.",
     "retry": "Réessayer",
-    "cta": "Choisir un véhicule"
+    "cta": "Choisir un véhicule",
+    "preview": "Aperçu sans son",
+    "watchWithSound": "Regarder avec le son"
   },
   "conditions": {
     "contents": "Sommaire",

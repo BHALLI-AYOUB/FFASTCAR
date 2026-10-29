@@ -6,6 +6,7 @@ import { getSiteContent } from "@/lib/content"
 import { BookButton } from "@/components/book-button"
 import { SectionHeading } from "@/components/section-heading"
 import { VideoPlayButton, VideoPlayerProvider } from "@/components/video-launcher"
+import { VideoPreview } from "@/components/video-preview"
 
 /**
  * "L'univers AB FAST CAR": the client's videos, after the fleet and before
@@ -35,6 +36,9 @@ export async function VideoSection() {
             {videos.map((video) => {
               // The picture without baked-in black bars: the cover is cropped to it.
               const ratio = video.pictureAspect ?? video.width / video.height
+              // Stacked cards (below lg) are full width: a very wide film would be a
+              // thin strip, so it is cropped to 16:10 there.
+              const stackedRatio = Math.min(ratio, 1.6)
               const title = video.title[locale as Locale]
               const caption = video.caption[locale as Locale]
               return (
@@ -43,37 +47,44 @@ export async function VideoSection() {
                   className="min-w-0 basis-full lg:basis-[calc(var(--ratio)*18rem)] lg:grow-[var(--ratio)]"
                   style={{ "--ratio": ratio, maxWidth: `calc(${ratio} * min(70svh, 34rem))` } as React.CSSProperties}
                 >
-                  <figure>
-                    <div
-                      data-theme="dark"
-                      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 sm:rounded-3xl"
-                      style={{ aspectRatio: ratio }}
-                    >
-                      <img
-                        src={video.poster}
-                        alt=""
-                        width={video.width}
-                        height={video.height}
-                        loading="lazy"
-                        decoding="async"
-                        className="absolute inset-0 h-full w-full object-cover"
-                      />
-                      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                      <VideoPlayButton
-                        video={{ id: video.id, title, src: video.src, srcSmall: video.srcSmall, width: video.width, height: video.height }}
-                        label={t("play", { title })}
-                        className="absolute inset-0 flex items-center justify-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-white"
-                      >
-                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-lg transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none sm:h-20 sm:w-20">
-                          <Play aria-hidden="true" className="h-7 w-7 translate-x-0.5 fill-current rtl:-translate-x-0.5 rtl:-scale-x-100 sm:h-8 sm:w-8" />
-                        </span>
-                      </VideoPlayButton>
+                  {/* The card: cover, then a muted preview that plays while the card is
+                      on screen; a click opens the player with sound. */}
+                  <div
+                    data-theme="dark"
+                    className="group @container relative aspect-(--stacked-ratio) overflow-hidden rounded-3xl border border-white/10 bg-zinc-900 shadow-2xl shadow-black/40 ring-white/30 transition-shadow hover:ring-1 lg:aspect-(--ratio)"
+                    style={{ "--stacked-ratio": stackedRatio } as React.CSSProperties}
+                  >
+                    <img
+                      src={video.poster}
+                      alt=""
+                      width={video.width}
+                      height={video.height}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <VideoPreview src={video.src} srcSmall={video.srcSmall} label={t("preview")} />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
+
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:p-6">
+                      <h3 className="text-lg font-black text-white sm:text-2xl">{title}</h3>
+                      {caption && <p className="mt-1 max-w-md text-sm leading-relaxed text-zinc-300">{caption}</p>}
                     </div>
-                    <figcaption className="mt-4 px-1">
-                      <h3 className="text-lg font-black text-white sm:text-xl">{title}</h3>
-                      {caption && <p className="mt-1 text-sm leading-relaxed text-zinc-400 sm:text-base">{caption}</p>}
-                    </figcaption>
-                  </figure>
+
+                    <VideoPlayButton
+                      video={{ id: video.id, title, src: video.src, srcSmall: video.srcSmall, width: video.width, height: video.height }}
+                      label={t("play", { title })}
+                      className="absolute inset-0 flex items-center justify-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-white"
+                    >
+                      <span className="inline-flex min-h-12 items-center gap-2 rounded-full bg-white/95 px-2 @[16rem]:px-4 text-sm font-bold text-black shadow-xl shadow-black/40 transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none sm:px-5">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
+                          <Play aria-hidden="true" className="h-4 w-4 translate-x-px fill-current rtl:-translate-x-px rtl:-scale-x-100" />
+                        </span>
+                        {/* Narrow (portrait) cards keep only the round play icon. */}
+                        <span className="hidden pe-1 @[16rem]:inline">{t("watchWithSound")}</span>
+                      </span>
+                    </VideoPlayButton>
+                  </div>
                 </li>
               )
             })}

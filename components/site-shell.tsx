@@ -6,7 +6,6 @@ import { getPublicContent } from "@/lib/content"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { MobileBookBar } from "@/components/mobile-book-bar"
 import { BookingProvider } from "@/components/booking-provider"
 import { BookingDialog } from "@/components/booking-dialog"
 
@@ -16,8 +15,7 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
 
   return (
     <BookingProvider>
-      {/* pb reserves the height of the mobile booking bar. */}
-      <div className="relative min-h-screen bg-background pb-[calc(4.5rem+env(safe-area-inset-bottom))] lg:pb-0">
+      <div className="relative min-h-screen bg-background">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-5 focus:py-3 focus:font-bold focus:text-black"
@@ -30,7 +28,6 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
         </main>
         <Footer contact={contact} />
         <WhatsAppButton />
-        <MobileBookBar />
       </div>
       <BookingDialog />
     </BookingProvider>
