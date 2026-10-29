@@ -1,0 +1,8 @@
+# Client video originals (≈166 MB): kept in public/ unmodified but never
+# deployed or served. The site plays the prepared copies in public/videos/.
+/public/*.MOV
+/public/*.mov
+# Delivery pack (duplicates public/videos and docs/client) and local reports.
+/abfastcar-client-integration
+/abfastcar-client-integration.zip
+/reports

@@ -1,0 +1,267 @@
+{
+  "common": {
+    "book": "Book",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "close": "Close",
+    "perDay": "/ day",
+    "skipToContent": "Skip to main content",
+    "indicative": "Indicative price converted from {mad}. Bookings are confirmed in Moroccan dirhams (MAD).",
+    "indicativeShort": "indicative",
+    "viewVehicle": "View the {name}",
+    "backToFleet": "Back to the fleet",
+    "opensInNewTab": "(opens in a new tab)"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "fleet": "Fleet",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "mainNav": "Main navigation",
+    "logoHome": "AB FAST CAR, back to home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
+  },
+  "switcher": {
+    "button": "Language, country and currency",
+    "country": "Country",
+    "language": "Language",
+    "currency": "Currency",
+    "currencies": {
+      "MAD": "Moroccan dirham (MAD)",
+      "EUR": "Euro (EUR)",
+      "GBP": "Pound sterling (GBP)"
+    },
+    "note": "Rates are set in Moroccan dirhams (MAD). EUR and GBP amounts are indicative (rates of {date})."
+  },
+  "hero": {
+    "slogan": "Select & Drive",
+    "title1": "Car rental",
+    "title2": "in Morocco",
+    "subtitle": "Premium service 24/7 — city cars, sedans, SUVs, family cars and luxury models.",
+    "cta": "Book",
+    "whatsapp": "Contact us on WhatsApp",
+    "scrollLabel": "Scroll down",
+    "carouselLabel": "Vehicles from the fleet",
+    "features": [
+      {
+        "label": "Mileage per contract",
+        "sub": "Terms before rental"
+      },
+      {
+        "label": "Airport delivery",
+        "sub": "Anywhere in Morocco"
+      },
+      {
+        "label": "Wide choice",
+        "sub": "City cars, sedans, SUVs"
+      },
+      {
+        "label": "Optional chauffeur",
+        "sub": "Personal service"
+      },
+      {
+        "label": "24/7 assistance",
+        "sub": "Always available"
+      }
+    ],
+    "pause": "Pause the slideshow",
+    "play": "Play the slideshow",
+    "videoPause": "Pause the video",
+    "videoPlay": "Play the video"
+  },
+  "brands": {
+    "title": "Our",
+    "titleHighlight": "brands",
+    "subtitle": "The car makers in our fleet"
+  },
+  "about": {
+    "subtitle": "About us",
+    "title": "AB FAST CAR",
+    "tagline": "Your partner for car rental in Morocco",
+    "description": "AB FAST CAR rents vehicles across Morocco from its base in Marrakech, with a varied fleet: city cars, sedans, SUVs, family cars and luxury models. We focus on personal customer service, 24/7 availability and professional handling, for a pleasant, safe driving experience suited to every need.",
+    "mission": "Our mission",
+    "missionText": "To provide a smooth, high-quality experience with vehicles for every budget and every occasion, whether you travel for personal, business or tourism reasons.",
+    "values": [
+      {
+        "title": "Trust",
+        "description": "Carefully maintained vehicles and published rates."
+      },
+      {
+        "title": "Choice",
+        "description": "A wide choice of cars for every occasion."
+      },
+      {
+        "title": "Availability",
+        "description": "24/7 service and delivery anywhere in Morocco."
+      },
+      {
+        "title": "Recent models",
+        "description": "Recent models, from city cars to luxury SUVs."
+      }
+    ]
+  },
+  "features": {
+    "title": "Our services",
+    "subtitle": "What comes with every rental",
+    "features": [
+      {
+        "title": "Optional chauffeur",
+        "description": "Professional, discreet drivers for business trips or private events."
+      },
+      {
+        "title": "Home delivery",
+        "description": "We deliver your vehicle to the address of your choice, anywhere in Morocco."
+      },
+      {
+        "title": "Recent cars",
+        "description": "A fleet of recent, carefully maintained vehicles."
+      },
+      {
+        "title": "24/7 assistance",
+        "description": "Our team can be reached day and night during your rental."
+      }
+    ]
+  },
+  "fleet": {
+    "eyebrow": "Our fleet",
+    "title": "Choose your vehicle",
+    "subtitle": "{count} vehicles, from city cars to luxury SUVs. Daily rates.",
+    "viewAll": "View the whole fleet"
+  },
+  "vehicle": {
+    "year": "Year",
+    "category": "Category",
+    "features": "Features",
+    "dailyRate": "Daily rate",
+    "intro": "{name} ({year}) for rent from AB FAST CAR in Marrakech, with delivery anywhere in Morocco.",
+    "bookTitle": "Book this vehicle",
+    "otherVehicles": "Other vehicles",
+    "breadcrumb": "Breadcrumb",
+    "gallery": "Photo gallery",
+    "galleryPhoto": "{name}, photo {n}"
+  },
+  "booking": {
+    "title": "Booking request",
+    "intro": "Fill in the form: your request opens in WhatsApp, ready to send to our team.",
+    "vehicle": "Vehicle",
+    "chooseVehicle": "Choose a vehicle",
+    "pickupDate": "Pick-up date",
+    "returnDate": "Return date",
+    "name": "Full name",
+    "phone": "WhatsApp number",
+    "countryCode": "Country code",
+    "phonePlaceholder": "7700 900123",
+    "required": "required",
+    "summary": "Summary",
+    "duration": "Duration",
+    "days": "{count, plural, one {# day} other {# days}}",
+    "pricePerDay": "Price per day",
+    "total": "Estimated total",
+    "totalNote": "Estimate only: our team confirms the final price.",
+    "submit": "Send my request on WhatsApp",
+    "errorSummary": "Please correct the highlighted fields.",
+    "errors": {
+      "vehicle": "Choose a vehicle.",
+      "pickup": "Choose a pick-up date.",
+      "pickupPast": "The pick-up date cannot be in the past.",
+      "return": "Choose a return date.",
+      "returnBefore": "The return date must be on or after the pick-up date.",
+      "name": "Enter your name.",
+      "phone": "Enter a valid number (6 to 15 digits)."
+    },
+    "sentTitle": "Your request is ready in WhatsApp",
+    "sentText": "Send the message in WhatsApp to pass your request on. The booking is only confirmed once our team replies.",
+    "openAgain": "Open WhatsApp",
+    "orCall": "Or call us on {phone}",
+    "edit": "Edit my request",
+    "whatsappMessage": "Hello AB FAST CAR,\n\nI would like to book:\nVehicle: {vehicle}\nFrom: {start}\nTo: {end}\nDuration: {duration}\nEstimated price: {total}{totalMad}\nName: {name}\nWhatsApp: {phone}\n\nThank you!",
+    "conditionsNote": "Please read our <link>rental conditions</link> before sending your request.",
+    "chooseDate": "Choose",
+    "selectPickup": "Choose the pick-up date",
+    "selectReturn": "Choose the return date"
+  },
+  "process": {
+    "title": "How to book",
+    "subtitle": "Four simple steps",
+    "steps": [
+      {
+        "title": "Choose",
+        "description": "Browse the fleet and pick the vehicle that suits you."
+      },
+      {
+        "title": "Book",
+        "description": "Enter your dates and send your request in a few clicks."
+      },
+      {
+        "title": "Collect",
+        "description": "We deliver your vehicle to the address of your choice in Morocco."
+      },
+      {
+        "title": "Enjoy",
+        "description": "Drive with peace of mind, with assistance available 24/7."
+      }
+    ],
+    "cta": "Book a vehicle"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "subtitle": "Our team is available 24/7 to answer your requests.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "instagram": "Instagram",
+    "whatsapp": "Book on WhatsApp",
+    "findUs": "Find us",
+    "openNow": "Open 24/7",
+    "getDirections": "Get directions",
+    "showMap": "Show the map",
+    "mapNote": "The map is provided by Google Maps and only loads when you ask for it.",
+    "mapTitle": "Map: AB FAST CAR, {address}"
+  },
+  "footer": {
+    "tagline": "Car rental in Morocco",
+    "description": "City cars, sedans, SUVs and luxury models, delivered anywhere in Morocco.",
+    "explore": "Explore",
+    "contactTitle": "Contact",
+    "follow": "Follow us",
+    "hours": "Available 24/7",
+    "rights": "All rights reserved.",
+    "conditions": "Rental conditions"
+  },
+  "mobileBar": {
+    "label": "Quick booking"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved.",
+    "home": "Back to home",
+    "fleet": "View the fleet"
+  },
+  "videos": {
+    "eyebrow": "Videos",
+    "title": "The AB FAST CAR world",
+    "intro": "Two short videos to discover our vehicles and their world before choosing yours.",
+    "play": "Play video: {title}",
+    "playerLabel": "Video: {title}",
+    "close": "Close video",
+    "loading": "Loading video…",
+    "error": "The video could not be played. Check your connection and try again.",
+    "retry": "Try again",
+    "cta": "Choose a vehicle",
+    "preview": "Muted preview",
+    "watchWithSound": "Watch with sound"
+  },
+  "conditions": {
+    "contents": "Contents",
+    "article": "Article {number}",
+    "source": "Source text: French version provided by the agency.",
+    "translation": "Translation of the French text provided by the agency.",
+    "frenchSource": "Read the French source text"
+  }
+}

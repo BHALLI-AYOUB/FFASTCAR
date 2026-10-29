@@ -1,20 +1,25 @@
 "use client"
 
-import { Phone } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { MessageCircle } from "lucide-react"
 
+import { contactLinks } from "@/lib/site"
+import { useContact } from "@/components/content-provider"
+
+/** Floating WhatsApp shortcut on large screens (the mobile bar has its own). */
 export function WhatsAppButton() {
-  const handleClick = () => {
-    window.open("https://wa.me/212601666665", "_blank")
-  }
+  const t = useTranslations("common")
+  const { whatsappUrl } = contactLinks(useContact())
 
   return (
-    
-    <button
-      onClick={handleClick}
-      className="fixed bottom-8 right-8 z-50 w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center shadow-2xl hover:scale-110 transition-all animate-bounce"
-      aria-label="Contact via WhatsApp"
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${t("whatsapp")} ${t("opensInNewTab")}`}
+      className="fixed end-8 bottom-8 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-black shadow-2xl transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white motion-reduce:transition-none lg:flex"
     >
-      <Phone className="h-8 w-8 text-white" />
-    </button>
+      <MessageCircle aria-hidden="true" className="h-7 w-7" />
+    </a>
   )
 }

@@ -1,6 +1,0 @@
-# robots.txt for AB FAST CAR
-
-User-agent: *
-Allow: /
-
-Sitemap: https://abfastcar.com/sitemap.xml

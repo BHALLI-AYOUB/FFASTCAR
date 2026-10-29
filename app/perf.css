@@ -1,0 +1,59 @@
+/* Font families, reduced motion and rendering optimisations.
+   Imported by app/[locale]/layout.tsx after globals.css. */
+
+/* globals.css names the families literally ("Inter", "Playfair Display"),
+   which never match the self-hosted next/font faces. Point the theme
+   variables at the next/font ones instead (see app/fonts.ts). */
+:root {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-montserrat), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Arabic: Cairo first, Latin fallback for model names and digits. */
+html[dir="rtl"] {
+  --font-sans: var(--font-cairo), var(--font-inter), ui-sans-serif, system-ui, Tahoma, sans-serif;
+  --font-display: var(--font-cairo), var(--font-montserrat), ui-sans-serif, system-ui, Tahoma, sans-serif;
+  --font-serif: var(--font-cairo), Georgia, serif;
+}
+
+body,
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Below-the-fold sections skip style, layout and paint until they approach
+   the viewport: on the home page that is most of the ~1,150 DOM nodes, which
+   otherwise delay the first render of the hero (LCP). `auto` in
+   contain-intrinsic-size remembers the real height once rendered.
+   Applied to every page section except the hero, and to the footer; a
+   section already in view is rendered normally. */
+.cv-auto,
+#main > section:not(#home),
+#main > div > section:not(#home),
+body footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* Respect the system "reduce motion" setting everywhere: no infinite loops,
+   no parallax, near-instant transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

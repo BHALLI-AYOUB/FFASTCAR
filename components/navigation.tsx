@@ -1,249 +1,130 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Sparkles } from "lucide-react"
+import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
+import { CalendarCheck, Menu, X } from "lucide-react"
 
-interface NavigationProps {
-  language: "fr" | "en"
-  setLanguage: (lang: "fr" | "en") => void
-}
+import { Link, usePathname } from "@/i18n/navigation"
+import { MarketSwitcher } from "@/components/market-switcher"
+import { BookButton } from "@/components/book-button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
-const translations = {
-  fr: {
-    home: "Accueil",
-    about: "À Propos",
-    fleet: "Flotte",
-    services: "Services",
-    testimonials: "Témoignages",
-    contact: "Contact",
-  },
-  en: {
-    home: "Home",
-    about: "About",
-    fleet: "Fleet",
-    services: "Services",
-    testimonials: "Testimonials",
-    contact: "Contact",
-  },
-}
-
-export function Navigation({ language, setLanguage }: NavigationProps) {
+export function Navigation() {
+  const t = useTranslations("navigation")
+  const tc = useTranslations("common")
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const t = translations[language]
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-      
-      // Track active section
-      const sections = ["home", "about", "fleet", "services", "testimonials", "contact"]
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-    
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setMobileMenuOpen(false)
-      setActiveSection(id)
-    }
-  }
+  // Close the menu after navigating.
+  useEffect(() => setMobileMenuOpen(false), [pathname])
 
   const navItems = [
-    { id: "home", label: t.home },
-    { id: "about", label: t.about },
-    { id: "fleet", label: t.fleet },
-    { id: "services", label: t.services },
-    { id: "testimonials", label: t.testimonials },
-    { id: "contact", label: t.contact },
+    { href: "/", label: t("home") },
+    { href: "/fleet", label: t("fleet") },
+    { href: "/#services", label: t("services") },
+    { href: "/#about", label: t("about") },
+    { href: "/faq", label: t("faq") },
+    { href: "/contact", label: t("contact") },
   ]
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : !href.includes("#") && pathname.startsWith(href))
 
   return (
-    <>
-      <style>{`
-        @keyframes shimmer-nav {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-        
-        @keyframes glow-pulse {
-          0%, 100% {
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
-          }
-          50% {
-            box-shadow: 0 0 40px rgba(250, 204, 21, 0.6);
-          }
-        }
-        
-        .nav-shimmer {
-          background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.9) 0%,
-            rgba(250, 204, 21, 0.1) 50%,
-            rgba(0, 0, 0, 0.9) 100%
-          );
-          background-size: 200% auto;
-          animation: shimmer-nav 3s linear infinite;
-        }
-        
-        .mobile-menu-slide {
-          animation: slideDown 0.3s ease-out;
-        }
-        
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || mobileMenuOpen ? "border-white/15 bg-black/95" : "border-white/10 bg-black/90"
+      }`}
+    >
+      <nav aria-label={t("mainNav")} className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex h-16 items-center justify-between gap-3 lg:h-20">
+          <Link href="/" aria-label={t("logoHome")} className="flex shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+            <img
+              src="/images/logo-ab-fastcar-white.webp"
+              alt="AB FAST CAR"
+              width={240}
+              height={107}
+              className="h-10 w-auto object-contain lg:h-12"
+            />
+          </Link>
 
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'bg-black/95 backdrop-blur-xl border-b-2 border-yellow-400/30 shadow-2xl shadow-yellow-400/10' 
-          : 'bg-black/80 backdrop-blur-lg border-b border-yellow-500/20'
-      }`}>
-        {/* Top Shimmer Line */}
-        <div className="nav-shimmer absolute top-0 left-0 right-0 h-1" />
-        
-        <div className="mx-auto max-w-7xl px-6">
-          <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
-            {/* Logo */}
-            <button 
-              onClick={() => scrollToSection("home")} 
-              className="flex items-center gap-3 group relative"
+          <ul className="hidden items-center gap-1 lg:flex">
+            {navItems.map((item) => {
+              const active = isActive(item.href)
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`relative flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white xl:px-4 ${
+                      active ? "text-white after:absolute after:inset-x-3 after:bottom-1.5 after:h-0.5 after:rounded-full after:bg-white" : "text-zinc-300 hover:text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* On phones the header is full: the switch is in the menu. */}
+            <div className="hidden lg:block">
+              <ThemeToggle />
+            </div>
+            <MarketSwitcher />
+            <BookButton className="hidden min-h-11 px-5 text-sm sm:inline-flex">
+              <CalendarCheck aria-hidden="true" className="h-4 w-4" />
+              {tc("book")}
+            </BookButton>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? t("closeMenu") : t("openMenu")}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white lg:hidden"
             >
-              <div className="relative">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className={`relative transition-all duration-300 ${scrolled ? 'h-10 w-auto' : 'h-12 w-auto'}`}>
-                  <img
-                    src="/images/logo-20ab-20300pp-20.png"
-                    alt="AB FAST CAR"
-                    className="h-full w-auto object-contain brightness-0 invert group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              </div>
-              
-              {/* Text Logo */}
-              <div className="hidden sm:block">
-                <div className="text-xl font-black">
-                  <span className="bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent">AB FAST</span>
-                  <span className="text-white ml-1">CAR</span>
-                </div>
-                <div className="text-[10px] text-yellow-400/70 tracking-widest">LUXURY RENTAL</div>
-              </div>
+              {mobileMenuOpen ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
             </button>
-
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg group ${
-                    activeSection === item.id
-                      ? 'text-yellow-400'
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {/* Active Indicator */}
-                  {activeSection === item.id && (
-                    <div className="absolute inset-0 bg-yellow-400/10 rounded-lg border border-yellow-400/30" />
-                  )}
-                  
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/5 rounded-lg transition-all duration-300" />
-                  
-                  <span className="relative z-10">{item.label}</span>
-                  
-                  {/* Bottom Line */}
-                  <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300 ${
-                    activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
-                </button>
-              ))}
-            </div>
-
-            {/* Right Actions */}
-            <div className="flex items-center gap-4">
-              {/* Language Switcher */}
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-                  className="relative bg-gradient-to-br from-zinc-900 to-black text-yellow-400 hover:text-yellow-300 font-bold rounded-xl px-5 py-2 border-2 border-yellow-400/30 hover:border-yellow-400/60 transition-all duration-300 hover:scale-105"
-                >
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  {language === "fr" ? "FR" : "EN"}
-                </Button>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden relative w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg shadow-yellow-400/30"
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-6 w-6 text-black" />
-                ) : (
-                  <Menu className="h-6 w-6 text-black" />
-                )}
-              </button>
-            </div>
           </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="mobile-menu-slide lg:hidden py-6 space-y-2 border-t border-yellow-400/20">
-              {navItems.map((item, index) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-yellow-400/20 text-yellow-400 border-l-4 border-yellow-400'
-                      : 'text-white/80 hover:text-white hover:bg-white/5 border-l-4 border-transparent'
-                  }`}
-                  style={{animationDelay: `${index * 0.05}s`}}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
-        {/* Bottom Glow Line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-50" />
+        {mobileMenuOpen && (
+          <div id="mobile-menu" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 py-4 lg:hidden">
+            <ul className="space-y-1">
+              {navItems.map((item) => {
+                const active = isActive(item.href)
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={`flex min-h-12 items-center rounded-xl border-s-4 px-4 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                        active ? "border-white bg-white/10 text-white" : "border-transparent text-zinc-200 hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+            <ThemeToggle variant="row" />
+            <BookButton className="mt-4 min-h-12 w-full text-base" onOpen={() => setMobileMenuOpen(false)}>
+              <CalendarCheck aria-hidden="true" className="h-5 w-5" />
+              {tc("book")}
+            </BookButton>
+          </div>
+        )}
       </nav>
-    </>
+    </header>
   )
 }

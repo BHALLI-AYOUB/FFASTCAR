@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "siteName": "AB FAST CAR",
+    "home": {
+      "title": "Location de voitures à Marrakech et au Maroc | AB FAST CAR",
+      "description": "Location de voitures à Marrakech : citadines, berlines, SUV, van et modèles de luxe. Service 24h/24, livraison partout au Maroc, réservation en ligne ou sur WhatsApp."
+    },
+    "fleet": {
+      "title": "Flotte et tarifs par jour | AB FAST CAR Marrakech",
+      "description": "Tous nos véhicules de location avec leur prix par jour en dirhams : Peugeot 208, Clio 5, Cupra, Mercedes, Range Rover, Porsche, Lamborghini Urus et plus."
+    },
+    "vehicle": {
+      "title": "Location {name} à Marrakech – {price}/jour | AB FAST CAR",
+      "description": "Louez la {name} ({category} : {features}) chez AB FAST CAR à Marrakech, à partir de {price} par jour. Livraison partout au Maroc, service 24h/24."
+    },
+    "faq": {
+      "title": "Questions fréquentes sur la location | AB FAST CAR",
+      "description": "Réservation, livraison, kilométrage, chauffeur, prix et contact : les réponses aux questions fréquentes sur la location de voitures chez AB FAST CAR à Marrakech."
+    },
+    "contact": {
+      "title": "Contact et adresse à Marrakech | AB FAST CAR",
+      "description": "Contactez AB FAST CAR 24h/24 par téléphone, WhatsApp ou email. Agence à Marrakech, livraison de votre véhicule partout au Maroc."
+    },
+    "notFound": {
+      "title": "Page introuvable | AB FAST CAR",
+      "description": "Cette page n'existe pas ou a été déplacée."
+    },
+    "conditions": {
+      "title": "Conditions de location | AB FAST CAR",
+      "description": "Les 16 articles des conditions de location AB FAST CAR : véhicule, assurance, franchise, caution, restitution, carburant et kilométrage."
+    }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "intro": "Les réponses aux questions que l'on nous pose le plus souvent sur la location de voitures chez AB FAST CAR. Pour toute autre question, notre équipe répond 24h/24.",
+    "book": "Réserver un véhicule",
+    "contact": "Nous contacter",
+    "items": [
+      {
+        "q": "Comment réserver une voiture chez AB FAST CAR ?",
+        "a": "Choisissez un véhicule dans notre flotte, puis cliquez sur « Réserver ». Indiquez vos dates et votre numéro WhatsApp : votre demande nous est envoyée sur WhatsApp et notre équipe vous répond pour confirmer la réservation. Vous pouvez aussi réserver par téléphone au +212 601 66 66 65."
+      },
+      {
+        "q": "Où se trouve votre agence et quels sont vos horaires ?",
+        "a": "Notre agence se trouve à Marrakech, au Maroc. Notre service est disponible 24h/24 et 7j/7."
+      },
+      {
+        "q": "Livrez-vous le véhicule ?",
+        "a": "Oui. Nous livrons votre véhicule à l'adresse de votre choix, partout au Maroc, y compris dans les aéroports. Contactez-nous pour connaître les modalités de livraison à votre adresse."
+      },
+      {
+        "q": "Le kilométrage est-il limité ?",
+        "a": "Les conditions de kilométrage sont précisées dans votre contrat. Tout dépassement peut être facturé selon les tarifs communiqués avant la location. Contactez l’agence pour les modalités applicables au véhicule choisi."
+      },
+      {
+        "q": "Proposez-vous un service avec chauffeur ?",
+        "a": "Oui, un chauffeur professionnel est disponible en option, pour vos déplacements d'affaires comme pour vos événements privés. Contactez-nous pour en connaître le tarif."
+      },
+      {
+        "q": "Quels types de véhicules proposez-vous ?",
+        "a": "Notre flotte comprend des citadines, des berlines, des SUV, un van 8 places et des modèles de luxe, de la Peugeot 208 à la Lamborghini Urus. Chaque modèle a sa fiche avec son prix par jour."
+      },
+      {
+        "q": "Combien coûte la location d'une voiture ?",
+        "a": "Nos prix sont indiqués par jour en dirhams marocains (MAD), de {min} à {max} selon le véhicule. Les montants affichés en euros ou en livres sont des conversions indicatives : la réservation est confirmée en dirhams."
+      },
+      {
+        "q": "Quelles sont les conditions de location (caution, documents, âge, assurance, paiement) ?",
+        "a": "Les conditions générales de location sont disponibles sur notre page dédiée. Le prix, la caution et les modalités de paiement figurent dans votre contrat. Contactez l’agence avant de réserver pour les documents requis, l’âge minimum et les modalités propres au véhicule."
+      },
+      {
+        "q": "Comment vous contacter ?",
+        "a": "Par téléphone ou WhatsApp au +212 601 66 66 65, par email à Abfastcar@gmail.com, ou sur Instagram (@abfastcar). Notre équipe est disponible 24h/24."
+      },
+      {
+        "q": "Quelle franchise s’applique en cas d’accident ?",
+        "a": "L’article 4 prévoit, lorsque la responsabilité totale ou partielle du client est établie, une franchise de 5 % de la valeur du véhicule selon la base définie au contrat et sous réserve de la police d’assurance. Elle ne peut être réclamée que dans les limites de sa responsabilité et des dispositions applicables. Ce n’est pas une caution générale."
+      },
+      {
+        "q": "Des frais de lavage sont-ils systématiques ?",
+        "a": "Non. L’article 11 prévoit 150 dirhams marocains (MAD) si le véhicule est rendu sale et nécessite un lavage complet. Un nettoyage spécialisé en cas de salissures exceptionnelles peut entraîner des frais supplémentaires justifiés selon le contrat."
+      },
+      {
+        "q": "Quelles sont les conditions d’annulation et de remboursement ?",
+        "a": "Elles sont communiquées avant la confirmation de votre réservation et précisées au contrat. L’annulation, l’interruption anticipée et le remboursement dépendent des conditions contractuelles et de la réglementation applicable. Contactez l’agence avant de confirmer."
+      }
+    ]
+  }
+}

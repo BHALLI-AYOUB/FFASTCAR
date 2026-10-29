@@ -1,0 +1,267 @@
+{
+  "common": {
+    "book": "Reserveren",
+    "whatsapp": "WhatsApp",
+    "call": "Bellen",
+    "close": "Sluiten",
+    "perDay": "/ dag",
+    "skipToContent": "Naar de hoofdinhoud",
+    "indicative": "Indicatieve prijs omgerekend vanaf {mad}. Reserveringen worden bevestigd in Marokkaanse dirham (MAD).",
+    "indicativeShort": "indicatief",
+    "viewVehicle": "Bekijk de {name}",
+    "backToFleet": "Terug naar de vloot",
+    "opensInNewTab": "(opent in een nieuw tabblad)"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "Over ons",
+    "fleet": "Vloot",
+    "services": "Diensten",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "mainNav": "Hoofdnavigatie",
+    "logoHome": "AB FAST CAR, terug naar home",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "themeLight": "Lichte modus",
+    "themeDark": "Donkere modus"
+  },
+  "switcher": {
+    "button": "Taal, land en valuta",
+    "country": "Land",
+    "language": "Taal",
+    "currency": "Valuta",
+    "currencies": {
+      "MAD": "Marokkaanse dirham (MAD)",
+      "EUR": "Euro (EUR)",
+      "GBP": "Brits pond (GBP)"
+    },
+    "note": "De tarieven zijn vastgesteld in Marokkaanse dirham (MAD). Bedragen in EUR of GBP zijn indicatief (koersen van {date})."
+  },
+  "hero": {
+    "slogan": "Select & Drive",
+    "title1": "Autoverhuur",
+    "title2": "in Marokko",
+    "subtitle": "Premium service 24/7 — stadsauto's, sedans, SUV's, gezinsauto's en luxemodellen.",
+    "cta": "Reserveren",
+    "whatsapp": "Contact via WhatsApp",
+    "scrollLabel": "Verder scrollen",
+    "carouselLabel": "Voertuigen uit de vloot",
+    "features": [
+      {
+        "label": "Kilometers per contract",
+        "sub": "Voorwaarden vooraf"
+      },
+      {
+        "label": "Levering op de luchthaven",
+        "sub": "Overal in Marokko"
+      },
+      {
+        "label": "Ruime keuze",
+        "sub": "Stadsauto's, sedans, SUV's"
+      },
+      {
+        "label": "Chauffeur optioneel",
+        "sub": "Persoonlijke service"
+      },
+      {
+        "label": "24/7 assistentie",
+        "sub": "Altijd bereikbaar"
+      }
+    ],
+    "pause": "Diavoorstelling pauzeren",
+    "play": "Diavoorstelling afspelen",
+    "videoPause": "Video pauzeren",
+    "videoPlay": "Video afspelen"
+  },
+  "brands": {
+    "title": "Onze",
+    "titleHighlight": "merken",
+    "subtitle": "De automerken in onze vloot"
+  },
+  "about": {
+    "subtitle": "Over ons",
+    "title": "AB FAST CAR",
+    "tagline": "Uw partner voor autoverhuur in Marokko",
+    "description": "AB FAST CAR verhuurt vanuit Marrakech voertuigen in heel Marokko, met een gevarieerde vloot: stadsauto's, sedans, SUV's, gezinsauto's en luxemodellen. We zetten in op persoonlijke service, 24/7 bereikbaarheid en een professionele afhandeling, voor een prettige en veilige rit die past bij elke behoefte.",
+    "mission": "Onze missie",
+    "missionText": "Een vlotte ervaring van hoge kwaliteit bieden, met voertuigen voor elk budget en elke gelegenheid, voor privé-, zakelijke of toeristische reizen.",
+    "values": [
+      {
+        "title": "Vertrouwen",
+        "description": "Zorgvuldig onderhouden voertuigen en duidelijke tarieven."
+      },
+      {
+        "title": "Keuze",
+        "description": "Een ruime keuze aan auto's voor elke gelegenheid."
+      },
+      {
+        "title": "Bereikbaarheid",
+        "description": "24/7 service en levering overal in Marokko."
+      },
+      {
+        "title": "Recente modellen",
+        "description": "Recente modellen, van stadsauto tot luxe-SUV."
+      }
+    ]
+  },
+  "features": {
+    "title": "Onze diensten",
+    "subtitle": "Wat bij elke huur hoort",
+    "features": [
+      {
+        "title": "Chauffeur optioneel",
+        "description": "Professionele, discrete chauffeurs voor zakenreizen of privé-evenementen."
+      },
+      {
+        "title": "Levering aan huis",
+        "description": "We leveren uw voertuig op het adres van uw keuze, overal in Marokko."
+      },
+      {
+        "title": "Recente auto's",
+        "description": "Een vloot van recente, zorgvuldig onderhouden voertuigen."
+      },
+      {
+        "title": "24/7 assistentie",
+        "description": "Ons team is dag en nacht bereikbaar tijdens uw huurperiode."
+      }
+    ]
+  },
+  "fleet": {
+    "eyebrow": "Onze vloot",
+    "title": "Kies uw voertuig",
+    "subtitle": "{count} voertuigen, van stadsauto tot luxe-SUV. Tarieven per dag.",
+    "viewAll": "Bekijk de hele vloot"
+  },
+  "vehicle": {
+    "year": "Bouwjaar",
+    "category": "Categorie",
+    "features": "Kenmerken",
+    "dailyRate": "Dagtarief",
+    "intro": "{name} ({year}) te huur bij AB FAST CAR in Marrakech, met levering overal in Marokko.",
+    "bookTitle": "Dit voertuig reserveren",
+    "otherVehicles": "Andere voertuigen",
+    "breadcrumb": "Kruimelpad",
+    "gallery": "Fotogalerij",
+    "galleryPhoto": "{name}, foto {n}"
+  },
+  "booking": {
+    "title": "Reserveringsaanvraag",
+    "intro": "Vul het formulier in: uw aanvraag opent in WhatsApp, klaar om naar ons team te sturen.",
+    "vehicle": "Voertuig",
+    "chooseVehicle": "Kies een voertuig",
+    "pickupDate": "Ophaaldatum",
+    "returnDate": "Inleverdatum",
+    "name": "Volledige naam",
+    "phone": "WhatsApp-nummer",
+    "countryCode": "Landcode",
+    "phonePlaceholder": "6 12345678",
+    "required": "verplicht",
+    "summary": "Overzicht",
+    "duration": "Duur",
+    "days": "{count, plural, one {# dag} other {# dagen}}",
+    "pricePerDay": "Prijs per dag",
+    "total": "Geschat totaal",
+    "totalNote": "Schatting: ons team bevestigt de definitieve prijs.",
+    "submit": "Aanvraag versturen via WhatsApp",
+    "errorSummary": "Corrigeer de gemarkeerde velden.",
+    "errors": {
+      "vehicle": "Kies een voertuig.",
+      "pickup": "Kies een ophaaldatum.",
+      "pickupPast": "De ophaaldatum kan niet in het verleden liggen.",
+      "return": "Kies een inleverdatum.",
+      "returnBefore": "De inleverdatum moet op of na de ophaaldatum liggen.",
+      "name": "Vul uw naam in.",
+      "phone": "Vul een geldig nummer in (6 tot 15 cijfers)."
+    },
+    "sentTitle": "Uw aanvraag staat klaar in WhatsApp",
+    "sentText": "Verstuur het bericht in WhatsApp om uw aanvraag door te geven. De reservering is pas bevestigd nadat ons team heeft geantwoord.",
+    "openAgain": "WhatsApp openen",
+    "orCall": "Of bel ons op {phone}",
+    "edit": "Aanvraag wijzigen",
+    "whatsappMessage": "Hallo AB FAST CAR,\n\nIk wil graag reserveren:\nVoertuig: {vehicle}\nVan: {start}\nTot: {end}\nDuur: {duration}\nGeschatte prijs: {total}{totalMad}\nNaam: {name}\nWhatsApp: {phone}\n\nBedankt!",
+    "conditionsNote": "Lees onze <link>huurvoorwaarden</link> voordat u uw aanvraag verstuurt.",
+    "chooseDate": "Kiezen",
+    "selectPickup": "Kies de ophaaldatum",
+    "selectReturn": "Kies de inleverdatum"
+  },
+  "process": {
+    "title": "Zo reserveert u",
+    "subtitle": "Vier eenvoudige stappen",
+    "steps": [
+      {
+        "title": "Kies",
+        "description": "Bekijk de vloot en kies het voertuig dat bij u past."
+      },
+      {
+        "title": "Reserveer",
+        "description": "Vul uw data in en verstuur uw aanvraag in een paar klikken."
+      },
+      {
+        "title": "Ophalen",
+        "description": "We leveren uw voertuig op het adres van uw keuze in Marokko."
+      },
+      {
+        "title": "Genieten",
+        "description": "Rijd zorgeloos, met 24/7 assistentie."
+      }
+    ],
+    "cta": "Een voertuig reserveren"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Neem contact op",
+    "subtitle": "Ons team staat 24/7 klaar voor uw vragen.",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "address": "Adres",
+    "instagram": "Instagram",
+    "whatsapp": "Reserveren via WhatsApp",
+    "findUs": "Ons vinden",
+    "openNow": "24/7 geopend",
+    "getDirections": "Routebeschrijving",
+    "showMap": "Kaart tonen",
+    "mapNote": "De kaart wordt geleverd door Google Maps en laadt alleen op uw verzoek.",
+    "mapTitle": "Kaart: AB FAST CAR, {address}"
+  },
+  "footer": {
+    "tagline": "Autoverhuur in Marokko",
+    "description": "Stadsauto's, sedans, SUV's en luxemodellen, geleverd overal in Marokko.",
+    "explore": "Ontdekken",
+    "contactTitle": "Contact",
+    "follow": "Volg ons",
+    "hours": "24/7 bereikbaar",
+    "rights": "Alle rechten voorbehouden.",
+    "conditions": "Huurvoorwaarden"
+  },
+  "mobileBar": {
+    "label": "Snel reserveren"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet of is verplaatst.",
+    "home": "Terug naar home",
+    "fleet": "Bekijk de vloot"
+  },
+  "videos": {
+    "eyebrow": "Video’s",
+    "title": "De wereld van AB FAST CAR",
+    "intro": "Twee korte video’s om onze voertuigen en hun wereld te ontdekken voordat u de uwe kiest.",
+    "play": "Video afspelen: {title}",
+    "playerLabel": "Video: {title}",
+    "close": "Video sluiten",
+    "loading": "Video laden…",
+    "error": "De video kon niet worden afgespeeld. Controleer uw verbinding en probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "cta": "Kies een voertuig",
+    "preview": "Voorbeeld zonder geluid",
+    "watchWithSound": "Bekijk met geluid"
+  },
+  "conditions": {
+    "contents": "Inhoud",
+    "article": "Artikel {number}",
+    "source": "Brontekst: Franse versie verstrekt door het verhuurbedrijf.",
+    "translation": "Vertaling van de Franse tekst verstrekt door het verhuurbedrijf.",
+    "frenchSource": "Lees de Franse brontekst"
+  }
+}
