@@ -1,142 +1,56 @@
 {
-  "about": {
-    "subtitle": "À PROPOS DE NOUS",
-    "title": "AB FAST CAR",
-    "tagline": "Votre Partenaire de Confiance pour la Location de Voitures de Luxe",
-    "description": "Depuis notre création, AB FAST CAR s'est imposé comme une référence dans la location de véhicules au Maroc. Nous proposons une expérience fiable et premium avec une flotte variée : citadines, berlines, SUV, voitures familiales et modèles de luxe Nous mettons un point d'honneur à offrir un service client personnalisé, une disponibilité 24h/7j et une prise en charge professionnelle. Notre objectif est de garantir bien plus qu'une simple location : une expérience de conduite agréable, sécurisée et adaptée à chaque besoin.",
-    "mission": "Notre Mission",
-    "missionText": "Offrir à nos clients une expérience fluide et de qualité, avec des véhicules adaptés à tous les budgets et à toutes les occasions. Grâce à un service irréprochable, une grande flexibilité et une équipe attentif à chaque détail, nous accompagnons nos clients dans tous leurs déplacements, qu'ils soient personnels, professionnels ou touristiques.",
-    "values": [
-      {
-        "title": "Confiance",
-        "description": "Des véhicules entretenus avec soin et une transparence totale."
-      },
-      {
-        "title": "Excellence",
-        "description": "Un large choix de voitures pour chaque occasion."
-      },
-      {
-        "title": "Disponibilité",
-        "description": "Service 24h/7j et livraison partout au Maroc."
-      },
-      {
-        "title": "Innovation",
-        "description": "Les derniers modèles et technologies automobiles."
-      }
-    ]
-  },
-  "bookingmodal": {
-    "title": "Réservez votre",
-    "vehicle": "véhicule de luxe",
-    "startDate": "Date de début",
-    "endDate": "Date de fin",
-    "phone": "Votre numéro WhatsApp",
-    "phonePlaceholder": "Numéro de téléphone",
-    "numberOfDays": "Durée",
-    "pricePerDay": "Prix / jour",
-    "totalPrice": "Total",
-    "confirmWhatsApp": "Confirmer la réservation",
-    "days": "jours",
-    "day": "jour",
-    "pickupDate": "Date de récupération",
-    "returnDate": "Date de retour",
-    "fillAllFields": "Veuillez remplir tous les champs",
-    "whatsappMessage": "Bonjour AB FAST CAR,\n\nJe souhaite réserver:\n🚗 Véhicule: {vehicle}\n📅 Du: {start}\n📅 Au: {end}\n⏱ Durée: {duration}\n💰 Prix total: {total}\n📱 Mon numéro WhatsApp: {phone}\n\nMerci!"
-  },
-  "brands": {
-    "title": "NOS MARQUES",
-    "titleHighlight": "PREMIUM",
-    "subtitle": "Les plus grandes marques automobiles à votre service"
-  },
-  "contact": {
-    "title": "RESTONS EN",
-    "titleGradient": "CONTACT",
-    "subtitle": "Notre équipe est à votre disposition 24/7 pour répondre à tous vos besoins",
-    "name": "Nom complet",
-    "email": "Email",
-    "phone": "Téléphone",
-    "address": "Adresse",
-    "message": "Message",
-    "whatsapp": "Réserver sur WhatsApp",
-    "instagram": "Suivez-nous",
-    "findUs": "Nous Trouver",
-    "findUsSubtitle": "Venez nous rendre visite à Rabat",
-    "openNow": "Ouvert 24h/24",
-    "getDirections": "Obtenir l'itinéraire",
-    "rating": "4.9/5 sur Google",
-    "info": {
-      "phone": "+212 601 66 66 65",
-      "email": "Abfastcar@gmail.com",
-      "address": "Rue Ouarzazate, Rabat, Maroc",
-      "instagram": "@abfastcar"
-    }
-  },
-  "features": {
-    "title": "Nos Avantages",
-    "titleGradient": "Pourquoi Nous Choisir ?",
-    "subtitle": "Une expérience premium et personnalisée",
-    "features": [
-      {
-        "title": "Service Chauffeur VIP",
-        "description": "Des chauffeurs professionnels et discrets pour vos déplacements d'affaires ou événements privés."
-      },
-      {
-        "title": "Livraison à Domicile",
-        "description": "Nous livrons votre véhicule directement à l'adresse de votre choix, partout au Maroc."
-      },
-      {
-        "title": "Voitures Récentes & Luxe",
-        "description": "Une flotte exclusivement composée de véhicules récents, entretenus avec le plus grand soin."
-      },
-      {
-        "title": "Assistance 24/7",
-        "description": "Notre équipe est disponible jour et nuit pour répondre à vos besoins et garantir votre sérénité."
-      }
-    ]
-  },
-  "fleet": {
-    "badge": "Collection Premium",
-    "title": "Notre Flotte",
-    "titleGradient": "Exceptionnelle",
-    "subtitle": "Découvrez notre sélection de véhicules de luxe",
-    "perDay": "/jour",
+  "common": {
     "book": "Réserver",
-    "close": "Fermer"
+    "whatsapp": "WhatsApp",
+    "call": "Appeler",
+    "close": "Fermer",
+    "perDay": "/ jour",
+    "skipToContent": "Aller au contenu principal",
+    "indicative": "Prix indicatif converti depuis {mad}. La réservation est confirmée en dirhams (MAD).",
+    "indicativeShort": "indicatif",
+    "viewVehicle": "Voir le {name}",
+    "backToFleet": "Retour à la flotte",
+    "opensInNewTab": "(ouvre un nouvel onglet)"
   },
-  "footer": {
-    "company": "AB FAST CAR",
-    "tagline": "Location de voitures de luxe au Maroc",
-    "description": "Votre partenaire de confiance pour une expérience de conduite exceptionnelle",
-    "rights": "Tous droits réservés.",
-    "terms": "Conditions",
-    "privacy": "Confidentialité",
-    "phone": "+212 601 66 66 65",
-    "email": "Abfastcar@gmail.com",
-    "address": "Rabat, Maroc",
-    "hours": "Disponible 24/7",
-    "quality": "Service Premium Garanti"
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "fleet": "Flotte",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "mainNav": "Navigation principale",
+    "logoHome": "AB FAST CAR, retour à l'accueil",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "themeLight": "Passer en mode clair",
+    "themeDark": "Passer en mode sombre"
   },
-  "gallery": {
-    "title": "Galerie",
-    "titleGradient": "Exclusive",
-    "subtitle": "Découvrez nos véhicules et tarifs",
-    "enlarge": "Cliquez pour agrandir"
+  "switcher": {
+    "button": "Langue, pays et devise",
+    "country": "Pays",
+    "language": "Langue",
+    "currency": "Devise",
+    "currencies": {
+      "MAD": "Dirham marocain (MAD)",
+      "EUR": "Euro (EUR)",
+      "GBP": "Livre sterling (GBP)"
+    },
+    "note": "Les tarifs sont fixés en dirhams (MAD). Les montants en EUR ou GBP sont indicatifs (taux du {date})."
   },
   "hero": {
+    "slogan": "Select & Drive",
     "title1": "Location de voitures",
     "title2": "au Maroc",
-    "slogan": "Select & Drive",
-    "subtitle": "Service premium 24/7 – Large flotte : citadines, berline ,SUV, familiales et modèles de luxe",
-    "cta": "Réserver maintenant",
-    "secondary": "Découvrir la flotte",
-    "recommended": "RECOMMANDÉ PAR",
-    "trustText": "Partenaires avec",
-    "trustBold": "500+",
-    "trustSuffix": "agences de location certifiées",
+    "subtitle": "Service premium 24h/24 et 7j/7 — citadines, berlines, SUV, familiales et modèles de luxe.",
+    "cta": "Réserver",
+    "whatsapp": "Contacter sur WhatsApp",
+    "scrollLabel": "Voir la suite",
+    "carouselLabel": "Véhicules de la flotte",
     "features": [
       {
-        "label": "Kilométrage illimité",
-        "sub": "Roulez sans limite"
+        "label": "Kilométrage au contrat",
+        "sub": "Modalités avant location"
       },
       {
         "label": "Livraison aéroport",
@@ -144,7 +58,7 @@
       },
       {
         "label": "Large choix",
-        "sub": "50+ véhicules"
+        "sub": "Citadines, berlines, SUV"
       },
       {
         "label": "Chauffeur en option",
@@ -154,28 +68,134 @@
         "label": "Assistance 24h/24",
         "sub": "Toujours disponible"
       }
+    ],
+    "pause": "Mettre en pause le défilement",
+    "play": "Reprendre le défilement",
+    "videoPause": "Mettre la vidéo en pause",
+    "videoPlay": "Lire la vidéo"
+  },
+  "brands": {
+    "title": "Nos marques",
+    "titleHighlight": "premium",
+    "subtitle": "Les grandes marques automobiles de notre flotte"
+  },
+  "about": {
+    "subtitle": "À propos",
+    "title": "AB FAST CAR",
+    "tagline": "Votre partenaire pour la location de voitures au Maroc",
+    "description": "AB FAST CAR propose la location de véhicules au Maroc depuis Marrakech, avec une flotte variée : citadines, berlines, SUV, voitures familiales et modèles de luxe. Nous misons sur un service client personnalisé, une disponibilité 24h/24 et 7j/7 et une prise en charge professionnelle, pour une expérience de conduite agréable, sûre et adaptée à chaque besoin.",
+    "mission": "Notre mission",
+    "missionText": "Offrir une expérience fluide et de qualité, avec des véhicules adaptés à tous les budgets et à toutes les occasions, pour vos déplacements personnels, professionnels ou touristiques.",
+    "values": [
+      {
+        "title": "Confiance",
+        "description": "Des véhicules entretenus avec soin et des tarifs affichés."
+      },
+      {
+        "title": "Choix",
+        "description": "Un large choix de voitures pour chaque occasion."
+      },
+      {
+        "title": "Disponibilité",
+        "description": "Service 24h/24 et livraison partout au Maroc."
+      },
+      {
+        "title": "Modèles récents",
+        "description": "Des modèles récents, de la citadine au SUV de luxe."
+      }
     ]
   },
-  "navigation": {
-    "home": "Accueil",
-    "about": "À Propos",
-    "fleet": "Flotte",
-    "services": "Services",
-    "testimonials": "Témoignages",
-    "contact": "Contact"
+  "features": {
+    "title": "Nos services",
+    "subtitle": "Ce que nous proposons avec chaque location",
+    "features": [
+      {
+        "title": "Chauffeur en option",
+        "description": "Des chauffeurs professionnels et discrets pour vos déplacements d'affaires ou vos événements privés."
+      },
+      {
+        "title": "Livraison à domicile",
+        "description": "Nous livrons votre véhicule à l'adresse de votre choix, partout au Maroc."
+      },
+      {
+        "title": "Voitures récentes",
+        "description": "Une flotte de véhicules récents, entretenus avec soin."
+      },
+      {
+        "title": "Assistance 24h/24",
+        "description": "Notre équipe est joignable jour et nuit pendant votre location."
+      }
+    ]
+  },
+  "fleet": {
+    "eyebrow": "Notre flotte",
+    "title": "Choisissez votre véhicule",
+    "subtitle": "{count} véhicules, de la citadine au SUV de luxe. Tarifs par jour.",
+    "viewAll": "Voir toute la flotte"
+  },
+  "vehicle": {
+    "year": "Année",
+    "category": "Catégorie",
+    "features": "Caractéristiques",
+    "dailyRate": "Tarif par jour",
+    "intro": "{name} ({year}) proposé à la location par AB FAST CAR à Marrakech, avec livraison partout au Maroc.",
+    "bookTitle": "Réserver ce véhicule",
+    "otherVehicles": "Autres véhicules",
+    "breadcrumb": "Fil d'Ariane",
+    "gallery": "Galerie photos",
+    "galleryPhoto": "{name}, photo {n}"
+  },
+  "booking": {
+    "title": "Demande de réservation",
+    "intro": "Remplissez le formulaire : votre demande s'ouvre dans WhatsApp, prête à être envoyée à notre équipe.",
+    "vehicle": "Véhicule",
+    "chooseVehicle": "Choisissez un véhicule",
+    "pickupDate": "Date de récupération",
+    "returnDate": "Date de retour",
+    "name": "Nom complet",
+    "phone": "Numéro WhatsApp",
+    "countryCode": "Indicatif",
+    "phonePlaceholder": "6 12 34 56 78",
+    "required": "obligatoire",
+    "summary": "Récapitulatif",
+    "duration": "Durée",
+    "days": "{count, plural, one {# jour} other {# jours}}",
+    "pricePerDay": "Prix par jour",
+    "total": "Total estimé",
+    "totalNote": "Estimation : le prix final est confirmé par notre équipe.",
+    "submit": "Envoyer ma demande sur WhatsApp",
+    "errorSummary": "Veuillez corriger les champs signalés.",
+    "errors": {
+      "vehicle": "Choisissez un véhicule.",
+      "pickup": "Choisissez une date de récupération.",
+      "pickupPast": "La date de récupération ne peut pas être dans le passé.",
+      "return": "Choisissez une date de retour.",
+      "returnBefore": "La date de retour doit être le même jour ou après la récupération.",
+      "name": "Indiquez votre nom.",
+      "phone": "Indiquez un numéro valide (6 à 15 chiffres)."
+    },
+    "sentTitle": "Votre demande est prête dans WhatsApp",
+    "sentText": "Envoyez le message dans WhatsApp pour transmettre votre demande. La réservation n'est confirmée qu'après la réponse de notre équipe.",
+    "openAgain": "Ouvrir WhatsApp",
+    "orCall": "Ou appelez-nous au {phone}",
+    "edit": "Modifier ma demande",
+    "whatsappMessage": "Bonjour AB FAST CAR,\n\nJe souhaite réserver :\nVéhicule : {vehicle}\nDu : {start}\nAu : {end}\nDurée : {duration}\nPrix estimé : {total}{totalMad}\nNom : {name}\nWhatsApp : {phone}\n\nMerci !",
+    "conditionsNote": "Consultez nos <link>conditions de location</link> avant d’envoyer votre demande.",
+    "chooseDate": "Choisir",
+    "selectPickup": "Choisissez la date de récupération",
+    "selectReturn": "Choisissez la date de retour"
   },
   "process": {
-    "title": "Comment Ça",
-    "titleGradient": "Marche",
-    "subtitle": "Un processus simple en 4 étapes",
+    "title": "Comment réserver",
+    "subtitle": "Quatre étapes simples",
     "steps": [
       {
         "title": "Choisissez",
-        "description": "Parcourez notre flotte et sélectionnez le véhicule parfait pour vos besoins."
+        "description": "Parcourez la flotte et sélectionnez le véhicule adapté à votre besoin."
       },
       {
         "title": "Réservez",
-        "description": "Choisissez vos dates et confirmez votre réservation en quelques clics."
+        "description": "Indiquez vos dates et envoyez votre demande en quelques clics."
       },
       {
         "title": "Récupérez",
@@ -183,81 +203,63 @@
       },
       {
         "title": "Profitez",
-        "description": "Vivez une expérience de conduite exceptionnelle avec notre service premium."
+        "description": "Roulez l'esprit tranquille, avec une assistance disponible 24h/24."
       }
-    ]
+    ],
+    "cta": "Réserver un véhicule"
   },
-  "stats": {
-    "stats": [
-      {
-        "value": "24/7",
-        "label": "Service disponible",
-        "type": "text"
-      },
-      {
-        "value": "100%",
-        "label": "Véhicules premium",
-        "type": "text"
-      },
-      {
-        "value": null,
-        "label": "Livraison nationale",
-        "type": "flag"
-      },
-      {
-        "value": "500+",
-        "label": "Clients satisfaits",
-        "type": "text"
-      }
-    ]
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Restons en contact",
+    "subtitle": "Notre équipe est disponible 24h/24 et 7j/7 pour répondre à vos demandes.",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Adresse",
+    "instagram": "Instagram",
+    "whatsapp": "Réserver sur WhatsApp",
+    "findUs": "Nous trouver",
+    "openNow": "Ouvert 24h/24",
+    "getDirections": "Obtenir l'itinéraire",
+    "showMap": "Afficher la carte",
+    "mapNote": "La carte est fournie par Google Maps et se charge uniquement à votre demande.",
+    "mapTitle": "Carte : AB FAST CAR, {address}"
   },
-  "testimonials": {
-    "title": "Ce Que Disent",
-    "titleGradient": "Nos Clients",
-    "subtitle": "Des centaines de clients satisfaits nous font confiance",
-    "testimonials": [
-      {
-        "name": "Mohammed Alami",
-        "role": "Chef d'entreprise",
-        "image": "https://i.pravatar.cc/150?img=12",
-        "rating": 5,
-        "text": "Service exceptionnel ! La Mercedes Classe S était impeccable et la livraison à l'heure. Je recommande vivement AB FAST CAR pour toute location de luxe."
-      },
-      {
-        "name": "Sarah Bennani",
-        "role": "Architecte",
-        "image": "https://i.pravatar.cc/150?img=45",
-        "rating": 5,
-        "text": "J'ai loué une BMW pour un événement important. Le service était professionnel, le véhicule parfait. Une expérience 5 étoiles du début à la fin."
-      },
-      {
-        "name": "Karim Idrissi",
-        "role": "Directeur Marketing",
-        "image": "https://i.pravatar.cc/150?img=33",
-        "rating": 5,
-        "text": "Excellent rapport qualité-prix. L'équipe est très réactive et les voitures sont magnifiques. C'est devenu mon premier choix pour les locations de prestige."
-      },
-      {
-        "name": "Fatima Zahrae",
-        "role": "Consultante",
-        "image": "https://i.pravatar.cc/150?img=47",
-        "rating": 5,
-        "text": "Service impeccable et véhicules luxueux. La livraison gratuite partout au Maroc est un énorme plus. Je suis cliente fidèle depuis 2 ans."
-      },
-      {
-        "name": "Youssef El Amrani",
-        "role": "Investisseur",
-        "image": "https://i.pravatar.cc/150?img=15",
-        "rating": 5,
-        "text": "La meilleure agence de location à Rabat. J'ai loué plusieurs véhicules et chaque fois c'était parfait. Équipe professionnelle et voitures impeccables."
-      },
-      {
-        "name": "Amina Tazi",
-        "role": "Avocate",
-        "image": "https://i.pravatar.cc/150?img=26",
-        "rating": 5,
-        "text": "Une expérience exceptionnelle ! Le Range Rover était en parfait état et le service clientèle au top. Je recommande à 100%."
-      }
-    ]
+  "footer": {
+    "tagline": "Location de voitures au Maroc",
+    "description": "Citadines, berlines, SUV et modèles de luxe, livrés partout au Maroc.",
+    "explore": "Explorer",
+    "contactTitle": "Contact",
+    "follow": "Suivez-nous",
+    "hours": "Disponible 24h/24 et 7j/7",
+    "rights": "Tous droits réservés.",
+    "conditions": "Conditions de location"
+  },
+  "mobileBar": {
+    "label": "Réservation rapide"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Cette page n'existe pas ou a été déplacée.",
+    "home": "Retour à l'accueil",
+    "fleet": "Voir la flotte"
+  },
+  "videos": {
+    "eyebrow": "Vidéos",
+    "title": "L’univers AB FAST CAR",
+    "intro": "Deux courtes vidéos pour découvrir nos véhicules et leur univers, avant de choisir le vôtre.",
+    "play": "Lire la vidéo : {title}",
+    "playerLabel": "Vidéo : {title}",
+    "close": "Fermer la vidéo",
+    "loading": "Chargement de la vidéo…",
+    "error": "La vidéo n’a pas pu être lue. Vérifiez votre connexion, puis réessayez.",
+    "retry": "Réessayer",
+    "cta": "Choisir un véhicule"
+  },
+  "conditions": {
+    "contents": "Sommaire",
+    "article": "Article {number}",
+    "source": "Texte source : version française communiquée par l’agence.",
+    "translation": "Traduction du texte français communiqué par l’agence.",
+    "frenchSource": "Consulter le texte source en français"
   }
 }

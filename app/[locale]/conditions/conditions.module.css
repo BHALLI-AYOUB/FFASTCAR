@@ -1,0 +1,19 @@
+@media print {
+  :global(body):has(.document) { background: white !important; color: black !important; }
+  :global(body):has(.document) :global(nav),
+  :global(body):has(.document) :global(footer),
+  :global(body):has(.document) :global(button),
+  :global(body):has(.document) :global([role="region"]),
+  :global(body):has(.document) :global(header):not(.document > header),
+  :global(body):has(.document) :global(a[href*="wa.me"]) { display: none !important; }
+  .document { padding: 0 !important; max-width: none !important; }
+  :global(body):has(.document) :global(div) { background: transparent !important; }
+  .document * { color: black !important; background: transparent !important; border-color: #ccc !important; box-shadow: none !important; }
+  .document > div { display: block !important; margin-top: 2rem !important; }
+  .document article { break-inside: auto; margin-top: 1.5rem !important; padding-top: 1rem !important; }
+  .document h1 { font-size: 24pt !important; }
+  .document h2 { break-after: avoid; font-size: 15pt !important; }
+  .document h3 { break-after: avoid; font-size: 12pt !important; }
+  .document p { orphans: 3; widows: 3; font-size: 10pt !important; }
+  .contents { display: none !important; }
+}
