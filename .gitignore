@@ -18,6 +18,7 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -25,3 +26,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# performance builds and local reports scratch
+/.next-perf/
+/.next-video-dev/
+
+# admin content and uploads saved locally in development (production uses Vercel Blob)
+/.data/
+/public/uploads/
+
+# client video originals (≈166 MB, kept unmodified, never served: the site
+# plays the prepared copies in public/videos/) and the extracted delivery pack
+/public/*.MOV
+/public/*.mov
+/abfastcar-client-integration/
+/abfastcar-client-integration.zip
+
+# Lighthouse runs and test captures: local evidence, too heavy for git
+# (≈180 MB). The written summaries (.md) are kept.
+/reports/**
+!/reports/**/
+!/reports/**/*.md

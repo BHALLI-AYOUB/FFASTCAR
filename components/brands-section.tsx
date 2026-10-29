@@ -1,261 +1,83 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react"
 import { useTranslations } from "next-intl"
 
-const brands = [
-  { 
-    name: "Porsche",
-    logo: "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Logo.png"
-  },
-  { 
-    name: "Audi",
-    logo: "https://1000logos.net/wp-content/uploads/2018/05/Audi-logo.jpg"
-  },
-  { 
-    name: "Volkswagen",
-    logo: "https://logos-world.net/wp-content/uploads/2021/04/Volkswagen-Logo.png"
-  },
-  { 
-    name: "BMW",
-    logo: "https://logos-world.net/wp-content/uploads/2020/04/BMW-Logo.png"
-  },
-  { 
-    name: "Mercedes",
-    logo: "https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png"
-  },
-  { 
-    name: "Range Rover",
-    logo: "https://images.seeklogo.com/logo-png/23/1/range-rover-logo-png_seeklogo-230449.png"
-  },
-  { 
-    name: "Renault",
-    logo: "https://1000logos.net/wp-content/uploads/2021/03/Renault-logo.png"
-  },
-  { 
-    name: "Cupra",
-    logo: "https://1000logos.net/wp-content/uploads/2020/06/Cupra-Logo.png"
-  },
-  { 
-    name: "Hyundai",
-    logo: "https://1000logos.net/wp-content/uploads/2018/04/Hyundai-Logo.png"
-  },
-]
+/**
+ * Logos self-hosted in public/brands/ (single-colour SVGs, 0.3–24 KB): from
+ * Simple Icons (CC0; Mercedes and Land Rover from v13.0.0, removed from later
+ * versions) and Wikimedia Commons for Cupra (public domain, trademarked).
+ * Keyed by the lower-cased brand name used in the fleet.
+ */
+const BRAND_LOGOS: Record<string, { file: string; width: number; height: number }> = {
+  lamborghini: { file: "lamborghini", width: 24, height: 24 },
+  "mercedes-benz": { file: "mercedes", width: 24, height: 24 },
+  mercedes: { file: "mercedes", width: 24, height: 24 },
+  "land rover": { file: "landrover", width: 24, height: 24 },
+  porsche: { file: "porsche", width: 24, height: 24 },
+  volkswagen: { file: "volkswagen", width: 24, height: 24 },
+  audi: { file: "audi", width: 24, height: 24 },
+  hyundai: { file: "hyundai", width: 24, height: 24 },
+  cupra: { file: "cupra", width: 132, height: 102 },
+  peugeot: { file: "peugeot", width: 24, height: 24 },
+  renault: { file: "renault", width: 24, height: 24 },
+}
 
-export function BrandsSection() {
+/**
+ * Brands present in the fleet. The page passes them in, derived from the
+ * visible vehicles, so the list can never advertise a brand that is not
+ * rentable. Each card shows the brand's logo with its name; a brand added
+ * in the admin without a logo file keeps a text wordmark.
+ */
+export function BrandsSection({ brands = [] }: { brands?: string[] }) {
   const t = useTranslations("brands")
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const brandsPerPage = 6
-  const totalPages = Math.ceil(brands.length / brandsPerPage)
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages)
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalPages)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [totalPages])
+  if (brands.length === 0) return null
 
   return (
+    <section className="cv-auto relative bg-gradient-to-b from-black via-zinc-950 to-black py-16 sm:py-24">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center sm:mb-14">
+          <h2 className="font-display text-3xl font-black tracking-tight sm:text-5xl md:text-6xl">
+            <span className="text-white">{t("title")} </span>
+            <span className="text-zinc-400">{t("titleHighlight")}</span>
+          </h2>
+          <div className="mt-5 flex items-center justify-center gap-4">
+            <div className="hidden h-px w-16 bg-gradient-to-r from-transparent to-white/40 sm:block" />
+            <p className="text-lg font-light italic text-zinc-400 sm:text-xl">{t("subtitle")}</p>
+            <div className="hidden h-px w-16 bg-gradient-to-l from-transparent to-white/40 sm:block" />
+          </div>
+        </div>
+
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+          {brands.map((brand) => (
+            <li
+              key={brand}
+              className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/80 px-4 py-5 text-center transition-colors hover:border-white/30 sm:min-h-32"
+            >
+              <BrandMark brand={brand} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+function BrandMark({ brand }: { brand: string }) {
+  const logo = BRAND_LOGOS[brand.trim().toLowerCase()]
+  if (!logo) {
+    return <span className="font-display text-base font-extrabold uppercase tracking-[0.18em] text-zinc-200 sm:text-lg">{brand}</span>
+  }
+  return (
     <>
-      <style>{`
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
-        }
-        
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        
-        @keyframes glow {
-          0%, 100% {
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
-          }
-          50% {
-            box-shadow: 0 0 40px rgba(250, 204, 21, 0.6);
-          }
-        }
-        
-        .shimmer-text {
-          background: linear-gradient(
-            90deg,
-            #fbbf24 0%,
-            #fef3c7 50%,
-            #fbbf24 100%
-          );
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-        
-        .brand-card {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .brand-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(250, 204, 21, 0.2),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-        
-        .brand-card:hover::before {
-          left: 100%;
-        }
-        
-        .sparkle-icon {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
-
-      <section className="py-20 sm:py-32 relative overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black">
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Header Section */}
-          <div className="text-center mb-12 sm:mb-20">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <Sparkles className="sparkle-icon h-8 w-8 text-yellow-400" />
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight">
-                <span className="text-white">{t("title")} </span>
-                <span className="shimmer-text">{t("titleHighlight")}</span>
-              </h2>
-              <Sparkles className="sparkle-icon h-8 w-8 text-yellow-400" style={{animationDelay: '1s'}} />
-            </div>
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-              <p className="text-zinc-400 text-xl font-light italic">{t("subtitle")}</p>
-              <div className="h-px w-20 bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-            </div>
-          </div>
-
-          {/* Carousel Section */}
-          <div className="relative">
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-6 z-20 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="h-8 w-8" strokeWidth={3} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-6 z-20 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 border-4 border-black"
-              aria-label="Next"
-            >
-              <ChevronRight className="h-8 w-8" strokeWidth={3} />
-            </button>
-
-            {/* Brands Container */}
-            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-sm border border-zinc-800 p-8">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
-                {Array.from({ length: totalPages }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="min-w-full">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                      {brands.slice(slideIndex * brandsPerPage, slideIndex * brandsPerPage + brandsPerPage).map((brand, index) => (
-                        <div
-                          key={index}
-                          className="brand-card group relative bg-gradient-to-br from-zinc-900 to-black rounded-2xl p-10 flex items-center justify-center transition-all duration-500 border-2 border-zinc-800 hover:border-yellow-400 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/20"
-                        >
-                          {/* Glow Effect on Hover */}
-                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-400/0 to-yellow-600/0 group-hover:from-yellow-400/5 group-hover:to-yellow-600/5 transition-all duration-500" />
-                          
-                          {/* Logo Container */}
-                          <div className="relative w-full h-28 flex items-center justify-center">
-                            <img 
-                              src={brand.logo} 
-                              alt={brand.name}
-                              className={`max-w-full max-h-full object-contain transition-all duration-500 drop-shadow-2xl ${
-                                ['Renault', 'Cupra', 'SEAT', 'Hyundai', 'Dacia'].includes(brand.name)
-                                  ? 'filter invert brightness-100 group-hover:brightness-110 group-hover:scale-110'
-                                  : 'filter brightness-110 contrast-110 group-hover:brightness-125 group-hover:scale-110'
-                              }`}
-                            />
-                          </div>
-                          
-                          {/* Brand Name on Hover */}
-                          <div className="absolute bottom-3 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p className="text-yellow-400 font-bold text-sm tracking-wider">{brand.name}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="flex justify-center gap-3 mt-12">
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className="group/pg flex h-6 items-center px-2 -my-1.5"
-                aria-label={`Go to page ${index + 1}`}
-                aria-current={index === currentIndex}
-              >
-                <span
-                  className={`block transition-all duration-300 rounded-full ${
-                    index === currentIndex
-                      ? "w-16 h-3 bg-gradient-to-r from-yellow-400 to-amber-500 shadow-lg shadow-yellow-400/50"
-                      : "w-3 h-3 bg-zinc-700 group-hover/pg:bg-zinc-600"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-
-          {/* Bottom Decorative Line */}
-          <div className="mt-20 flex justify-center">
-            <div className="relative">
-              <div className="h-1 w-96 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/50" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* The name below is the accessible label; the logo is decorative. */}
+      <img
+        src={`/brands/${logo.file}.svg`}
+        alt=""
+        width={logo.width}
+        height={logo.height}
+        loading="lazy"
+        decoding="async"
+        className="h-10 w-auto max-w-[7rem] object-contain sm:h-12"
+      />
+      <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-400 sm:text-xs">{brand}</span>
     </>
   )
 }

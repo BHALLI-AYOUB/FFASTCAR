@@ -10,25 +10,37 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.1 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.75 0.15 85);
+  /* Brand accents are neutral (white / grey). Red is reserved for booking. */
+  --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.08 0 0);
   --secondary: oklch(0.2 0.01 264);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.25 0.01 264);
   --muted-foreground: oklch(0.7 0.02 264);
-  --accent: oklch(0.8 0.18 90);
+  --accent: oklch(0.92 0 0);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.25 0.02 264);
   --input: oklch(0.2 0.01 264);
-  --ring: oklch(0.8 0.18 90);
-  --chart-1: oklch(0.75 0.15 85);
+  --ring: oklch(0.985 0 0);
+  --chart-1: oklch(0.7 0 0);
   --chart-2: oklch(0.6 0.12 264);
   --chart-3: oklch(0.7 0.1 200);
   --chart-4: oklch(0.65 0.14 120);
   --chart-5: oklch(0.7 0.13 50);
   --radius: 0.75rem;
+
+  /* AB FAST CAR palette */
+  --brand-red: #dc2626;        /* "Réserver" buttons only — 4.8:1 with white text */
+  --brand-red-hover: #b91c1c;
+  --brand-red-ring: #fca5a5;
+  --brand-ink: #ffffff;        /* headings, active states, icons */
+  --brand-muted: #a1a1aa;      /* secondary text, 7.6:1 on black */
+  --brand-line: rgba(255, 255, 255, 0.14); /* borders and separators */
+  --brand-glow: rgba(255, 255, 255, 0.08); /* hover fills and halos */
+  --whatsapp: #25d366;
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -105,6 +117,14 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-hover: var(--brand-red-hover);
+  --color-brand-red-ring: var(--brand-red-ring);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-line: var(--brand-line);
+  --color-brand-glow: var(--brand-glow);
+  --color-whatsapp: var(--whatsapp);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -124,88 +144,8 @@
   }
 }
 
-@keyframes shimmer {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
-  }
-}
-
-.text-gradient-gold {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ffd700 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.gradient-gold {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ffd700 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.text-gradient-elegant {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ffd700 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.text-gradient-accent {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ffd700 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 10s ease-in-out infinite;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
+/* Visible keyboard focus everywhere, on the dark background. */
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }

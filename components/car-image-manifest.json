@@ -1,0 +1,107 @@
+{
+  "/abfastcar/audi-a3-s-line.jpg": {
+    "base": "audi-a3-s-line",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/clio-5-automatique.jpg": {
+    "base": "clio-5-automatique",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/cupra-formentor.jpg": {
+    "base": "cupra-formentor",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/cupra-leon.jpg": {
+    "base": "cupra-leon",
+    "width": 1000,
+    "height": 1250
+  },
+  "/abfastcar/hyundai-i20.jpg": {
+    "base": "hyundai-i20",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/hyundai-sonata.jpg": {
+    "base": "hyundai-sonata",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/hyundai-tucson.jpg": {
+    "base": "hyundai-tucson",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/lamborghini-urus.jpg": {
+    "base": "lamborghini-urus",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-amg-cla-45-s.jpg": {
+    "base": "mercedes-amg-cla-45-s",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-cla-pack-amg.jpg": {
+    "base": "mercedes-cla-pack-amg",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-classe-a-pack-amg.jpg": {
+    "base": "mercedes-classe-a-pack-amg",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-e-class-w214.jpg": {
+    "base": "mercedes-e-class-w214",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-g63.jpg": {
+    "base": "mercedes-g63",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/mercedes-vito.jpg": {
+    "base": "mercedes-vito",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/peugeot-208.jpg": {
+    "base": "peugeot-208",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/porsche-cayenne.jpg": {
+    "base": "porsche-cayenne",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/porsche-macan-t.jpg": {
+    "base": "porsche-macan-t",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/porsche-macan.jpg": {
+    "base": "porsche-macan",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/range-rover-evoque.jpg": {
+    "base": "range-rover-evoque",
+    "width": 1000,
+    "height": 1250
+  },
+  "/abfastcar/range-rover-sport.jpg": {
+    "base": "range-rover-sport",
+    "width": 1122,
+    "height": 1402
+  },
+  "/abfastcar/volkswagen-touareg.jpg": {
+    "base": "volkswagen-touareg",
+    "width": 1122,
+    "height": 1402
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "siteName": "AB FAST CAR",
+    "home": {
+      "title": "Autoverhuur in Marrakech en Marokko | AB FAST CAR",
+      "description": "Autoverhuur in Marrakech: stadsauto's, sedans, SUV's, een bestelbus en luxemodellen. 24/7 bereikbaar, levering overal in Marokko, online of via WhatsApp reserveren."
+    },
+    "fleet": {
+      "title": "Vloot en dagprijzen | AB FAST CAR Marrakech",
+      "description": "Al onze huurauto's met hun dagprijs in Marokkaanse dirham: Peugeot 208, Clio 5, Cupra, Mercedes, Range Rover, Porsche, Lamborghini Urus en meer."
+    },
+    "vehicle": {
+      "title": "{name} huren in Marrakech – {price}/dag | AB FAST CAR",
+      "description": "Huur de {name} ({category}: {features}) bij AB FAST CAR in Marrakech, vanaf {price} per dag. Levering overal in Marokko, 24/7 bereikbaar."
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over autohuur | AB FAST CAR",
+      "description": "Reserveren, levering, kilometers, chauffeur, prijzen en contact: antwoorden op de meest gestelde vragen over autohuur bij AB FAST CAR in Marrakech."
+    },
+    "contact": {
+      "title": "Contact en adres in Marrakech | AB FAST CAR",
+      "description": "Neem 24/7 contact op met AB FAST CAR via telefoon, WhatsApp of e-mail. Kantoor in Marrakech, levering van uw auto overal in Marokko."
+    },
+    "notFound": {
+      "title": "Pagina niet gevonden | AB FAST CAR",
+      "description": "Deze pagina bestaat niet of is verplaatst."
+    },
+    "conditions": {
+      "title": "Huurvoorwaarden | AB FAST CAR",
+      "description": "De 16 artikelen van de huurvoorwaarden van AB FAST CAR: voertuig, verzekering, eigen risico, waarborg, terugbrengen, brandstof en kilometers."
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "intro": "Antwoorden op de vragen die we het vaakst krijgen over autohuur bij AB FAST CAR. Voor andere vragen staat ons team 24/7 voor u klaar.",
+    "book": "Een auto reserveren",
+    "contact": "Contact opnemen",
+    "items": [
+      {
+        "q": "Hoe reserveer ik een auto bij AB FAST CAR?",
+        "a": "Kies een auto uit onze vloot en klik op ‘Reserveren’. Vul uw data en uw WhatsApp-nummer in: uw aanvraag wordt via WhatsApp naar ons gestuurd en ons team antwoordt om de reservering te bevestigen. U kunt ook telefonisch reserveren via +212 601 66 66 65."
+      },
+      {
+        "q": "Waar is uw kantoor en wat zijn de openingstijden?",
+        "a": "Ons kantoor ligt in Marrakech, Marokko. Onze service is 24 uur per dag, 7 dagen per week beschikbaar."
+      },
+      {
+        "q": "Leveren jullie de auto af?",
+        "a": "Ja. We leveren de auto op het adres van uw keuze, overal in Marokko, ook op luchthavens. Neem contact met ons op voor de leveringsafspraken op uw adres."
+      },
+      {
+        "q": "Is het aantal kilometers beperkt?",
+        "a": "De kilometervoorwaarden staan in uw huurovereenkomst. Een overschrijding kan worden gefactureerd tegen de vóór de huur meegedeelde tarieven. Neem contact op met het verhuurbedrijf voor de voorwaarden voor uw gekozen voertuig."
+      },
+      {
+        "q": "Bieden jullie een chauffeursdienst aan?",
+        "a": "Ja, een professionele chauffeur is optioneel beschikbaar, voor zakenreizen en privé-evenementen. Neem contact met ons op voor het tarief."
+      },
+      {
+        "q": "Welke soorten auto's bieden jullie aan?",
+        "a": "Onze vloot bestaat uit stadsauto's, sedans, SUV's, een bestelbus met 8 zitplaatsen en luxemodellen, van de Peugeot 208 tot de Lamborghini Urus. Elk model heeft een eigen pagina met de dagprijs."
+      },
+      {
+        "q": "Wat kost het huren van een auto?",
+        "a": "Onze prijzen gelden per dag in Marokkaanse dirham (MAD), van {min} tot {max} afhankelijk van de auto. Bedragen in euro of pond zijn indicatieve omrekeningen: de reservering wordt in dirham bevestigd."
+      },
+      {
+        "q": "Wat zijn de huurvoorwaarden (borg, documenten, leeftijd, verzekering, betaling)?",
+        "a": "De algemene huurvoorwaarden staan op onze speciale pagina. De prijs, waarborg en betalingsafspraken staan in uw overeenkomst. Neem vóór het reserveren contact op met het verhuurbedrijf over vereiste documenten, minimumleeftijd en voertuigspecifieke afspraken."
+      },
+      {
+        "q": "Hoe kan ik contact met jullie opnemen?",
+        "a": "Via telefoon of WhatsApp op +212 601 66 66 65, per e-mail via Abfastcar@gmail.com of op Instagram (@abfastcar). Ons team is 24/7 bereikbaar."
+      },
+      {
+        "q": "Welk eigen risico geldt na een ongeval?",
+        "a": "Artikel 4 voorziet, wanneer de gehele of gedeeltelijke aansprakelijkheid van de klant is vastgesteld, in een eigen risico van 5 % van de voertuigwaarde volgens de berekeningsgrondslag in de huurovereenkomst en onder voorbehoud van de verzekeringspolis. Dit kan alleen worden gevorderd binnen de grenzen van diens aansprakelijkheid en de toepasselijke bepalingen. Het is geen algemene waarborg."
+      },
+      {
+        "q": "Worden er altijd waskosten gerekend?",
+        "a": "Nee. Artikel 11 voorziet in 150 Marokkaanse dirham (MAD) als het voertuig vuil wordt teruggebracht en een volledige wasbeurt nodig heeft. Gespecialiseerde reiniging bij uitzonderlijke vervuiling kan gerechtvaardigde extra kosten volgens de overeenkomst meebrengen."
+      },
+      {
+        "q": "Wat zijn de annulerings- en terugbetalingsvoorwaarden?",
+        "a": "Deze worden vóór de bevestiging van uw reservering meegedeeld en in de overeenkomst vastgelegd. Annulering, voortijdige beëindiging en terugbetaling hangen af van de contractuele voorwaarden en toepasselijke regelgeving. Neem vóór het bevestigen contact op met het verhuurbedrijf."
+      }
+    ]
+  }
+}

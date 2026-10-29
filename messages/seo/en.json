@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "siteName": "AB FAST CAR",
+    "home": {
+      "title": "Car Rental in Marrakech and Morocco | AB FAST CAR",
+      "description": "Car rental in Marrakech: city cars, sedans, SUVs, a van and luxury models. Available 24/7, delivery anywhere in Morocco, book online or on WhatsApp."
+    },
+    "fleet": {
+      "title": "Fleet and Daily Rates | AB FAST CAR Marrakech",
+      "description": "All our rental cars with their daily price in Moroccan dirhams: Peugeot 208, Clio 5, Cupra, Mercedes, Range Rover, Porsche, Lamborghini Urus and more."
+    },
+    "vehicle": {
+      "title": "{name} Rental in Marrakech – {price}/day | AB FAST CAR",
+      "description": "Rent the {name} ({category}: {features}) from AB FAST CAR in Marrakech, from {price} per day. Delivery anywhere in Morocco, available 24/7."
+    },
+    "faq": {
+      "title": "Car Rental FAQ | AB FAST CAR",
+      "description": "Booking, delivery, mileage, driver, prices and contact: answers to the most common questions about renting a car with AB FAST CAR in Marrakech."
+    },
+    "contact": {
+      "title": "Contact and Address in Marrakech | AB FAST CAR",
+      "description": "Contact AB FAST CAR 24/7 by phone, WhatsApp or email. Agency in Marrakech, with car delivery anywhere in Morocco."
+    },
+    "notFound": {
+      "title": "Page not found | AB FAST CAR",
+      "description": "This page does not exist or has moved."
+    },
+    "conditions": {
+      "title": "Rental Conditions | AB FAST CAR",
+      "description": "The 16 articles of AB FAST CAR rental conditions: vehicle, insurance, excess, deposit, return, fuel and mileage."
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Answers to the questions we are asked most often about renting a car with AB FAST CAR. For anything else, our team answers 24/7.",
+    "book": "Book a car",
+    "contact": "Contact us",
+    "items": [
+      {
+        "q": "How do I book a car with AB FAST CAR?",
+        "a": "Choose a car from our fleet and select “Book”. Enter your dates and your WhatsApp number: your request is sent to us on WhatsApp and our team replies to confirm the booking. You can also book by phone on +212 601 66 66 65."
+      },
+      {
+        "q": "Where is your agency and what are your opening hours?",
+        "a": "Our agency is in Marrakech, Morocco. Our service is available 24 hours a day, 7 days a week."
+      },
+      {
+        "q": "Do you deliver the car?",
+        "a": "Yes. We deliver the car to the address of your choice anywhere in Morocco, including airports. Contact us for the delivery arrangements to your address."
+      },
+      {
+        "q": "Is mileage limited?",
+        "a": "Mileage conditions are specified in your rental contract. Excess mileage may be charged at the rates communicated before rental. Contact the agency for the conditions applying to your chosen vehicle."
+      },
+      {
+        "q": "Do you offer a chauffeur service?",
+        "a": "Yes, a professional driver is available as an option, for business trips as well as private events. Contact us for the rate."
+      },
+      {
+        "q": "What kinds of cars do you offer?",
+        "a": "Our fleet includes city cars, sedans, SUVs, an 8-seat van and luxury models, from the Peugeot 208 to the Lamborghini Urus. Each model has its own page with its daily price."
+      },
+      {
+        "q": "How much does it cost to rent a car?",
+        "a": "Our prices are per day in Moroccan dirhams (MAD), from {min} to {max} depending on the car. Amounts shown in euros or pounds are indicative conversions: the booking is confirmed in dirhams."
+      },
+      {
+        "q": "What are the rental conditions (deposit, documents, age, insurance, payment)?",
+        "a": "The general rental conditions are available on our dedicated page. The price, deposit and payment arrangements are set out in your contract. Contact the agency before booking for required documents, minimum age and vehicle-specific arrangements."
+      },
+      {
+        "q": "How can I contact you?",
+        "a": "By phone or WhatsApp on +212 601 66 66 65, by email at Abfastcar@gmail.com, or on Instagram (@abfastcar). Our team is available 24/7."
+      },
+      {
+        "q": "What insurance excess applies after an accident?",
+        "a": "Under article 4, where the customer’s full or partial liability is established, an excess of 5 % of the vehicle’s value applies according to the calculation basis in the rental contract and subject to the insurance policy. It may only be claimed within the limits of their liability and applicable provisions. This is not a general deposit."
+      },
+      {
+        "q": "Is a washing fee always charged?",
+        "a": "No. Article 11 provides for 150 Moroccan dirhams (MAD) if the vehicle is returned dirty and requires a full wash. Specialist cleaning for exceptional soiling may incur additional substantiated costs under the contract."
+      },
+      {
+        "q": "What are the cancellation and refund conditions?",
+        "a": "They are communicated before your booking is confirmed and specified in the contract. Cancellation, early termination and refunds depend on the contractual conditions and applicable regulations. Contact the agency before confirming."
+      }
+    ]
+  }
+}
