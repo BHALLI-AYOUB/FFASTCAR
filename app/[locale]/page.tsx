@@ -12,6 +12,7 @@ import { FleetSection } from "@/components/fleet-section"
 import { ProcessSection } from "@/components/process-section"
 import { VideoSection } from "@/components/video-section"
 import { ContactSection } from "@/components/contact-section"
+import { GoogleReviewsSection } from "@/components/google-reviews-section"
 
 type Props = { params: Promise<{ locale: Locale }> }
 
@@ -37,6 +38,7 @@ export default async function Home({ params }: Props) {
       <FleetSection />
       <VideoSection />
       <ProcessSection />
+      <GoogleReviewsSection />
       <ContactSection contact={contact} />
     </SiteShell>
   )

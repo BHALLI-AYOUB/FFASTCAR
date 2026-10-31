@@ -257,6 +257,18 @@
     "preview": "معاينة بدون صوت",
     "watchWithSound": "شاهد مع الصوت"
   },
+  "reviews": {
+    "eyebrow": "تجارب العملاء",
+    "title": "ماذا يقول عملاؤنا عنا",
+    "subtitle": "اكتشفوا تجارب عملائنا مع AB FAST CAR في مراكش.",
+    "allReviews": "عرض جميع التقييمات على Google",
+    "source": "مجموعة مختارة من التقييمات المنشورة على Google Maps بلغاتها الأصلية.",
+    "previous": "التقييمات السابقة",
+    "next": "التقييمات التالية",
+    "carousel": "تقييمات العملاء على Google",
+    "ownerResponse": "رد AB FAST CAR",
+    "position": "{current} / {total}"
+  },
   "conditions": {
     "contents": "المحتويات",
     "article": "المادة {number}",
