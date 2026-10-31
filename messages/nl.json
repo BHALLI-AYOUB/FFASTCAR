@@ -257,6 +257,18 @@
     "preview": "Voorbeeld zonder geluid",
     "watchWithSound": "Bekijk met geluid"
   },
+  "reviews": {
+    "eyebrow": "Ervaringen van klanten",
+    "title": "Wat onze klanten zeggen",
+    "subtitle": "Ontdek de ervaringen van onze klanten bij AB FAST CAR in Marrakech.",
+    "allReviews": "Alle reviews op Google bekijken",
+    "source": "Een selectie van reviews op Google Maps, in de oorspronkelijke taal.",
+    "previous": "Vorige reviews",
+    "next": "Volgende reviews",
+    "carousel": "Klantreviews op Google",
+    "ownerResponse": "Reactie van AB FAST CAR",
+    "position": "{current} / {total}"
+  },
   "conditions": {
     "contents": "Inhoud",
     "article": "Artikel {number}",
